@@ -11,6 +11,7 @@ function App() {
         </p>
         <p>
           Look yall, I made our react app for ResearchU!
+          Add more text
         </p>
         <a
           className="App-link"
