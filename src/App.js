@@ -1,17 +1,23 @@
-import logo from './logo.svg';
+import logo from './ResearchULogo.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <p id="right">
+          About Us
+        </p>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Find research opportunities here on ResearchU! Get involved
+          in your school community, build reputation for your career, develop
+          written and oral communication skills, and advance academic
+          achievement by partaking in academic research!
         </p>
         <p>
-          Look yall, I made our react app for ResearchU!
-          Add more text
+          Contact us by email at:
+          abe.arrevalo@emory.edu
         </p>
         <a
           className="App-link"
