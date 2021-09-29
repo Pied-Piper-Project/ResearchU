@@ -4,6 +4,7 @@ import logo from '../ResearchULogo.png';
 function Home(){
     return(
      <div className = 'Home'>
+         <div class='container'>
          <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
@@ -13,6 +14,7 @@ function Home(){
             achievement by partaking in academic research!
             </p>
          </header>
+         </div>
      </div>
     );
 }

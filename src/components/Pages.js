@@ -5,7 +5,7 @@ function Pages(props){
     <div className = 'Pages'>
       <nav class="navbar navbar-expand navbar-light bg-dark">
         <div class="container">
-          <Link class="navbar-brand" to="/">
+          <Link class="navbar-brand" to="/ResearchU">
             ResearchU Navigation Bar
           </Link>
 
@@ -13,10 +13,10 @@ function Pages(props){
             <ul class="navbar-nav ml-auto">
               <li
                 class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
+                  props.location.pathname === "/ResearchU" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/">
+                <Link class="nav-link" to="/ResearchU">
                   Home
                   <span class="sr-only">(current)</span>
                 </Link>

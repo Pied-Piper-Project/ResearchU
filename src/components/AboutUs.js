@@ -3,6 +3,7 @@ import '../App.css';
 function AboutUs(){
     return(
         <div className="AboutUs">
+            <div class='container'>
             <header className="App-header">
                 <p>
                 This website was constructed by the scrum team Pied
@@ -13,6 +14,7 @@ function AboutUs(){
                 Matthew Moreno, Ender Schmidt, Carol Tang
                 </p>
             </header>
+            </div>
         </div>
     );
 }
