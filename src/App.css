@@ -233,6 +233,10 @@ img{
   font-size: 1.3rem;
 }
 
+.nav__logo > img{
+  vertical-align: middle;
+}
+
 .nav__link, .nav__logo, .nav__toggle{
   color: var(--title-color);
   font-weight: var(--font-semi-bold);

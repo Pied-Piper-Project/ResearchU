@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
+import logo from '../logo.PNG'
 
 function Navigation(props){
   return(
     <div className ='1-header' id="header">
       <nav class="nav bd-container">
           <Link class="nav__logo" to="/ResearchU">
-            ResearchU
+            <img src={logo} width={300} />
           </Link>
 
           <div className="nav__menu" id="nav-menu">
