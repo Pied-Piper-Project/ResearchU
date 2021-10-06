@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ResearchU/static/css/main.e0a122ca.chunk.css",
+    "main.js": "/ResearchU/static/js/main.5280335a.chunk.js",
+    "main.js.map": "/ResearchU/static/js/main.5280335a.chunk.js.map",
+    "runtime-main.js": "/ResearchU/static/js/runtime-main.510544b6.js",
+    "runtime-main.js.map": "/ResearchU/static/js/runtime-main.510544b6.js.map",
+    "static/js/2.8737b1d0.chunk.js": "/ResearchU/static/js/2.8737b1d0.chunk.js",
+    "static/js/2.8737b1d0.chunk.js.map": "/ResearchU/static/js/2.8737b1d0.chunk.js.map",
+    "static/js/3.69defcd0.chunk.js": "/ResearchU/static/js/3.69defcd0.chunk.js",
+    "static/js/3.69defcd0.chunk.js.map": "/ResearchU/static/js/3.69defcd0.chunk.js.map",
+    "index.html": "/ResearchU/index.html",
+    "static/css/main.e0a122ca.chunk.css.map": "/ResearchU/static/css/main.e0a122ca.chunk.css.map",
+    "static/js/2.8737b1d0.chunk.js.LICENSE.txt": "/ResearchU/static/js/2.8737b1d0.chunk.js.LICENSE.txt",
+    "static/media/ResearchULogo.4a1b2b80.png": "/ResearchU/static/media/ResearchULogo.4a1b2b80.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.510544b6.js",
+    "static/js/2.8737b1d0.chunk.js",
+    "static/css/main.e0a122ca.chunk.css",
+    "static/js/main.5280335a.chunk.js"
+  ]
+}
