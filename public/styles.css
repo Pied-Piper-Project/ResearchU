@@ -1,52 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* .App {
-  text-align: center;
-}
-
-#aboutus {
-  text-align: right;
-  padding-left: 1000px;
-  font-size: 20px;
-}
-
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-}
-
-.App-header {
-  background-color: #ffcc66;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/**********************/
-/**** AMIN UI CSS  ****/
-/**********************/
-
 /*-------- VARIABLES CSS --------*/
 :root {
   --header-height: 3rem;
@@ -231,10 +184,6 @@ img{
 }
 .nav__logo {
   font-size: 1.3rem;
-}
-
-.nav__logo > img{
-  vertical-align: middle;
 }
 
 .nav__link, .nav__logo, .nav__toggle{

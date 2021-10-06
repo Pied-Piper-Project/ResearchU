@@ -1,8 +1,9 @@
+import React from 'react';
 import '../App.css';
 
-function AboutUs(){
+function About(){
     return(
-        <div className="AboutUs">
+        <div className="About">
             <div class='container'>
             <header className="App-header">
                 <p>
@@ -19,4 +20,4 @@ function AboutUs(){
     );
 }
 
-export default AboutUs;
+export default About;
