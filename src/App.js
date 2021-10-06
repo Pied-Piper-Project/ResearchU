@@ -9,8 +9,8 @@ function App() {
         <Router>
         <Navigation />
         <Switch>
-          <Route path="/" exact component={() => <Home />} />
-          <Route path="/About" exact component={() => <About />} />
+          <Route path="/ResearchU" exact component={() => <Home />} />
+          <Route path="/ResearchU/About" exact component={() => <About />} />
         </Switch>
         </Router>
         <p>

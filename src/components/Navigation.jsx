@@ -3,37 +3,35 @@ import { Link, withRouter } from 'react-router-dom';
 
 function Navigation(props){
   return(
-    <div className = 'Navigation'>
-      <nav class="navbar navbar-expand navbar-light bg-dark">
-        <div class="container">
-          <Link class="navbar-brand" to="/">
-            ResearchU Navigation Bar
+    <div className ='1-header' id="header">
+      <nav class="nav bd-container">
+          <Link class="nav__logo" to="/ResearchU">
+            ResearchU
           </Link>
 
-          <div>
-            <ul class="navbar-nav ml-auto">
+          <div className="nav__menu" id="nav-menu">
+            <ul class="nav__list">
               <li
-                class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
+                class={`nav__item  ${
+                  props.location.pathname === "/ResearchU" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/">
+                <Link class="nav__link active-link" to="/ResearchU">
                   Home
                   <span class="sr-only">(current)</span>
                 </Link>
               </li>
               <li
-                class={`nav-item  ${
-                  props.location.pathname === "/About" ? "active" : ""
+                class={`nav__item  ${
+                  props.location.pathname === "/ResearchU/About" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/About">
+                <Link class="nav__link" to="/ResearchU/About">
                   About Us
                 </Link>
               </li>
             </ul>
           </div>
-        </div>
       </nav>
     </div>
   );
