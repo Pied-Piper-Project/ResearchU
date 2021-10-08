@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../ResearchULogo.png';
 
 function Home(){
     return(
