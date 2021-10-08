@@ -4,10 +4,10 @@ import logo from '../logo.PNG'
 
 function Navigation(props){
   return(
-    <div className ='1-header' id="header">
+    <header className ='1-header' id="header">
       <nav class="nav bd-container">
           <Link class="nav__logo" to="/ResearchU">
-            <img src={logo} width={300} />
+            <img src={logo} width={300} alt="ResearchU logo" />
           </Link>
 
           <div className="nav__menu" id="nav-menu">
@@ -34,7 +34,7 @@ function Navigation(props){
             </ul>
           </div>
       </nav>
-    </div>
+    </header>
   );
 }
 
