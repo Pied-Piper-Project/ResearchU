@@ -659,3 +659,9 @@ img{
     column-gap: 5rem;
   }
 }
+
+.video_center{
+  margin-left: auto;
+  margin-right: auto;
+  display: block
+}
