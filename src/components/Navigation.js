@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import logo from '../logo.PNG'
+import logo from '../logo.PNG';
 
 
 function Navigation(props){
@@ -11,32 +11,32 @@ function Navigation(props){
 
   return(
     <header className ='1-header' id="header">
-      <nav class="nav bd-container">
-          <Link class="nav__logo" to="/ResearchU">
+      <nav className="nav bd-container">
+          <Link className="nav__logo" to="/ResearchU">
             <img src={logo} width={300} alt="ResearchU logo" />
           </Link>
 
           <div className="nav__menu" id="nav-menu">
-            <ul class="nav__list">
+            <ul className="nav__list">
               <li>
                 <button id="theme-button" onClick={myButton}> Night Mode </button>
               </li>
               <li
-                class={`nav__item  ${
+                className={`nav__item  ${
                   props.location.pathname === "/ResearchU" ? "active" : ""
                 }`}
               >
-                <Link class="nav__link active-link" to="/ResearchU">
+                <Link className="nav__link active-link" to="/ResearchU">
                   Home
-                  <span class="sr-only">(current)</span>
+                  <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li
-                class={`nav__item  ${
+                className={`nav__item  ${
                   props.location.pathname === "/ResearchU/About" ? "active" : ""
                 }`}
               >
-                <Link class="nav__link" to="/ResearchU/About">
+                <Link className="nav__link" to="/ResearchU/About">
                   About Us
                 </Link>
               </li>
@@ -47,4 +47,4 @@ function Navigation(props){
   );
 }
 
-export default withRouter(Navigation)
+export default withRouter(Navigation);
