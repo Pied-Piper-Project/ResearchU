@@ -2,12 +2,13 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import logo from '../logo.PNG'
 
-function myButton() {
-  var click = document.body
-  click.classList.toggle("dark-theme")
-}
 
 function Navigation(props){
+  function myButton() {
+    var click = document.body
+    click.classList.toggle("dark-theme")
+  }
+
   return(
     <header className ='1-header' id="header">
       <nav class="nav bd-container">
