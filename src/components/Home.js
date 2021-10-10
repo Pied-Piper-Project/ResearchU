@@ -5,6 +5,7 @@ function Home(){
     const [school, setSchool] = useState('');
     const [department, setDepartment] = useState('');
     const [professor, setProfessor] = useState('');
+    //Need to add a useState for button
 
     useEffect(() => {
         console.log(`school is: ${school}`);
@@ -32,7 +33,7 @@ function Home(){
                                 <input type="text" className="input_search" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
                                 <input type="text" className="input_search" value={department} onChange={e => setDepartment(e.target.value)} placeholder="Department: Math, Biology, CS..." />
                                 <input type="text" className="input_search" value={professor} onChange={e => setProfessor(e.target.value)} placeholder="Professor" />
-                                <div className="search_btn"><i className="fas fa-search"></i></div>
+                                <button className="search_btn"><i className="fas fa-search"></i></button>
                             </div>
                         <p className="home__description">FIND research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
                     </div>             
