@@ -2,7 +2,13 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import logo from '../logo.PNG';
 
+
 function Navigation(props){
+  function myButton() {
+    var click = document.body
+    click.classList.toggle("dark-theme")
+  }
+
   return(
     <header className ='1-header' id="header">
       <nav className="nav bd-container">
@@ -12,6 +18,9 @@ function Navigation(props){
 
           <div className="nav__menu" id="nav-menu">
             <ul className="nav__list">
+              <li>
+                <button id="theme-button" onClick={myButton}> Night Mode </button>
+              </li>
               <li
                 className={`nav__item  ${
                   props.location.pathname === "/ResearchU" ? "active" : ""
