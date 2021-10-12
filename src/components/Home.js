@@ -9,7 +9,7 @@ function Home(){
                         <img src="assets/img/home.png" alt="" />
                     </div>
                     <div class="video">
-                        <video className="video_center" width={1000} height={250} autoPlay muted>
+                        <video className="video_center" height={200} autoPlay muted>
                             <source src={videoSource} type="video/mp4"/>
                         </video>
                     </div>
