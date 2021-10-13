@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function ResearchResult( {result} ){
 
@@ -10,7 +10,7 @@ function ResearchResult( {result} ){
     <>
       <h1>{result.name}</h1>
       <h3>School {result.school}</h3>
-      <img src={result.schoolLogo} />
+      <img src={result.schoolLogo} alt={result.school + "'s school logo"} />
       <h3>Academic Department {result.department}</h3>
       <h3>Professor {result.professor}</h3>
       <h3>Location: {result.location}</h3>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ResearchResult from './ResearchResult';
-import results from './ExampleResearchPosts.json'
-
+import ResearchResult from './../components/ResearchResult';
 
 function Home(){
     const [school, setSchool] = useState('');
@@ -101,7 +99,7 @@ function Home(){
     ]
     `;
     let data1 = JSON.parse(dataJSON);
-    console.log(data1);
+    // console.log(data1);
 
     return(
         <>
