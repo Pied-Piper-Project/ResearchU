@@ -4,7 +4,7 @@ import '../App.css';
 function About(){
     return(
         <div className="About">
-            <div class='container'>
+            <div className='container'>
             <header className="App-header">
                 <p>
                 This website was constructed by the scrum team Pied
