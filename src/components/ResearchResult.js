@@ -17,7 +17,7 @@ function ResearchResult( {result} ){
       <h3>Semester: {result.semester}</h3>
       <h3>Duration: {result.dateRange}</h3>
       <h3>Research is conducted between the hours of {result.timeRange}</h3>
-      <h3>This is {result.isPaid ? "not a paid" : "a paid"} research opportunity</h3>
+      <h3>This is {result.isPaid ? "a paid" : "not a paid"} research opportunity</h3>
       <h3>This opportunity pays ${result.payAmount}</h3>
       <p>{result.postBody}</p>
       <p>This opportunity is {result.isOnline ? "online" : "offline"}</p>
