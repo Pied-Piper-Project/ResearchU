@@ -10,8 +10,8 @@ function About(){
                 This website was constructed by the scrum team Pied
                 Piper, a group of eight students from Emory University.
                 The names of those involved with the project include:
-                Abraham Arevalo (Product Owner), Amin El Asery (Scrum Master),
-                Abner Benitez, Kody Coppock, Enoc Flores Hernandez,
+                Abraham Arevalo (Product Owner), Amin El Asery,
+                Abner Benitez (Scrum Master), Kody Coppock, Enoc Flores Hernandez,
                 Matthew Moreno, Ender Schmidt, Carol Tang
                 </p>
             </header>
