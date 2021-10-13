@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import logo from '../logo.PNG'
+import nightImage from '../NightMode.png'
 
 
 function Navigation(props){
@@ -19,7 +20,7 @@ function Navigation(props){
           <div className="nav__menu" id="nav-menu">
             <ul class="nav__list">
               <li>
-                <button id="theme-button" onClick={myButton}> Night Mode </button>
+                <button id="theme-button" onClick={myButton}><img src ={nightImage} width={40} alt="NightMode logo"/> </button>
               </li>
               <li
                 class={`nav__item  ${
