@@ -117,11 +117,10 @@ function Home(){
                                 <input type="text" className="input_search" value={professor} onChange={e => setProfessor(e.target.value)} placeholder="Professor" />
                                 <button className="search_btn"><i className="fas fa-search"></i></button>
                             </div>
-                            <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
-
                             {data1.map((item) => (
                               <ResearchResult result={item} key={item.postID}/>
                             ))}
+                        <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
                     </div>
                 </div>
             </section>
