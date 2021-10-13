@@ -20,7 +20,7 @@ function Navigation(props){
           <div className="nav__menu" id="nav-menu">
             <ul class="nav__list">
               <li>
-                <button id="theme-button" onClick={myButton}><img src ={nightImage} width={40} alt="NightMode logo"/> </button>
+                <button id="theme-button" onClick={myButton}><img src ={nightImage} width={40} alt="Night Mode icon"/> </button>
               </li>
               <li
                 class={`nav__item  ${
