@@ -34,10 +34,10 @@ const Navbar = ({toggle}) => {
                             <NavLinks to ='/ResearchU' >Home</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to ="/About">About</NavLinks>
+                            <NavLinks to ="/ResearchU/About">About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to ="/Contact">Contact</NavLinks>
+                            <NavLinks to ="/ResearchU/Contact">Contact</NavLinks>
                         </NavItem>
                         <NavItem>
                         <NightModeIcon onClick={myButton}>
@@ -46,9 +46,9 @@ const Navbar = ({toggle}) => {
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
-                        <NavLinks to ="/SignIn">Sign In</NavLinks>
+                        <NavLinks to ="/ResearchU/SignIn">Sign In</NavLinks>
                         {/* <FaGripLinesVertical/> */}
-                        <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
+                        <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
