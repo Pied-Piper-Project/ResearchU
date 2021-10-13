@@ -1,5 +1,5 @@
-{
-    "researchPost1": {
+[
+    {
     "postID": 1,
     "name": "Amino Acid Research",
     "professor": "John Dalton",
@@ -24,7 +24,7 @@
     }
   },
 
-  "researchPost2": {
+  {
     "postID": 2,
     "name": "Photocatalysis Research",
     "professor": "Antoine Lavoisier",
@@ -50,7 +50,7 @@
   },
 
 
-  "researchPost3": {
+  {
     "postID": 3,
     "name": "Solar Energy Conversion Research",
     "professor": "Joseph Priestley",
@@ -74,4 +74,4 @@
       "major": "Chemistry"
     }
   }
-}
+]
