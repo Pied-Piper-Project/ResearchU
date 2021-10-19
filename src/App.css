@@ -18,6 +18,7 @@
   --text-color-light: #8F8A8A;
   --body-color: #F5F6FA;
   --container-color: #FFF;
+  --button-color: #fc6;
 
   /*---------------- Font and typography ----------------*/
   --body-font: 'Poppins', sans-serif;
@@ -73,6 +74,7 @@ body.dark-theme{
   --text-color: #D1C7C8;
   --body-color: #241E45;
   --container-color: #443c6c;
+  --button-color: rgb(76, 46, 158);
 }
 
 /*---------------- Button Dark/Light ----------------*/
@@ -330,7 +332,7 @@ img{
 	width: 50px;
 	height: 50px;
 	border-radius: 30%;
-	background: #fc6;
+	background: var(--button-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -356,9 +358,9 @@ img{
     
 }
 
-::placeholder {
-  /* color: rgb(0, 17, 255); */
-  /* opacity: 1; */
+.input_search::placeholder {
+  color: var(--text-color);
+  opacity: 1;
 }
 
 ::-webkit-input-placeholder {
