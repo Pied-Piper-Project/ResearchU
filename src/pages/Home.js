@@ -1,7 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import ResearchResult from './../components/ResearchResult';
 
+import dayjs from "dayjs";
+import PersonItem from "../components/PersonItem";
+import { data } from "./ExampleResearchPosts";
+import FilterBar from "../components/FilterBar";
+
+const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
+const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
+dayjs.extend(isSameOrBefore);
+dayjs.extend(isSameOrAfter);
+
+
 function Home(){
+    const [allData, setData] = useState(data);
+
+    const generateMajorDataForDropdown = () => {
+      return [...new Set(data.map((item) => item.major))];
+    };
+
+    const handleFilterName = (name) => {
+      const filteredData = data.filter((item) => {
+        const fullName = `${item.name}`;
+        if (fullName.toLowerCase().includes(name.toLowerCase())) {
+          return item;
+        }
+      });
+
+      setData(filteredData);
+    };
+
+    const handleFilterMajor = (major) => {
+      const filteredData = data.filter((item) => {
+        if (item.major === major) {
+          return item;
+        }
+      });
+
+      setData(filteredData);
+    };
+
+    const handleFilterDate = (date, field) => {
+      const filteredData = data.filter((item) => {
+        if (field === "from" && dayjs(item.date).isSameOrAfter(dayjs(date))) {
+          return item;
+        }
+      });
+
+      setData(filteredData);
+    };
+
+    // --------------
     const [school, setSchool] = useState('');
     const [department, setDepartment] = useState('');
     const [professor, setProfessor] = useState('');
@@ -117,10 +166,30 @@ function Home(){
                                 <input type="text" className="input_search" value={professor} onChange={e => setProfessor(e.target.value)} placeholder="Professor" />
                                 <button className="search_btn"><i className="fas fa-search"></i></button>
                             </div>
-                            {data1.map((item) => (
+                            {/* {data1.map((item) => (
                               <ResearchResult result={item} key={item.postID}/>
-                            ))}
-                        <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
+                            ))} */}
+                        {/* <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p> */}
+                        <div className="container">
+                          <div className="row">
+                            <div className="col-sm-3">
+                            <FilterBar
+                              majors={generateMajorDataForDropdown()}
+                              onNameFilter={handleFilterName}
+                              onMajorFilter={handleFilterMajor}
+                              onYearFilter={handleFilterMajor}
+                              onDateFilter={handleFilterDate}
+                            />
+                            </div>
+                            <div className="col-sm-9">
+                              <div className="row mt-5">
+                                {allData.map((item) => (
+                                  <PersonItem item={item} key={item.id} />
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </section>

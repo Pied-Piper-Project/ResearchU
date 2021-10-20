@@ -96,6 +96,9 @@ body{
   
 }
 
+.card-body {
+font-family: var(--body-font);
+}
 h1,h2,h3,ul,p{
   margin: 0;
 }
@@ -339,6 +342,7 @@ img{
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(65,11,16,.15);
   border-radius: 1rem;
+  
 }
 
 .search_box .input_search{
@@ -347,12 +351,13 @@ img{
 	background: rgba(235, 172, 35, 0.2);
 	border-radius: 20px;
 	padding: 15px 20px;
-	width: 260px; 
+	width: 246px; 
 	height: 50px;
   /* color: #A5A5A5; */
   /* border: 0.2px solid #8472df; */
   box-shadow: 0 2px 6px rgba(87, 62, 9, 0.3);
   border-radius: 1rem;
+  font-size: 0.9rem;
     
 }
 
@@ -403,6 +408,9 @@ img{
 }
 
 
+.search__container{
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
 
 /*---------------- About ----------------*/
 .about__container{
