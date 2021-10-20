@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import videoSource from "./../anim_logo.mp4";
 import ResearchResult from './../components/ResearchResult';
 
 function Home(){
@@ -107,6 +108,11 @@ function Home(){
                 <div className="home__container bd-container">
                     <div className="home__img">
                         <img src="assets/img/home.png" alt="" />
+                    </div>
+                    <div className="video">
+                        <video className="video_center" height={200} autoPlay muted>
+                            <source src={videoSource} type="video/mp4"/>
+                        </video>
                     </div>
                     <div className="home__data">
                         <h1 className="home__title">Research is just a click away!</h1>
