@@ -1,26 +1,43 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Navigation, About, Home} from "./components";
+import React, {useState} from 'react'
+import {BrowserRouter as Router, Switch, Route} from  'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Navbar from './components/Navbar';
+import Sidebar from './components/SideBar';
+
+
+
 
 function App() {
+  
+
+  const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => {
+        setIsOpen(!isOpen)
+    };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Router>
-        <Navigation />
-        <Switch>
-          <Route path="/ResearchU" exact component={() => <Home />} />
-          <Route path="/ResearchU/About" exact component={() => <About />} />
-        </Switch>
-        </Router>
-        <p>
-            Contact us by email at:
-            abe.arrevalo@emory.edu
-        </p>
-      </header>
-    </div>
+    <Router>
+       
+      <Sidebar isOpen= {isOpen} toggle = {toggle}/>
+      <Navbar toggle = {toggle}/>
+      <Switch>
+        
+        <Route path = '/' exact component = {Home}/>
+        <Route path = '/ResearchU' exact component = {Home}/>
+        <Route path = '/ResearchU/About' exact component = {About}/>
+        <Route path = '/ResearchU/Contact' exact component = {Contact}/>
+        <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
+        <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
+       
+      </Switch>
+    </Router>
   );
 }
-
 
 export default App;
