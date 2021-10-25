@@ -492,6 +492,20 @@ img{
   justify-self: center;
 }
 
+/*---------------- FILTER ----------------*/
+.filter__container{
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.filter__data{
+  text-align: center;
+  padding: 1rem 2rem 2rem;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 6px rgba(35, 10, 58, 0.3);
+  border-radius: 1rem;
+}
+
 /*---------------- FOOTER ----------------*/
 .footer__container{
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

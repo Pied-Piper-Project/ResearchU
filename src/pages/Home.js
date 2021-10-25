@@ -5,12 +5,14 @@ import dayjs from "dayjs";
 import PersonItem from "../components/PersonItem";
 import { data } from "./ExampleResearchPosts";
 import FilterBar from "../components/FilterBar";
+import { alignPropType } from 'react-bootstrap/esm/types';
+import App from "../App.css"
+import { Container, Row, Col } from 'react-grid-system';
 
 const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
 const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
 dayjs.extend(isSameOrBefore);
 dayjs.extend(isSameOrAfter);
-
 
 function Home(){
     const [allData, setData] = useState(data);
@@ -170,26 +172,27 @@ function Home(){
                               <ResearchResult result={item} key={item.postID}/>
                             ))} */}
                         {/* <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p> */}
-                        <div className="container">
-                          <div className="row">
-                            <div className="col-sm-3">
-                            <FilterBar
-                              majors={generateMajorDataForDropdown()}
-                              onNameFilter={handleFilterName}
-                              onMajorFilter={handleFilterMajor}
-                              onYearFilter={handleFilterMajor}
-                              onDateFilter={handleFilterDate}
-                            />
-                            </div>
-                            <div className="col-sm-9">
-                              <div className="row mt-5">
+                        <Container className = "filter__container">
+                          <Row>
+                            <Col sm={3} className = "filter__data">
+                              <FilterBar
+                            majors={generateMajorDataForDropdown()}
+                            onNameFilter={handleFilterName}
+                            onMajorFilter={handleFilterMajor}
+                            onYearFilter={handleFilterMajor}
+                            onDateFilter={handleFilterDate}
+                            ></FilterBar></Col>
+                            <Col sm={9} className = "about__container bd-grid">
+                              <Row mt={10}>
                                 {allData.map((item) => (
+                                  <div className = "about__data">
                                   <PersonItem item={item} key={item.id} />
+                                  </div>
                                 ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Container>
                     </div>
                 </div>
             </section>
