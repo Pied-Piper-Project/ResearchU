@@ -111,16 +111,36 @@ function Home(){
                     <div className="home__data">
                         <h1 className="home__title">Research is just a click away!</h1>
                         {/* <a href="#" class="button">Get Started</a> */}
-                            <div className="search_box bd-grid">
+                            {/* <div className="search_box bd-grid">
                                 <input type="text" className="input_search" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
                                 <input type="text" className="input_search" value={department} onChange={e => setDepartment(e.target.value)} placeholder="Department: Math, Biology, CS..." />
                                 <input type="text" className="input_search" value={professor} onChange={e => setProfessor(e.target.value)} placeholder="Professor" />
                                 <button className="search_btn"><i className="fas fa-search"></i></button>
-                            </div>
-                            {data1.map((item) => (
+                            </div> */}
+                            {/* {data1.map((item) => (
                               <ResearchResult result={item} key={item.postID}/>
-                            ))}
-                        <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
+                            ))} */}
+                        {/* <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p> */}
+                    </div>
+                    <div class="home_container">
+                        <div class="search-bar">Search Bar
+                            <div className= "">
+                              {/* Create search bar here */}
+                            </div>
+                        </div>
+                        
+                        <div class="filters">Filters
+                            <div className= "">
+                              {/* Create filters  here */}
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="card">Card 1</div>
+                            <div class="card">Card 2</div>
+                            <div class="card">Card 3</div>
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </section>
