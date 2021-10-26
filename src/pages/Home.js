@@ -122,8 +122,8 @@ function Home(){
                             ))} */}
                         {/* <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p> */}
                     </div>
-                    <div class="home_container">
-                        <div class="search-bar">Search Bar
+                    <div className="home_container">
+                        <div className="search-bar">Search Bar
                             <div className= "">
                               {/* Create search bar here */}
                             </div>
