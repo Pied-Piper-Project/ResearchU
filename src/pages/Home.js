@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import ResearchResult from './../components/ResearchResult';
+import { data } from "./ExampleResearchPosts";
+import PersonItem from "../components/PersonItem";
+import FilterBar from "../components/FilterBar";
 
 function Home(){
+    const [allData, setData] = useState(data);
+    const generateMajorDataForDropdown = () => {
+      return [...new Set(data.map((item) => item.major))];
+    };
     const [school, setSchool] = useState('');
     const [department, setDepartment] = useState('');
     const [professor, setProfessor] = useState('');
     //Need to add a useState for button
+    
+    const handleFilterMajor = (major) => {
+      const filteredData = data.filter((item) => {
+        if (item.major === major) {
+          return item;
+        }
+      });
+
+      setData(filteredData);
+    };
 
     useEffect(() => {
         console.log(`school is: ${school}`);
@@ -129,9 +146,16 @@ function Home(){
                             </div>
                         </div>
                         
-                        <div class="filters">Filters
+                        <div class="filters">
                             <div className= "">
-                              {/* Create filters  here */}
+                              <div>
+                              <FilterBar
+                              majors={generateMajorDataForDropdown()}
+                              onYearFilter={handleFilterMajor}
+                              onGpaFilter={handleFilterMajor}
+                              onMajorFilter={handleFilterMajor}
+                              ></FilterBar>
+                              </div>
                             </div>
                         </div>
                         <div class="cards">
