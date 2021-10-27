@@ -3,17 +3,14 @@ import ResearchResult from './../components/ResearchResult';
 import { data } from "./ExampleResearchPosts";
 import PersonItem from "../components/PersonItem";
 import FilterBar from "../components/FilterBar";
+import SearchBar from '../components/SearchBar';
 
 function Home(){
     const [allData, setData] = useState(data);
     const generateMajorDataForDropdown = () => {
       return [...new Set(data.map((item) => item.major))];
     };
-    const [school, setSchool] = useState('');
-    const [department, setDepartment] = useState('');
-    const [professor, setProfessor] = useState('');
-    //Need to add a useState for button
-    
+
     const handleFilterMajor = (major) => {
       const filteredData = data.filter((item) => {
         if (item.major === major) {
@@ -23,18 +20,6 @@ function Home(){
 
       setData(filteredData);
     };
-
-    useEffect(() => {
-        console.log(`school is: ${school}`);
-    }, [school])
-
-    useEffect(() => {
-        console.log(`department is: ${department}`);
-    }, [department])
-
-    useEffect(() => {
-        console.log(`professor is: ${professor}`);
-    }, [professor])
 
     let dataJSON = `
     [
@@ -127,44 +112,33 @@ function Home(){
                     </div>
                     <div className="home__data">
                         <h1 className="home__title">Research is just a click away!</h1>
-                        {/* <a href="#" class="button">Get Started</a> */}
-                            {/* <div className="search_box bd-grid">
-                                <input type="text" className="input_search" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
-                                <input type="text" className="input_search" value={department} onChange={e => setDepartment(e.target.value)} placeholder="Department: Math, Biology, CS..." />
-                                <input type="text" className="input_search" value={professor} onChange={e => setProfessor(e.target.value)} placeholder="Professor" />
-                                <button className="search_btn"><i className="fas fa-search"></i></button>
-                            </div> */}
-                            {/* {data1.map((item) => (
-                              <ResearchResult result={item} key={item.postID}/>
-                            ))} */}
-                        {/* <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p> */}
                     </div>
                     <div className="home_container">
-                        <div className="search-bar">Search Bar
+                        <div className="search-bar">
                             <div className= "">
-                              {/* Create search bar here */}
+                                <SearchBar />
                             </div>
                         </div>
                         
                         <div class="filters">
                             <div className= "">
-                              <div>
-                              <FilterBar
-                              majors={generateMajorDataForDropdown()}
-                              onYearFilter={handleFilterMajor}
-                              onGpaFilter={handleFilterMajor}
-                              onMajorFilter={handleFilterMajor}
-                              ></FilterBar>
-                              </div>
+                                <div>
+                                <FilterBar
+                                majors={generateMajorDataForDropdown()}
+                                onYearFilter={handleFilterMajor}
+                                onGpaFilter={handleFilterMajor}
+                                onMajorFilter={handleFilterMajor}
+                                ></FilterBar>
+                                </div>
                             </div>
                         </div>
+
                         <div class="cards">
-                            <div class="card">Card 1</div>
-                            <div class="card">Card 2</div>
-                            <div class="card">Card 3</div>
+                            {data1.map((item) => (
+                                <ResearchResult result={item} key={item.postID}/>
+                                ))}
                         </div>
-                        
-                        
+
                     </div>
                 </div>
             </section>
