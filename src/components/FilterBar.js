@@ -3,9 +3,7 @@ import ReactSlider from "react-slider";
 
 const FilterBar = ({
   majors,
-  onYearFilter,
-  onGpaFilter,
-  onMajorFilter,
+  onAllFilter,
 }) => {
   const [filters, setFilters] = useState({
     year: "",
@@ -14,7 +12,14 @@ const FilterBar = ({
   });
 
   const handleInput = (field) => (event) => {
-    const { value } = event.target;
+    let tool;
+    if (field === "gpa"){
+      tool = event;
+    }
+    else{
+      tool = event.target.value
+    }
+    const value = tool; 
 
     setFilters({
       ...filters,
@@ -23,13 +28,13 @@ const FilterBar = ({
 
     switch (field) {
       case "gpa":
-        onGpaFilter(value);
+        onAllFilter(filters.year, value, filters.major);
         break;
       case "major":
-        onMajorFilter(value);
+        onAllFilter(filters.year, filters.gpa, value);
         break;
       case "year":
-        onYearFilter(value);
+        onAllFilter(value, filters.gpa, filters.major);
         break; 
       default:
         break;
@@ -47,7 +52,7 @@ const FilterBar = ({
         <div>
         <input
         type="radio"
-        className = "filter__slide"
+        className = "filter__boxes"
         id="year"
         checked={filters.year === "Freshman"}
         onChange={handleInput("year")}
@@ -56,7 +61,7 @@ const FilterBar = ({
         <div>
         <input
         type="radio"
-        className = "filter__slide"
+        className = "filter__boxes"
         id="year"
         checked={filters.year === "Sophomore"}
         onChange={handleInput("year")}
@@ -65,7 +70,7 @@ const FilterBar = ({
         <div>
         <input
         type="radio"
-        className = "filter__slide"
+        className = "filter__boxes"
         id="year"
         checked={filters.year === "Junior"}
         onChange={handleInput("year")}
@@ -97,14 +102,14 @@ const FilterBar = ({
             <ReactSlider 
                 marks={1}
                 markClassName = "example-mark"
-                min="0"
-                max="4"
+                min={0}
+                max={4}
                 step={0.1}
                 className="horizontal-slider"
                 thumbClassName="example-thumb"
                 trackClassName="example-track"
                 id="gpa"
-                onChange={(valueNow, index) => <div value = {valueNow} onChange = {handleInput("gpa")}></div>}
+                onChange={handleInput("gpa")}
                 renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
             />
         </div>

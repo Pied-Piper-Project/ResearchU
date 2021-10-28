@@ -11,9 +11,10 @@ function Home(){
       return [...new Set(data.map((item) => item.major))];
     };
 
-    const handleFilterMajor = (major) => {
+    const handleFilterMajor = (year, gpa, major) => {
       const filteredData = data.filter((item) => {
-        if (item.major === major) {
+        if ((item.year === year && item.major === major && item.gpa >= gpa) ||
+          ("" === major && item.year === year && item.gpa >= gpa)) {
           return item;
         }
       });
@@ -120,21 +121,19 @@ function Home(){
                             </div>
                         </div>
                         
-                        <div class="filters">
+                        <div className="filters">
                             <div className= "">
                                 <div>
                                 <FilterBar
                                 majors={generateMajorDataForDropdown()}
-                                onYearFilter={handleFilterMajor}
-                                onGpaFilter={handleFilterMajor}
-                                onMajorFilter={handleFilterMajor}
+                                onAllFilter={handleFilterMajor}
                                 ></FilterBar>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="cards">
-                            {data1.map((item) => (
+                        <div className="cards">
+                            {allData.map((item) => (
                                 <ResearchResult result={item} key={item.postID}/>
                                 ))}
                         </div>

@@ -17,7 +17,7 @@ export const data = [
       payAmount: 0,
       gpa: 3.5,
       isGrad: false,
-      year: "third-year",
+      year: "Sophomore",
       prerequisites: "Freshmen Chemistry",
       major: "Chemistry"
   
@@ -40,7 +40,7 @@ export const data = [
       payAmount: 0,
       gpa: 3.5,
       isGrad: false,
-      year: "third-year",
+      year: "Senior",
       prerequisites: "Freshmen Chemistry",
       major: "Chemistry"
     },
@@ -62,7 +62,7 @@ export const data = [
       payAmount: 0,
       gpa: 3.5,
       isGrad: false,
-      year: "third-year",
+      year: "Junior",
       prerequisites: "Freshmen Chemistry",
       major: "CS"
     },
@@ -84,7 +84,7 @@ export const data = [
       payAmount: 0,
       gpa: 3.5,
       isGrad: false,
-      year: "third-year",
+      year: "Senior",
       prerequisites: "Freshmen Chemistry",
       major: "Physics"
     },
@@ -106,7 +106,7 @@ export const data = [
       payAmount: 0,
       gpa: 3.5,
       isGrad: false,
-      year: "third-year",
+      year: "Junior",
       prerequisites: "Freshmen Chemistry",
       major: "Math"
     },
@@ -128,7 +128,7 @@ export const data = [
       payAmount: 0,
       gpa: 3.5,
       isGrad: false,
-      year: "third-year",
+      year: "Junior",
       prerequisites: "Freshmen Chemistry",
       major: "Chemistry"
     },
