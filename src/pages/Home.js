@@ -4,8 +4,13 @@ import { data } from "./ExampleResearchPosts";
 import PersonItem from "../components/PersonItem";
 import FilterBar from "../components/FilterBar";
 import SearchBar from '../components/SearchBar';
+import { MdViewColumn, MdTableRows, MdDateRange} from "react-icons/md";
+
 
 function Home(){
+  const icon1 = <MdTableRows/>
+  const icon2 = <MdTableRows/>
+
     const [allData, setData] = useState(data);
     const generateMajorDataForDropdown = () => {
       return [...new Set(data.map((item) => item.major))];
@@ -132,7 +137,29 @@ function Home(){
                             </div>
                         </div>
 
-                        <div className="cards">
+                        <div className="cards-wrapper">
+                        <div className= "listing">
+        <h1>Results</h1>
+        <div className = "sorting">
+          <h1>Sort By:</h1>
+          <div className="select-dropdown">
+            <select>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+
+          <div className= "sort-icon">
+            
+            <div className = "original-icon">{icon1}</div>
+            <div className = "rotate-icon">{icon2}</div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
                             {allData.map((item) => (
                                 <ResearchResult result={item} key={item.postID}/>
                                 ))}

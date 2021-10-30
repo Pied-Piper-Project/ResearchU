@@ -42,19 +42,13 @@ const FilterBar = ({
   };
 
   return (
-    <div className="row my-5">
-      <div className="col">
-      </div>
-
-      <div className="col-sm-12 my-2">
-        <label htmlFor="year" className="filter__title">School year:</label>
+    <div className="filter__container">
+      <div className="">
+        <h1>School year:</h1>
+        <label htmlFor="year"></label>
+        <div className ="school-filter">
         <div>
-        <div>
-        <input
-        type="radio"
-        className = "filter__boxes"
-        id="year"
-        checked={filters.year === "Freshman"}
+        <input type="radio" className = "filter__boxes"  id="year" checked={filters.year === "Freshman"}
         onChange={handleInput("year")}
         value="Freshman"/> Freshman
         </div>
@@ -96,11 +90,14 @@ const FilterBar = ({
         </div>
         </div>
       </div>
-      <div className="col-sm-12 my-2">
-        <label htmlFor="gpa" className="filter__title">Min GPA:</label>
+
+
+      <div className="">
+        <h1>Min GPA:</h1>
+        <label htmlFor="gpa"></label>
         <div>
             <ReactSlider 
-                marks={1}
+                // marks={1}
                 markClassName = "example-mark"
                 min={0}
                 max={4}
@@ -115,21 +112,25 @@ const FilterBar = ({
         </div>
       </div>
 
-      <div className="col-sm-12 my-2">
-        <label htmlFor="major" className="filter__title">Subject:</label>
-        <div>
+      <div className="">
+        <h1>Subject:</h1>
+        <label htmlFor="major"></label>
+        <div className = "select-wrapper" >
+        <div className = "select-dropdown-subject">
         <select
-          className="filter__slide"
+          className=" "
           id="major"
           onChange={handleInput("major")}
         >
-          <option className = "filter__slide" value=""></option>
+          {/* <option value="select">Select</option> */}
+          <option className = "" value="">CS, Math, Biology...</option>
           {majors.map((major) => (
-            <option className = "filter__slide" value={major} key={major}>
+            <option className = "" value={major} key={major}>
               {major}
             </option>
           ))}
         </select>
+        </div>
         </div>
       </div>
     </div>
