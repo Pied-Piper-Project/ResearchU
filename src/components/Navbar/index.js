@@ -46,9 +46,10 @@ const Navbar = ({toggle}) => {
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
-                        <NavLinks to ="/ResearchU/SignIn">Sign In</NavLinks>
+                        <NavBtnLink to = "/ResearchU/CreatePost"> Create Post</NavBtnLink>
+                        {/* <NavLinks to ="/ResearchU/SignIn">Sign In</NavLinks> */}
                         {/* <FaGripLinesVertical/> */}
-                        <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink>
+                        {/* <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink> */}
                     </NavBtn>
                 </NavbarContainer>
             </Nav>

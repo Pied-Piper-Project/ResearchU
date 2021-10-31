@@ -13,10 +13,10 @@
   --first-color: #6654C4;
   --first-color-alt: #6654C4;
   --first-color-send: #6654C4;
-  --title-color: #161212;
+  --title-color: #091b33;
   --text-color: #5B5757;
   --text-color-light: #8F8A8A;
-  --body-color:  #F5F6FA;
+  --body-color:  #e1dff1;
   --container-color: #FFF;
 
   /*---------------- Font and typography ----------------*/
@@ -301,7 +301,7 @@ img{
   font-weight: var(--font-bold);
   margin-bottom: var(--mb-2);
   margin-top: 0rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .home__description{
@@ -383,13 +383,53 @@ img{
   color: #fff;
 }
 
+/*---------------- Create Post ----------------*/
+.createPost-wrapper {
+  background-color: #6258be;
+  width: auto;
+  max-width: 55rem;
+  margin: auto;
+  height: 40rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
+  border-radius: 2rem;
+  
+}
+
+.createPost-content {
+  padding: 3rem;
+  
+}
+
+.createPost-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.createPost-label {
+  margin-top: 1.5rem;
+}
+
+.createPost-form input {
+  margin-top: 0.5rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 2;
+  border: 0.15rem solid #c0becf;
+  border-radius: 0.3rem;
+}
 
 /*---------------- Search bar ----------------*/
 .search-bar{
   grid-area: search-bar;
   height: 5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
+
+
 
 
 
@@ -688,7 +728,7 @@ input[type='radio']:checked:after {
   height: 4.5rem;
   border-radius: 1rem;
 
-  border: 0.14rem solid #cecccc;
+  border: 0.14rem solid #dbdbdb;
 
 }
 
@@ -760,7 +800,7 @@ input[type='radio']:checked:after {
 }
 .tags {
   color: #8d8b8b;
-  background-color: #ebecf1;
+  background-color: #dbdbdb;
   margin-right: 0.5rem;
   margin-top: auto;
   margin-bottom: auto;
@@ -800,7 +840,7 @@ input[type='radio']:checked:after {
 .view {
   margin-right: 0.5rem;
   color: #daa739;
-  background-color: #faefd3;
+  background-color: #fceabe;
 }
 
 .apply {
@@ -1073,7 +1113,7 @@ input[type='radio']:checked:after {
   }
 
   .home__container{
-    padding: 7rem 2rem 0;
+    padding: 3rem 2rem 0;
   }
 
   .share__container{

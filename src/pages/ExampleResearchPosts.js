@@ -60,9 +60,9 @@ export const data = [
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      gpa: 3.5,
+      gpa: 3.6,
       isGrad: false,
-      year: "Junior",
+      year: "Sophomore",
       prerequisites: "Freshmen Chemistry",
       major: "CS"
     },
