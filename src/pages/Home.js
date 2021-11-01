@@ -19,7 +19,7 @@ function Home(){
     const handleFilterMajor = (year, gpa, major) => {
       const filteredData = data.filter((item) => {
         if ((item.year === year || "" === year) &&
-          (item.major === major || "" === major) && item.gpa >= gpa) {
+          (item.major === major || "" === major) && item.gpa <= gpa) {
           return item;
         }
       });

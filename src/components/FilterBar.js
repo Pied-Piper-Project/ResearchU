@@ -16,6 +16,12 @@ const FilterBar = ({
     if (field === "gpa"){
       tool = event;
     }
+    else if (field === "year"){
+      tool = event.target.value
+      if (tool === filters.year){
+        tool = ""
+      }
+    }
     else{
       tool = event.target.value
     }
@@ -49,7 +55,7 @@ const FilterBar = ({
         <div className ="school-filter">
         <div>
         <input type="radio" className = "filter__boxes"  id="year" checked={filters.year === "Freshman"}
-        onChange={handleInput("year")}
+        onClick={handleInput("year")}
         value="Freshman"/> Freshman
         </div>
         <div>
@@ -58,7 +64,7 @@ const FilterBar = ({
         className = "filter__boxes"
         id="year"
         checked={filters.year === "Sophomore"}
-        onChange={handleInput("year")}
+        onClick={handleInput("year")}
         value="Sophomore"/> Sophomore
         </div>
         <div>
@@ -67,7 +73,7 @@ const FilterBar = ({
         className = "filter__boxes"
         id="year"
         checked={filters.year === "Junior"}
-        onChange={handleInput("year")}
+        onClick={handleInput("year")}
         value="Junior"/> Junior
         </div>
         <div>
@@ -76,7 +82,7 @@ const FilterBar = ({
         className = "filter__boxes"
         id="year"
         checked={filters.year === "Senior"}
-        onChange={handleInput("year")}
+        onClick={handleInput("year")}
         value="Senior"/> Senior
         </div>
         <div>
@@ -85,7 +91,7 @@ const FilterBar = ({
         className = "filter__boxes"
         id="year"
         checked={filters.year === "Graduate"}
-        onChange={handleInput("year")}
+        onClick={handleInput("year")}
         value="Graduate"/> Graduate
         </div>
         </div>
