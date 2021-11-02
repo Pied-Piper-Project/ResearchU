@@ -7,7 +7,7 @@ const FilterBar = ({
 }) => {
   const [filters, setFilters] = useState({
     year: "",
-    gpa: "",
+    gpa: 4,
     major: "",
   });
 
