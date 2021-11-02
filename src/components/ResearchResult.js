@@ -20,7 +20,7 @@ function ResearchResult( {result} ){
     // function handleClick() {
     //   history.push(SignIn);
     // }
-  
+
 
   // ToDo: write function to display pay amount if it is paid
 
@@ -42,9 +42,11 @@ function ResearchResult( {result} ){
       <p>{result.postBody}</p>
       <p>This opportunity is {result.isOnline ? "online" : "offline"}</p> */}
       <div className="cards column">
-      
+
           <div className="card column-item ">
-              <img className ="one" src={result.schoolLogo}/>
+            <a href = {result.schoolLogo}>
+              <img className ="one" src={'//logo.clearbit.com/'+ result.schoolLogo}/>
+              </a>
               <div className ="two">
                 <h1>{result.name}</h1>
                 <div className= "details ">
@@ -57,7 +59,7 @@ function ResearchResult( {result} ){
                     <h5>{result.school}</h5>
                   </div>
                 </div>
-                
+
               </div>
               <div className ="three">
                 {icon3}
@@ -103,7 +105,7 @@ function ResearchResult( {result} ){
                         <p>{result.postBody}</p>
                     </div>
                   </div>
-                  
+
               </div>}
           </div>
           {/* <div className="card column-item ">Card 2</div>
