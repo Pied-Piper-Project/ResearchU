@@ -389,8 +389,8 @@ img{
   width: auto;
   max-width: 55rem;
   margin: auto;
-  height: 40rem;
-  background-color: #fff;
+  height: 120rem;
+  background-color: var(--container-color);
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
   border-radius: 2rem;
   
@@ -436,7 +436,7 @@ img{
 /*---------------- Filters ----------------*/
 .filters {
   grid-area: filters;
-  background-color: #fff;
+  background-color: var(--container-color);
   height: 42rem;
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
   border-radius: 2rem;
@@ -485,6 +485,7 @@ input[type='radio']:after {
   height: 15px;
   border: 15px;
   border-radius: 3px;
+  margin-bottom: 14px;
   top: -2px;
   left: -1px;
   position: relative;
@@ -737,7 +738,7 @@ input[type='radio']:checked:after {
 .two {
   
   grid-area: two;
-  background-color: #fff; 
+  background-color: var(--container-color); 
   
 }
 .two h1 {
@@ -826,7 +827,7 @@ input[type='radio']:checked:after {
 
 .buttonCard { 
   border: none;
-  color: #fff;
+  color: var(--container-color);
   font-size: 0.9rem;
   font-weight: 600;
   height: 2.5rem;
@@ -883,7 +884,7 @@ input[type='radio']:checked:after {
 
 
 .card {
-  background-color: #fff;
+  background-color: var(--container-color);
   margin-bottom: 3rem;
   height: auto;
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
