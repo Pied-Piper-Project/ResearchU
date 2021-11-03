@@ -74,10 +74,13 @@ const FilterBar = ({
         break;
       case "isOnline":
         onAllFilter(filters.year, filters.gpa, filters.major, value, filters.semester, filters.date);
+        break;
       case "semester":
         onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, value, filters.date);
+        break;
       case "date":
         onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, value);
+        break;
       default:
         break;
     }
@@ -222,7 +225,7 @@ const FilterBar = ({
         </div>
       </div>
 
-      <div className="">
+      {/* <div className="">
         <div className="select-wrapper">
           <label htmlFor="startDate">From</label>
           <input
@@ -241,7 +244,7 @@ const FilterBar = ({
             onChange={handleInput("to")}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

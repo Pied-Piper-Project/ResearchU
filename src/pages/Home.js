@@ -20,11 +20,11 @@ function Home() {
     return [...new Set(data.map((item) => item.semester))];
   };
 
-  const handleFilterMajor = (year, gpa, major, isOnline, semester, duration) => {
+  const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDuration, toDuration) => {
     const filteredData = data.filter((item) => {
       if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
         && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
-        && (item.duration === duration || "" === duration)) {
+        ) { //(item.fromDuration === duration)
           console.log(isOnline)
         return item;
       }
