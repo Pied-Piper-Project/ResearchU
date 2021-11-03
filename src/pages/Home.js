@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ResearchResult from './../components/ResearchResult';
+import OrderForm from './../components/OrderForm';
 
 function Home(){
     const [school, setSchool] = useState('');
@@ -7,6 +8,9 @@ function Home(){
     const [professor, setProfessor] = useState('');
     const [order, setOrder] = useState('');
     //Need to add a useState for button
+    function handleChange(event){
+        setOrder({value: event.target.value});
+    }
 
     useEffect(() => {
         console.log(`school is: ${school}`);
@@ -101,6 +105,12 @@ function Home(){
     `;
     let data1 = JSON.parse(dataJSON);
     // console.log(data1);
+    if(order.value === "Ascending"){
+        data1.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
+    }
+    else{
+        data1.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
+    }
 
     return(
         <>
@@ -118,6 +128,7 @@ function Home(){
                                 <input type="text" className="input_search" value={professor} onChange={e => setProfessor(e.target.value)} placeholder="Professor" />
                                 <button className="search_btn"><i className="fas fa-search"></i></button>
                             </div>
+                        <OrderForm update = {handleChange.bind(this)} cur={order.value}/>
                             {data1.map((item) => (
                               <ResearchResult result={item} key={item.postID}/>
                             ))}

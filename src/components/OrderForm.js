@@ -1,29 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ResearchResult from "./ResearchResult";
 
 class OrderForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: 'Descending'};
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
+        this.state= {value: this.props.cur}
     }
 
     render() {
         return (
             <form>
                 <label>
-                    Pick your favorite flavor:
-                    <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="Descending">Descending</option>
-                        <option value="Ascending">Ascending</option>
+                    <select value={this.state.value} onChange={this.props.update}>
+                        <option value="Descending">New First</option>
+                        <option value="Ascending">Old First</option>
                     </select>
                 </label>
-                <input type="submit" value="Submit" />
             </form>
         );
     }
@@ -33,3 +26,5 @@ ReactDOM.render(
     <OrderForm />,
     document.getElementById('root')
 );
+
+export default OrderForm;
