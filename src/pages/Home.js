@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ResearchResult from './../components/ResearchResult';
+import OrderForm from './../components/OrderForm';
 import { data } from "./ExampleResearchPosts";
 import PersonItem from "../components/PersonItem";
 import FilterBar from "../components/FilterBar";
@@ -10,6 +11,11 @@ import { MdViewColumn, MdTableRows, MdDateRange} from "react-icons/md";
 function Home(){
   const icon1 = <MdTableRows/>
   const icon2 = <MdTableRows/>
+    const [order, setOrder] = useState('');
+    //Need to add a useState for button
+    function handleChange(event){
+        setOrder({value: event.target.value});
+    }
 
     const [allData, setData] = useState(data);
     const generateMajorDataForDropdown = () => {
@@ -108,6 +114,12 @@ function Home(){
     `;
     let data1 = JSON.parse(dataJSON);
     // console.log(data1);
+    if(order.value === "Ascending"){
+        data1.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
+    }
+    else{
+        data1.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
+    }
 
     return(
         <>
@@ -125,7 +137,7 @@ function Home(){
                                 <SearchBar />
                             </div>
                         </div>
-                        
+
                         <div className="filters">
                             <div className= "">
                                 <div>
@@ -151,20 +163,25 @@ function Home(){
           </div>
 
           <div className= "sort-icon">
-            
+
             <div className = "original-icon">{icon1}</div>
             <div className = "rotate-icon">{icon2}</div>
-            
+
           </div>
-          
+
         </div>
-        
+
       </div>
                             {allData.map((item) => (
                                 <ResearchResult result={item} key={item.postID}/>
                                 ))}
                         </div>
 
+                        <OrderForm update = {handleChange.bind(this)} cur={order.value}/>
+                            {data1.map((item) => (
+                              <ResearchResult result={item} key={item.postID}/>
+                            ))}
+                        <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
                     </div>
                 </div>
             </section>
