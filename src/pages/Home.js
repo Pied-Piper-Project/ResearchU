@@ -5,6 +5,7 @@ function Home(){
     const [school, setSchool] = useState('');
     const [department, setDepartment] = useState('');
     const [professor, setProfessor] = useState('');
+    const [order, setOrder] = useState('');
     //Need to add a useState for button
 
     useEffect(() => {
