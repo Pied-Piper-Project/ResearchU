@@ -437,7 +437,7 @@ img{
 .filters {
   grid-area: filters;
   background-color: var(--container-color);
-  height: 42rem;
+  height: auto;
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
   border-radius: 2rem;
 

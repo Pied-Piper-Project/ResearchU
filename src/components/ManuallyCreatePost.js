@@ -53,7 +53,7 @@ function ManuallyCreatePost(){
         else if (field === "payAmount" || field === "gpa"){
             let p = value
             value = parseFloat(value, 10)
-            if (isNaN(value) && p != ""){
+            if (isNaN(value) && p !== ""){
                 alert('Your value for ' + field + ' was not valid. Please insert a number.')
                 return
             }
@@ -101,9 +101,9 @@ function ManuallyCreatePost(){
                         <div className = "filter__container">
                             <div className="school-filter">
                                 <input type="radio" id="isOnline" className="filter__boxes" value = "true"
-                                    onClick = {handleInput("isOnline")} checked = {post.isOnline == "true"}/> Remote
+                                    onClick = {handleInput("isOnline")} checked = {post.isOnline === "true"}/> Remote
                                 <input type="radio" id="isOnline" className = "filter__boxes" value = "false"
-                                    onClick = {handleInput("isOnline")} checked = {post.isOnline == "false"}/> In-Person
+                                    onClick = {handleInput("isOnline")} checked = {post.isOnline === "false"}/> In-Person
                             </div>
                         </div>
                         <label className ="createPost-label"  for="location">Location:</label>
@@ -112,9 +112,9 @@ function ManuallyCreatePost(){
                         <div className = "filter__container">
                             <div className="school-filter">
                                 <input type="radio" id="activePost" className="filter__boxes" value = "true"
-                                    onClick = {handleInput("activePost")} checked = {post.activePost == "true"}/> Active
+                                    onClick = {handleInput("activePost")} checked = {post.activePost === "true"}/> Active
                                 <input type="radio" id="activePost" className = "filter__boxes" value = "false"
-                                    onClick = {handleInput("activePost")} checked = {post.activePost == "false"}/> Inactive
+                                    onClick = {handleInput("activePost")} checked = {post.activePost === "false"}/> Inactive
                             </div>
                         </div>
                         <label className ="createPost-label"  for="semester">Semester:</label>
@@ -123,9 +123,9 @@ function ManuallyCreatePost(){
                         <div className = "filter__container">
                             <div className="school-filter">
                                 <input type="radio" id="isPaid" className="filter__boxes" value = "true"
-                                    onClick = {handleInput("isPaid")} checked = {post.isPaid == "true"}/> Yes
+                                    onClick = {handleInput("isPaid")} checked = {post.isPaid === "true"}/> Yes
                                 <input type="radio" id="isPaid" className = "filter__boxes" value = "false"
-                                    onClick = {handleInput("isPaid")} checked = {post.isPaid == "false"}/> No
+                                    onClick = {handleInput("isPaid")} checked = {post.isPaid === "false"}/> No
                             </div>
                         </div>
                         <label className ="createPost-label"  for="payAmount">Pay Amount (number only):</label>
@@ -136,24 +136,24 @@ function ManuallyCreatePost(){
                         <div className = "filter__container">
                             <div className="school-filter">
                                 <input type="radio" id="isGrad" className="filter__boxes" value = "true"
-                                    onClick = {handleInput("isGrad")} checked = {post.isGrad == "true"}/> Yes
+                                    onClick = {handleInput("isGrad")} checked = {post.isGrad === "true"}/> Yes
                                 <input type="radio" id="isGrad" className = "filter__boxes" value = "false"
-                                    onClick = {handleInput("isGrad")} checked = {post.isGrad == "false"}/> In-Person
+                                    onClick = {handleInput("isGrad")} checked = {post.isGrad === "false"}/> In-Person
                             </div>
                         </div>
                         <label className ="createPost-label"  for="activePost">Year of College Preferred:</label>
                         <div className = "filter__container">
                             <div className="school-filter">
                                 <input type="radio" id="year" className="filter__boxes" value = "Freshman"
-                                    onClick = {handleInput("year")} checked = {post.year == "Freshman"}/> Freshman
+                                    onClick = {handleInput("year")} checked = {post.year === "Freshman"}/> Freshman
                                 <input type="radio" id="year" className = "filter__boxes" value = "Sophomore"
-                                    onClick = {handleInput("year")} checked = {post.year == "Sophomore"}/> Sophomore
+                                    onClick = {handleInput("year")} checked = {post.year === "Sophomore"}/> Sophomore
                                 <input type="radio" id="year" className = "filter__boxes" value = "Junior"
-                                    onClick = {handleInput("year")} checked = {post.year == "Junior"}/> Junior
+                                    onClick = {handleInput("year")} checked = {post.year === "Junior"}/> Junior
                                 <input type="radio" id="year" className = "filter__boxes" value = "Senior"
-                                    onClick = {handleInput("year")} checked = {post.year == "Senior"}/> Senior
+                                    onClick = {handleInput("year")} checked = {post.year === "Senior"}/> Senior
                                 <input type="radio" id="year" className = "filter__boxes" value = "Graduate"
-                                    onClick = {handleInput("year")} checked = {post.year == "Graduate"}/> Graduate
+                                    onClick = {handleInput("year")} checked = {post.year === "Graduate"}/> Graduate
                             </div>
                         </div>
                         <label className ="createPost-label"  for="prerequisites">Prerequisites:</label>
