@@ -115,10 +115,10 @@ function Home(){
     let data1 = JSON.parse(dataJSON);
     // console.log(data1);
     if(order.value === "Ascending"){
-        data1.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
+        allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
     }
     else{
-        data1.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
+        allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
     }
 
     return(
@@ -155,11 +155,7 @@ function Home(){
         <div className = "sorting">
           <h1>Sort By:</h1>
           <div className="select-dropdown">
-            <select>
-              <option value="newest">Newest</option>
-              <option value="oldest">Oldest</option>
-              <option value="newest">Newest</option>
-            </select>
+              <OrderForm update = {handleChange.bind(this)} cur={order.value}/>
           </div>
 
           <div className= "sort-icon">
@@ -176,11 +172,6 @@ function Home(){
                                 <ResearchResult result={item} key={item.postID}/>
                                 ))}
                         </div>
-
-                        <OrderForm update = {handleChange.bind(this)} cur={order.value}/>
-                            {data1.map((item) => (
-                              <ResearchResult result={item} key={item.postID}/>
-                            ))}
                         <p className="home__description">Find research opportunities here on ResearchU! Get involved in your school community, build reputation for your career, develop written and oral communication skills, and advance academic achievement by partaking in academic research!</p>
                     </div>
                 </div>
