@@ -52,7 +52,7 @@ function Home(){
       <section className="home" id="home">
         <div className="home__container bd-container">
           <div className="home__img">
-            <img src="assets/img/home.png" alt="" />
+            {/* <img src="assets/img/home.png" alt="" /> */}
           </div>
           <div className="home__data">
             <h1 className="home__title">Research is just a click away!</h1>
