@@ -1,10 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import { tempData } from "./ExampleResearchPosts";
 
-function SearchBar(){
+function SearchBar( {setData, setAllData} ){
+    const data = [];
 
     const [school, setSchool] = useState('');
     const [keyword, setKeyword] = useState('');
     //Need to add a useState for button
+
+    const getResults = async () => {
+        try {
+            const result = await fetch('/api/research/', {
+                method: 'get',
+                // body: JSON.stringify({ school, keyword }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            data = await result.json();
+        } catch(error) {
+            console.log(error);
+            setData(tempData);
+            setAllData(tempData);
+            console.log(tempData);
+        }
+    };
 
     useEffect(() => {
     console.log(`school is: ${school}`);
@@ -14,12 +35,11 @@ function SearchBar(){
     console.log(`keyword is: ${keyword}`);
     }, [keyword])
 
-
     return(
         <div className="search_box bd-grid">
             <input type="text" className="input_school" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
             <input type="text" className="input_keyword" value={keyword} onChange={e => setKeyword(e.target.value)} placeholder="Keyword: Math, Amino Acids, CS, etc..." />
-            <button className="search_btn"><i className="fas fa-search"></i></button>
+            <button className="search_btn" onClick={() => getResults()}><i className="fas fa-search"></i></button>
         </div>
     )
 }

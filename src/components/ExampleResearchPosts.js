@@ -1,4 +1,4 @@
-export const data = [
+export const tempData = [
     {
       postID: 1,
       name: "Chem Amino Acid Research",
