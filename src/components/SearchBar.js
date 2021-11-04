@@ -36,7 +36,7 @@ function SearchBar( {setData, setAllData} ){
     }, [keyword])
 
     return(
-        <div className="search_box bd-grid">
+        <div className="search_box bd-grid glass">
             <input type="text" className="input_school" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
             <input type="text" className="input_keyword" value={keyword} onChange={e => setKeyword(e.target.value)} placeholder="Keyword: Math, Amino Acids, CS, etc..." />
             <button className="search_btn" onClick={() => getResults()}><i className="fas fa-search"></i></button>

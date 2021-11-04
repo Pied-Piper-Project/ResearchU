@@ -4,6 +4,7 @@ import ResearchResult from './../components/ResearchResult';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
+import animatedLogo from "../images/logo.gif";
 
 
 function Home(){
@@ -52,7 +53,7 @@ function Home(){
       <section className="home" id="home">
         <div className="home__container bd-container">
           <div className="home__img">
-            {/* <img src="assets/img/home.png" alt="" /> */}
+            <img src={ animatedLogo } alt="Animated ResearchU logo" />
           </div>
           <div className="home__data">
             <h1 className="home__title">Research is just a click away!</h1>
