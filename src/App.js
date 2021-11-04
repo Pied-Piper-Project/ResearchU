@@ -6,8 +6,11 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import CreatePost from './pages/CreatePost';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
+
+
 
 
 
@@ -34,7 +37,8 @@ function App() {
         <Route path = '/ResearchU/Contact' exact component = {Contact}/>
         <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
         <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
-       
+        <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>
+          
       </Switch>
     </Router>
   );
