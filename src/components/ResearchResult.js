@@ -44,7 +44,7 @@ function ResearchResult({ result }) {
       <div className="cards column">
 
         <div className="card column-item">
-          <a href={result.schoolLogo}>
+          <a>
             <img className="one" src={'//logo.clearbit.com/' + result.schoolLogo} alt={result.school + ' logo'} />
           </a>
           <div className="two">
