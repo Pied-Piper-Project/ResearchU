@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import SearchBar from '../components/SearchBar';
+// import SearchBar from '../components/SearchBar';
+import { tempData } from "../components/ExampleResearchPosts";
 import ResearchResult from './../components/ResearchResult';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
@@ -8,9 +9,8 @@ import animatedLogo from "../images/logo.gif";
 
 
 function Home(){
-  // const data = [];
-
-  const [data, setData] = useState([]);
+  const data = tempData;
+  // const [data, setData] = useState([]);
 
   const icon1 = <MdTableRows/>
   const icon2 = <MdTableRows/>
@@ -61,7 +61,7 @@ function Home(){
           <div className="home_container">
             <div className="search-bar">
               <div className="">
-                <SearchBar setData={setData} setAllData={setAllData} />
+                {/* <SearchBar setData={setData} setAllData={setAllData} /> */}
               </div>
             </div>
 
