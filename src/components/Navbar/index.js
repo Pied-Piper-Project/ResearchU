@@ -18,13 +18,13 @@ const Navbar = ({toggle}) => {
         click.classList.toggle("dark-theme")
     }
 
-
+    
     return (
         <>
             <Nav>
                 <NavbarContainer>
                     <NavLogo to ='/ResearchU'>
-                    <img src={logo} width={150} alt='logo' />
+                    <img src={logo} width={200} alt='logo' />
                     </NavLogo>
                     <MobileIcon onClick = {toggle}>
                         <FaBars/>
@@ -46,10 +46,9 @@ const Navbar = ({toggle}) => {
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
-                        <NavBtnLink to = "/ResearchU/CreatePost"> Create Post</NavBtnLink>
-                        {/* <NavLinks to ="/ResearchU/SignIn">Sign In</NavLinks> */}
+                        <NavLinks to ="/ResearchU/SignIn">Sign In</NavLinks>
                         {/* <FaGripLinesVertical/> */}
-                        {/* <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink> */}
+                        <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>

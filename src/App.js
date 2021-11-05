@@ -1,17 +1,15 @@
 import './App.css';
 import React, {useState} from 'react'
 import {BrowserRouter as Router, Switch, Route} from  'react-router-dom';
+import {PrivateRoute} from "./auth/PrivateRoute";
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import CreatePost from './pages/CreatePost';
+import StudentInfoPage from './pages/StudentInfoPage';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
-
-
-
 
 
 
@@ -37,8 +35,8 @@ function App() {
         <Route path = '/ResearchU/Contact' exact component = {Contact}/>
         <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
         <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
-        <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>
-          
+        <PrivateRoute path = '/ResearchU/StudentInfoPage' exact component = {StudentInfoPage}/>
+       
       </Switch>
     </Router>
   );
