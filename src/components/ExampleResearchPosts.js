@@ -26,7 +26,7 @@ export const tempData = [
 
       }
     },
-        {
+    {
       postID: 2,
       name: "Machine Learning: ASL Recognition",
       professor: "Han Motion",
