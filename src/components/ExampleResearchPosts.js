@@ -20,7 +20,7 @@ export const tempData = [
       requirments: {
         gpa: 3.5,
         isGrad: false,
-        year: ["second-year"],
+        year: [1, 2],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
 
@@ -47,7 +47,7 @@ export const tempData = [
       requirments: {
         gpa: null,
         isGrad: false,
-        year: ["first-year", "second-year"],
+        year: [1, 2],
         prerequisites: null,
         major: null
 
@@ -74,7 +74,7 @@ export const tempData = [
       requirments: {
         gpa: 3.5,
         isGrad: false,
-        year: ["fourth-year"],
+        year: [4],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
       }
@@ -100,7 +100,7 @@ export const tempData = [
       requirments: {
           gpa: 3.2,
           isGrad: false,
-          year: ["second-year"],
+          year: [2],
           prerequisites: ["CS 170", "PHYS 141"],
           major: ["Computer Science", "Physics"]
       }
@@ -152,7 +152,7 @@ export const tempData = [
       requirments: {
         gpa: 3.5,
         isGrad: false,
-        year: ["third-year"],
+        year: [3],
         prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
         major: ["Mathematics"]
       }
