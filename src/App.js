@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
+import Footer from './components/Footer';
 
 
 
@@ -40,6 +41,7 @@ function App() {
         <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>
           
       </Switch>
+        <Footer />
     </Router>
   );
 }
