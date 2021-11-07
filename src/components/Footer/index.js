@@ -21,7 +21,6 @@ const Footer = () => {
             </h1>
             <Container>
                 <Row>
-                    <Column></Column>
                     <Column>
                         <Heading>About</Heading>
                         <FooterLink href="#">About Us</FooterLink>
@@ -40,26 +39,16 @@ const Footer = () => {
                             </i>
                         </FooterLink>
                         <FooterLink href="#">
-                            <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
-                            </i>
-                        </FooterLink>
-                        <FooterLink href="#">
                             <i className="fab fa-twitter">
                 <span style={{ marginLeft: "10px" }}>
                   Twitter
                 </span>
                             </i>
                         </FooterLink>
-                        <FooterLink href="#">
-                            <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-                            </i>
-                        </FooterLink>
+                    </Column>
+                    <Column>
+                        <Heading>Thanks To:</Heading>
+                        <FooterLink href="https://clearbit.com/">Clearbit API</FooterLink>
                     </Column>
                 </Row>
             </Container>
