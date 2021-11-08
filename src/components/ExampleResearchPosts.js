@@ -17,14 +17,11 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirements: {
-        gpa: 3.5,
-        isGrad: false,
-        year: ["1", "2"],
-        prerequisites: ["CHEM 150"],
-        major: ["Chemistry"]
-
-      }
+      gpa: 3.5,
+      isGrad: false,
+      year: ["1", "2"],
+      prerequisites: ["CHEM 150"],
+      major: ["Chemistry"]
     },
     {
       postID: 2,
@@ -44,14 +41,11 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirements: {
-        gpa: null,
-        isGrad: false,
-        year: ["1", "2"],
-        prerequisites: [""],
-        major: [""]
-
-      }
+      gpa: 0,
+      isGrad: false,
+      year: ["1", "2"],
+      prerequisites: ["N/A"],
+      major: ["N/A"]
     },
     {
       postID: 3,
@@ -71,13 +65,11 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      requirements: {
-        gpa: 3.5,
-        isGrad: false,
-        year: ["4"],
-        prerequisites: ["CHEM 150"],
-        major: ["Chemistry"]
-      }
+      gpa: 3.5,
+      isGrad: false,
+      year: ["4"],
+      prerequisites: ["CHEM 150"],
+      major: ["Chemistry"]
     },
     {
       postID: 4,
@@ -97,13 +89,11 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      requirements: {
-          gpa: 3.2,
-          isGrad: false,
-          year: ["2"],
-          prerequisites: ["CS 170", "PHYS 141"],
-          major: ["Computer Science", "Physics"]
-      }
+      gpa: 3.2,
+      isGrad: false,
+      year: ["2"],
+      prerequisites: ["CS 170", "PHYS 141"],
+      major: ["Computer Science", "Physics"]
     },
     {
       postID: 5,
@@ -123,13 +113,11 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirements: {
-        gpa: 3.0,
-        isGrad: false,
-        year: ["0"],
-        prerequisites: ["PHYS 220"],
-        major: ["Physics"]
-      }
+      gpa: 3.0,
+      isGrad: false,
+      year: ["0"],
+      prerequisites: ["PHYS 220"],
+      major: ["Physics"]
     },
     {
       postID: 6,
@@ -149,13 +137,11 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirements: {
-        gpa: 3.5,
-        isGrad: false,
-        year: ["3"],
-        prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
-        major: ["Mathematics"]
-      }
+      gpa: 3.5,
+      isGrad: false,
+      year: ["3"],
+      prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
+      major: ["Mathematics"]
     },
     {
       postID: 7,
@@ -175,12 +161,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirements: {
-        gpa: 3.7,
-        isGrad: false,
-        year: ["0"],
-        prerequisites: ["CHEM 150"],
-        major: ["Chemistry"]
-      }
+      gpa: 3.7,
+      isGrad: false,
+      year: ["0"],
+      prerequisites: ["CHEM 150"],
+      major: ["Chemistry"]
     },
   ];

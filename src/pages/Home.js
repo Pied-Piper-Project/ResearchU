@@ -23,6 +23,7 @@ function Home() {
   const generateMajorDataForDropdown = () => {
     return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
     //return [...new Set(data.map((item) => item.major))];
+    //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
     
 //   const[research, setResearch] = useState({name: " "});
@@ -62,9 +63,9 @@ function Home() {
       let fromDateObj = new Date(fromDate);
       let toDateObj = new Date(toDate);
 
-      if ((item.requirements.year.includes(year) || 0 === year) && 
-      (item.requirements.major.includes(major) || 0 === major.length) && 
-      (item.requirements.gpa <= gpa) && 
+      if ((item.year.includes(year) || 0 === year) && 
+      (item.major.includes(major) || 0 === major.length) && 
+      (item.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
       ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
