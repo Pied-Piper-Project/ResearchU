@@ -23,11 +23,11 @@ const Footer = () => {
                 <Row>
                     <Column>
                         <Heading>About</Heading>
-                        <FooterLink href="#">About Us</FooterLink>
+                        <FooterLink href="/ResearchU/About">About Us</FooterLink>
                     </Column>
                     <Column>
                         <Heading>Contact</Heading>
-                        <FooterLink href="#">Contact Us</FooterLink>
+                        <FooterLink href="/ResearchU/Contact">Contact Us</FooterLink>
                     </Column>
                     <Column>
                         <Heading>Social Media</Heading>
