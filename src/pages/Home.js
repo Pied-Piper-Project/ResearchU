@@ -29,12 +29,10 @@ function Home(){
     return [...new Set(data.map((item) => item.semester))];
   };
 
-  const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDuration, toDuration) => {
+  const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
       if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
-        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
-        ) { //(item.fromDuration === duration)
-          console.log(isOnline)
+        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester) && ((fromDate >= item.fromDate && item.toDate <= toDate) || (fromDate === ""  || toDate === ""))) {
         return item;
       }
     });

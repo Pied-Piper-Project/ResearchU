@@ -13,6 +13,8 @@ const FilterBar = ({
     isOnline: false,
     semester: "",
     duration: "",
+    toDate: "",
+    fromDate: "",
   });
 
   const handleInput = (field) => (event) => {
@@ -32,7 +34,8 @@ const FilterBar = ({
 
     else if (field === "isOnline") {
       tool = event.target.value
-      console.log(tool)
+      // console.log(tool)
+      // This is for unclicking the button
       if ((tool === "true" && filters.isOnline === true) || (tool === "false" && filters.isOnline === false)) {
         tool = ""
       }
@@ -44,7 +47,16 @@ const FilterBar = ({
       }
     }
 
-    else if (field === "date") {
+    else if (field === "fromDate") {
+      console.log(tool)
+      tool = event
+      console.log(tool)
+      if (tool === "") {
+        tool = ""
+      }
+    }
+
+    else if (field === "toDate") {
       tool = event
       console.log(tool)
       if (tool === "") {
@@ -64,22 +76,25 @@ const FilterBar = ({
 
     switch (field) {
       case "year":
-        onAllFilter(value, filters.gpa, filters.major, filters.isOnline, filters.semester, filters.date);
+        onAllFilter(value, filters.gpa, filters.major, filters.isOnline, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "gpa":
-        onAllFilter(filters.year, value, filters.major, filters.isOnline, filters.semester, filters.date);
+        onAllFilter(filters.year, value, filters.major, filters.isOnline, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "major":
-        onAllFilter(filters.year, filters.gpa, value, filters.isOnline, filters.semester, filters.date);
+        onAllFilter(filters.year, filters.gpa, value, filters.isOnline, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "isOnline":
-        onAllFilter(filters.year, filters.gpa, filters.major, value, filters.semester, filters.date);
+        onAllFilter(filters.year, filters.gpa, filters.major, value, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "semester":
-        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, value, filters.date);
+        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, value, filters.fromDate, filters.toDate);
         break;
-      case "date":
-        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, value);
+      case "fromDate":
+        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, value, filters.toDate);
+        break;
+      case "toDate":
+        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, filters.fromDate, value);
         break;
       default:
         break;
