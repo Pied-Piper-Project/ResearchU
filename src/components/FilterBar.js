@@ -50,7 +50,6 @@ const FilterBar = ({
 
     else if (field === "fromDate") {
       tool = event
-      console.log(tool)
       if (tool === "") {
         tool = ""
       }
@@ -58,7 +57,6 @@ const FilterBar = ({
 
     else if (field === "toDate") {
       tool = event
-      console.log(tool)
       if (tool === "") {
         tool = ""
       }
@@ -270,6 +268,7 @@ const FilterBar = ({
             onChange={handleInput("fromDate")}
             className="form-control"
             id="fromDate"
+            minDate = {new Date(2021, 8, 20)}
           />
         </div>
         <div className="select-wrapper">

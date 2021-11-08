@@ -8,17 +8,17 @@ import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
 
 
-function Home(){
+function Home() {
   const data = tempData;
   // const [data, setData] = useState([]);
 
-  const icon1 = <MdTableRows/>
-  const icon2 = <MdTableRows/>
-    const [order, setOrder] = useState('');
-    //Need to add a useState for button
-    function handleChange(event){
-        setOrder({value: event.target.value});
-    }
+  const icon1 = <MdTableRows />
+  const icon2 = <MdTableRows />
+  const [order, setOrder] = useState('');
+  //Need to add a useState for button
+  function handleChange(event) {
+    setOrder({ value: event.target.value });
+  }
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
@@ -32,26 +32,27 @@ function Home(){
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
       if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
-        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester) && ((fromDate >= item.fromDate && item.toDate <= toDate) || (fromDate === ""  || toDate === ""))) {
+        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester) && ((fromDate >= item.fromDate && item.toDate <= toDate) || (fromDate === "" || toDate === ""))) {
+        console.log('test'); // will probabaly need to do new Date(item.semester)
         return item;
       }
     });
 
     setAllData(filteredData);
   };
-    if(order.value === "Ascending"){
-        allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
-    }
-    else{
-        allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
-    }
+  if (order.value === "Ascending") {
+    allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
+  }
+  else {
+    allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
+  }
 
   return (
     <>
       <section className="home" id="home">
         <div className="home__container bd-container">
           <div className="home__img">
-            <img src={ animatedLogo } alt="Animated ResearchU logo" />
+            <img src={animatedLogo} alt="Animated ResearchU logo" />
           </div>
           <div className="home__data">
             <h1 className="home__title">Research is just a click away!</h1>
@@ -81,7 +82,7 @@ function Home(){
                 <div className="sorting">
                   <h1>Sort By:</h1>
                   <div className="select-dropdown">
-                      <OrderForm update = {handleChange.bind(this)} cur={order.value}/>
+                    <OrderForm update={handleChange.bind(this)} cur={order.value} />
                   </div>
 
                   <div className="sort-icon">
