@@ -17,10 +17,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.5,
         isGrad: false,
-        year: [1, 2],
+        year: ["1", "2"],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
 
@@ -44,12 +44,12 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
-        gpa: null,
+      requirements: {
+        gpa: 0,
         isGrad: false,
-        year: [1, 2],
-        prerequisites: null,
-        major: null
+        year: ["1", "2"],
+        prerequisites: ["N/A"],
+        major: ["N/A"]
 
       }
     },
@@ -71,10 +71,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.5,
         isGrad: false,
-        year: [4],
+        year: ["4"],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
       }
@@ -97,10 +97,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      requirments: {
+      requirements: {
           gpa: 3.2,
           isGrad: false,
-          year: [2],
+          year: ["2"],
           prerequisites: ["CS 170", "PHYS 141"],
           major: ["Computer Science", "Physics"]
       }
@@ -123,10 +123,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.0,
         isGrad: false,
-        year: null,
+        year: [0],
         prerequisites: ["PHYS 220"],
         major: ["Physics"]
       }
@@ -149,10 +149,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.5,
         isGrad: false,
-        year: [3],
+        year: ["3"],
         prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
         major: ["Mathematics"]
       }
@@ -175,10 +175,10 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.7,
         isGrad: false,
-        year: null,
+        year: [0],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
       }

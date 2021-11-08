@@ -22,7 +22,8 @@ function Home(){
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return [...new Set(data.map((item) => item.major))];
+    return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
+    //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
 
   const generateSemesterDataForDropdown = () => {
@@ -31,8 +32,9 @@ function Home(){
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDuration, toDuration) => {
     const filteredData = data.filter((item) => {
-      if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
-        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
+      if ((year === 0 || item.requirements.year.includes(year)) && (0 === major.length || item.requirements.major.includes(major)) &&
+        (item.requirements.gpa <= gpa) && (item.isOnline === isOnline || "" === isOnline) &&
+        (item.semester === semester || "" === semester)
         ) { //(item.fromDuration === duration)
           console.log(isOnline)
         return item;
