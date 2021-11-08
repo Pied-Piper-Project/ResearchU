@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactSlider from "react-slider";
+import DatePicker from 'react-date-picker';
 
 const FilterBar = ({
   majors,
@@ -48,7 +49,6 @@ const FilterBar = ({
     }
 
     else if (field === "fromDate") {
-      console.log(tool)
       tool = event
       console.log(tool)
       if (tool === "") {
@@ -103,6 +103,7 @@ const FilterBar = ({
 
   return (
     <div className="filter__container">
+
       <div className="">
         <h1>School year:</h1>
         <label htmlFor="year"></label>
@@ -150,7 +151,6 @@ const FilterBar = ({
           </div>
         </div>
       </div>
-
 
       <div className="">
         <h1>GPA:</h1>
@@ -242,7 +242,8 @@ const FilterBar = ({
 
       {/* <div className="">
         <div className="select-wrapper">
-          <label htmlFor="startDate">From</label>
+        <h1>From</h1>
+          <label htmlFor="startDate"></label>
           <input
             type="date"
             className="form-control"
@@ -251,7 +252,8 @@ const FilterBar = ({
           />
         </div>
         <div className="select-wrapper">
-          <label htmlFor="endDate">To</label>
+        <h1>To</h1>
+          <label htmlFor="endDate"></label>
           <input
             type="date"
             className="form-control"
@@ -260,6 +262,25 @@ const FilterBar = ({
           />
         </div>
       </div> */}
+
+      <div className="">
+        <div className="select-wrapper">
+          <h1>From:</h1>
+          <DatePicker
+            onChange={handleInput("fromDate")}
+            className="form-control"
+            id="fromDate"
+          />
+        </div>
+        <div className="select-wrapper">
+          <h1>To:</h1>
+          <DatePicker
+            onChange={handleInput("toDate")}
+            className="form-control"
+            id="toDate"
+          />
+        </div>
+      </div>
     </div>
   );
 };
