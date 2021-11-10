@@ -170,6 +170,22 @@ function ManuallyCreatePost(){
                 alert('Error: ' + field + ' needs to be implemented')
                 return
             }
+            else if (field === "major" || field === "prerequisites"){
+                let i = 0
+                while (i < post.major.length){
+                    if (post.major[i] === ""){
+                        post.major.splice(i, 1)
+                    }
+                    i++
+                }
+                let j = 0
+                while (j < post.prerequisites.length){
+                    if(post.prerequisites[j] === ""){
+                        post.prerequisites.splice(j, 1)
+                    }
+                    j++
+                }
+            }
         }
         const submitPost = async () => {
             const response  = await axios.post('/api/createpost', post);
@@ -183,15 +199,15 @@ function ManuallyCreatePost(){
                 <h2 className="section-title">Create Post</h2>
                 <div className ="createPost-wrapper">
                     <div className ="createPost-content">
-                        <h2>Create a new post:</h2>
+                        <h2>Create a new post (* indicates a required field):</h2>
                         <form className ="createPost-form" onSubmit = {submitFormHandler}>
-                        <label className ="createPost-label" for="name">Research Topic:</label>
+                        <label className ="createPost-label" for="name">Research Topic*:</label>
                         <input type="text" id="name" name="name" onChange = {handleInput("name")}/>
-                        <label className ="createPost-label" for="school">School Name:</label>
+                        <label className ="createPost-label" for="school">School Name*:</label>
                         <input type="text" id="school" name="school" onChange = {handleInput("school")}/>
                         <label className ="createPost-label" for="schoolLogo">Insert School url here:</label>
                         <input type="text" id="schoolLogo" name="schoolLogo" onChange = {handleInput("schoolLogo")}/>
-                        <label className ="createPost-label"  for="department">Department:</label>
+                        <label className ="createPost-label"  for="department">Department*:</label>
                         <input type="text" id="department" name="department" onChange = {handleInput("department")}/>
                         <label className ="createPost-label"  for="isOnline">In-Person or Remote:</label>
                         <div className = "filter__container">
