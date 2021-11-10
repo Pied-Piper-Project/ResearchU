@@ -48,8 +48,8 @@ export const tempData = [
         gpa: 0,
         isGrad: false,
         year: ["1", "2"],
-        prerequisites: ["N/A"],
-        major: ["N/A"]
+        prerequisites: [""],
+        major: [""]
 
       }
     },
@@ -126,7 +126,7 @@ export const tempData = [
       requirements: {
         gpa: 3.0,
         isGrad: false,
-        year: [0],
+        year: ["0"],
         prerequisites: ["PHYS 220"],
         major: ["Physics"]
       }
