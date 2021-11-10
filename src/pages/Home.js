@@ -22,7 +22,8 @@ function Home() {
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return [...new Set(data.map((item) => item.major))];
+    return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
+    //return [...new Set(data.map((item) => item.major))];
   };
 
   const generateSemesterDataForDropdown = () => {
@@ -31,8 +32,12 @@ function Home() {
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
-      if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
-        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester) && ((fromDate >= item.fromDate && item.toDate <= toDate) || (fromDate === "" || toDate === ""))) {
+      if ((item.requirements.year.includes(year) || 0 === year) && 
+      (item.requirements.major.includes(major) || 0 === major.length) && 
+      (item.requirements.gpa <= gpa) && 
+      (item.isOnline === isOnline || "" === isOnline) && 
+      (item.semester === semester || "" === semester) && 
+      ((fromDate >= item.fromDate && item.toDate <= toDate) || (fromDate === "" || toDate === ""))) {
         console.log('test'); // will probabaly need to do new Date(item.semester)
         return item;
       }

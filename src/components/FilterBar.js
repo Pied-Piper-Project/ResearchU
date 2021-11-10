@@ -8,7 +8,7 @@ const FilterBar = ({
   onAllFilter,
 }) => {
   const [filters, setFilters] = useState({
-    year: "",
+    year: 0,
     gpa: 4,
     major: "",
     isOnline: false,
@@ -23,12 +23,14 @@ const FilterBar = ({
     if (field === "gpa") {
       tool = event;
     }
+
     else if (field === "year") {
       tool = event.target.value
       if (tool === filters.year) {
-        tool = ""
+        tool = 0
       }
     }
+
     else if (field === "semester" || field === "major") {
       tool = event.target.value
     }
@@ -107,45 +109,48 @@ const FilterBar = ({
         <label htmlFor="year"></label>
         <div className="school-filter">
           <div>
-            <input type="radio" className="filter__boxes" id="year" checked={filters.year === "Freshman"}
+            <input type="radio"
+              className="filter__boxes"
+              id="year"
+              checked={filters.year === "1"}
               onClick={handleInput("year")}
-              value="Freshman" /> Freshman
+              value={1} /> Freshman
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Sophomore"}
+              checked={filters.year === "2"}
               onClick={handleInput("year")}
-              value="Sophomore" /> Sophomore
+              value={2} /> Sophomore
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Junior"}
+              checked={filters.year === "3"}
               onClick={handleInput("year")}
-              value="Junior" /> Junior
+              value={3} /> Junior
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Senior"}
+              checked={filters.year === "4"}
               onClick={handleInput("year")}
-              value="Senior" /> Senior
+              value={4} /> Senior
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Graduate"}
+              checked={filters.year === "5"}
               onClick={handleInput("year")}
-              value="Graduate" /> Graduate
+              value={5} /> Graduate
           </div>
         </div>
       </div>
@@ -268,7 +273,7 @@ const FilterBar = ({
             onChange={handleInput("fromDate")}
             className="form-control"
             id="fromDate"
-            minDate = {new Date(2021, 8, 20)}
+            minDate={new Date(2021, 8, 20)}
           />
         </div>
         <div className="select-wrapper">
