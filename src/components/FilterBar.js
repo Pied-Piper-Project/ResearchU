@@ -25,47 +25,47 @@ const FilterBar = ({
     }
 
     else if (field === "year") {
-      tool = event.target.value
+      tool = event.target.value;
       if (tool === filters.year) {
-        tool = 0
+        tool = 0;
       }
     }
 
     else if (field === "semester" || field === "major") {
-      tool = event.target.value
+      tool = event.target.value;
     }
 
     else if (field === "isOnline") {
-      tool = event.target.value
+      tool = event.target.value;
       // console.log(tool)
       // This is for unclicking the button
       if ((tool === "true" && filters.isOnline === true) || (tool === "false" && filters.isOnline === false)) {
-        tool = ""
+        tool = "";
       }
       if (tool === "true") {
-        tool = true
+        tool = true;
       }
       else if (tool === "false") {
-        tool = false
+        tool = false;
       }
     }
 
     else if (field === "fromDate") {
-      tool = event
+      tool = event.toISOString();
       if (tool === "") {
-        tool = ""
+        tool = "";
       }
     }
 
     else if (field === "toDate") {
-      tool = event
+      tool = event.toISOString();
       if (tool === "") {
-        tool = ""
+        tool = "";
       }
     }
 
     else {
-      tool = event.target.value
+      tool = event.target.value;
     }
     const value = tool;
 
@@ -273,7 +273,7 @@ const FilterBar = ({
             onChange={handleInput("fromDate")}
             className="form-control"
             id="fromDate"
-            minDate={new Date(2021, 8, 20)}
+            minDate={new Date(2021, 8, 20)} // Ideally this is not hard coded
           />
         </div>
         <div className="select-wrapper">
@@ -282,6 +282,7 @@ const FilterBar = ({
             onChange={handleInput("toDate")}
             className="form-control"
             id="toDate"
+            minDate={new Date(2021, 8, 24)} // This is purely for debugging. Delete when done.
           />
         </div>
       </div>

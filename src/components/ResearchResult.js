@@ -52,7 +52,7 @@ function ResearchResult({ result }) {
             <div className="details ">
               <div className="icon-posted">
                 <div className="icon-date"> {iconData}</div>
-                <h5>Posted: yesterday</h5>
+                <h5>Posted: yesterday</h5> {/* We should fix this. Reseach Post skeleton does not have a field of postDate.*/}
               </div>
               <div className="icon-location">
                 <div className="icon-loc"> {iconLocation}</div>
@@ -109,7 +109,6 @@ function ResearchResult({ result }) {
                 <p>{result.postBody}</p>
               </div>
             </div>
-
           </div>}
         </div>
         {/* <div className="card column-item ">Card 2</div>

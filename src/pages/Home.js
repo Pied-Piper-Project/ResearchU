@@ -32,13 +32,17 @@ function Home() {
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
+      let item_fromDateObj = new Date(item.fromDate);
+      let item_toDateObj = new Date(item.toDate);
+      let fromDateObj = new Date(fromDate);
+      let toDateObj = new Date(toDate);
+
       if ((item.requirements.year.includes(year) || 0 === year) && 
       (item.requirements.major.includes(major) || 0 === major.length) && 
       (item.requirements.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
-      ((fromDate >= item.fromDate && item.toDate <= toDate) || (fromDate === "" || toDate === ""))) {
-        console.log('test'); // will probabaly need to do new Date(item.semester)
+      ((fromDateObj >= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
         return item;
       }
     });
