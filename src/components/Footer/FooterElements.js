@@ -38,19 +38,16 @@ export const Container = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: left;
-  margin-left: 60px;
+  text-align: center;
 `;
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 
-                         minmax(185px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
    
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, 
-                           minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;
 
