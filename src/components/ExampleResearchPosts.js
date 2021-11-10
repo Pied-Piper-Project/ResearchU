@@ -48,8 +48,8 @@ export const tempData = [
         gpa: null,
         isGrad: false,
         year: ["1", "2"],
-        prerequisites: null,
-        major: null
+        prerequisites: [""],
+        major: [""]
 
       }
     },
