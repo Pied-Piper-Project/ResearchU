@@ -8,6 +8,10 @@ import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import StudentInfoPage from './pages/StudentInfoPage';
+import PleaseVerifyEmailPage from './pages/PleaseVerifyEmailPage';
+import EmailVerificationLandingPage from './pages/EmailVerificationLandingPage';
+import PasswordResetLandingPage from './pages/PasswordResetLandingPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
 
@@ -35,8 +39,12 @@ function App() {
         <Route path = '/ResearchU/Contact' exact component = {Contact}/>
         <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
         <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
+        <Route path = '/ResearchU/PleaseVerifyEmail' exact component = {PleaseVerifyEmailPage}/>
+        <Route path = '/ResearchU/verify-email/:verificationString' exact component = {EmailVerificationLandingPage}/>
+        <Route path = '/ResearchU/forgot-password' exact component = {ForgotPasswordPage}/>
+        <Route path = '/ResearchU/reset-password/:passwordResetCode' exact component = {PasswordResetLandingPage}/>
         <PrivateRoute path = '/ResearchU/StudentInfoPage' exact component = {StudentInfoPage}/>
-       
+
       </Switch>
     </Router>
   );

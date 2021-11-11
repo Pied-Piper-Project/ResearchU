@@ -21,7 +21,7 @@ const SignUp = () => {
         });
         const { token } = response.data;
         setToken(token);
-        history.push('/ResearchU/StudentInfoPage');
+        history.push('/ResearchU/PleaseVerifyEmail');
 
     }
 

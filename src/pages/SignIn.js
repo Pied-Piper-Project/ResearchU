@@ -42,7 +42,7 @@ const SignIn = () => {
                 disabled={!emailValue || !passwordValue}
                 onClick={onLogInClicked}>Sign In</button>
             <hr />
-            <button onClick={() => history.push('/forgot-password')}>Forgot your password?</button>
+            <button onClick={() => history.push('/ResearchU/forgot-password')}>Forgot your password?</button>
             <p></p>
             <button onClick={() => history.push('/ResearchU/SignUp')}>Don't have an account? Sign Up!</button>
         </div>
