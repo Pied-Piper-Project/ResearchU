@@ -43,9 +43,9 @@ function ResearchResult({ result }) {
       <p>This opportunity is {result.isOnline ? "online" : "offline"}</p> */}
       <div className="cards column">
 
-        <div className="card column-item ">
-          <a href={result.schoolLogo}>
-            <img className="one" src={'//logo.clearbit.com/' + result.schoolLogo} alt={result.school + 'logo'} />
+        <div className="card column-item">
+          <a>
+            <img className="one" src={'//logo.clearbit.com/' + result.schoolLogo} alt={result.school + ' logo'} />
           </a>
           <div className="two">
             <h1>{result.name}</h1>

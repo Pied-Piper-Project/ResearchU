@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
+// import SearchBar from '../components/SearchBar';
+import { tempData } from "../components/ExampleResearchPosts";
 import ResearchResult from './../components/ResearchResult';
 import OrderForm from './../components/OrderForm';
-import { data } from "./ExampleResearchPosts";
-import PersonItem from "../components/PersonItem";
 import FilterBar from "../components/FilterBar";
-import SearchBar from '../components/SearchBar';
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
+import animatedLogo from "../images/logo.gif";
 
 
 function Home(){
+  const data = tempData;
+  // const [data, setData] = useState([]);
+
   const icon1 = <MdTableRows/>
   const icon2 = <MdTableRows/>
     const [order, setOrder] = useState('');
@@ -17,7 +20,7 @@ function Home(){
         setOrder({value: event.target.value});
     }
 
-  const [allData, setData] = useState(data);
+  const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
     return [...new Set(data.map((item) => item.major))];
   };
@@ -36,7 +39,7 @@ function Home(){
       }
     });
 
-    setData(filteredData);
+    setAllData(filteredData);
   };
     if(order.value === "Ascending"){
         allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
@@ -50,7 +53,7 @@ function Home(){
       <section className="home" id="home">
         <div className="home__container bd-container">
           <div className="home__img">
-            <img src="assets/img/home.png" alt="" />
+            <img src={ animatedLogo } alt="Animated ResearchU logo" />
           </div>
           <div className="home__data">
             <h1 className="home__title">Research is just a click away!</h1>
@@ -58,7 +61,7 @@ function Home(){
           <div className="home_container">
             <div className="search-bar">
               <div className="">
-                <SearchBar />
+                {/* <SearchBar setData={setData} setAllData={setAllData} /> */}
               </div>
             </div>
 
