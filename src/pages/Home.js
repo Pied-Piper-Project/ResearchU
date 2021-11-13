@@ -21,7 +21,7 @@ function Home(){
 
   const icon1 = <MdTableRows/>
   const icon2 = <MdTableRows/>
-    const [order, setOrder] = useState('');
+  const [order, setOrder] = useState('');
     //Need to add a useState for button
     function handleChange(event){
         setOrder({value: event.target.value});
