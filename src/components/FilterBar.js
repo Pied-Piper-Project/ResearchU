@@ -18,6 +18,15 @@ const FilterBar = ({
     fromDate: "",
   });
 
+  const dateRead = val => {
+    if (val === ""){
+      return val
+    }
+    else{
+      return new Date(val)
+    }
+  }
+
   const handleInput = (field) => (event) => {
     let tool;
     if (field === "gpa") {
@@ -285,6 +294,7 @@ const FilterBar = ({
             onChange={handleInput("fromDate")}
             className="form-control"
             id="fromDate"
+            value = {dateRead(filters.fromDate)}
             minDate={new Date(2021, 8, 20)} // Ideally this is not hard coded
           />
         </div>
@@ -294,6 +304,7 @@ const FilterBar = ({
             onChange={handleInput("toDate")}
             className="form-control"
             id="toDate"
+            value = {dateRead(filters.toDate)}
             minDate={new Date(2021, 8, 24)} // This is purely for debugging. Delete when done.
           />
         </div>
