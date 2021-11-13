@@ -42,7 +42,7 @@ function Home() {
       (item.requirements.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
-      ((fromDateObj >= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
+      ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
         return item;
       }
     });

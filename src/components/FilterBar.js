@@ -51,15 +51,27 @@ const FilterBar = ({
     }
 
     else if (field === "fromDate") {
-      tool = event.toISOString();
-      if (tool === "") {
+      if (event != null){
+        tool = event.toISOString();
+        console.log(tool)
+        if (tool === "") {
+          tool = "";
+        }
+      }
+      else{
         tool = "";
       }
     }
 
     else if (field === "toDate") {
-      tool = event.toISOString();
-      if (tool === "") {
+      if (event != null){
+        tool = event.toISOString();
+        console.log(tool)
+        if (tool === "") {
+          tool = "";
+        }
+      }
+      else{
         tool = "";
       }
     }
