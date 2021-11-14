@@ -295,7 +295,7 @@ const FilterBar = ({
             className="form-control"
             id="fromDate"
             value = {dateRead(filters.fromDate)}
-            minDate={new Date(2021, 8, 20)} // Ideally this is not hard coded
+            minDate={new Date(2021, 8, 19)} // Ideally this is not hard coded
           />
         </div>
         <div className="select-wrapper">
