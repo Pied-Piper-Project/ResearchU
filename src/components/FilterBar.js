@@ -305,7 +305,6 @@ const FilterBar = ({
             className="form-control"
             id="toDate"
             value = {dateRead(filters.toDate)}
-            minDate={new Date(2021, 8, 24)} // This is purely for debugging. Delete when done.
           />
         </div>
       </div>
