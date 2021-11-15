@@ -22,10 +22,12 @@ function Home(){
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return [...new Set(data.map((item) => item.major))];
+    return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
+    // return [...new Set(data.map((item) => item.major))];
   };
 
   const generateSemesterDataForDropdown = () => {
+    return ["Fall 2021", "Spring 2022", "Fall 2022"];
     return [...new Set(data.map((item) => item.semester))];
   };
 
