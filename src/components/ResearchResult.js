@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
+import { GrLocation } from "react-icons/gr";
 
-function ResearchResult( {result} ){
+import { BiStar } from "react-icons/bi";
+import { useHistory } from "react-router-dom";
+import SignIn from "../pages/SignIn";
+
+
+function ResearchResult({ result }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const icon1 = <MdTableRows />
+  const icon2 = <MdTableRows />
+  const icon3 = <BiStar />
+  const iconLocation = <GrLocation />
+  const iconData = <MdDateRange />
+
+  const history = useHistory();
+  // function handleClick() {
+  //   history.push(SignIn);
+  // }
 
 
   // ToDo: write function to display pay amount if it is paid
 
   // ToDo: write function to format timeRange
-  return(
+  return (
     <>
-      <h1>{result.name}</h1>
+      {/* <h1>{result.name}</h1>
       <h3>School {result.school}</h3>
       <img src={result.schoolLogo} alt={result.school + "'s school logo"} />
       <h3>Academic Department {result.department}</h3>
@@ -16,11 +35,12 @@ function ResearchResult( {result} ){
       <h3>Location: {result.location}</h3>
       <h3>Semester: {result.semester}</h3>
       <h3>Duration: {result.dateRange}</h3>
+      <h3>Major: {result.major}</h3>
       <h3>Research is conducted between the hours of {result.timeRange}</h3>
       <h3>This is {result.isPaid ? "a paid" : "not a paid"} research opportunity</h3>
       <h3>This opportunity pays ${result.payAmount}</h3>
       <p>{result.postBody}</p>
-      <p>This opportunity is {result.isOnline ? "online" : "offline"}</p>
+      <p>This opportunity is {result.isOnline ? "online" : "offline"}</p> */}
       <div className="cards column">
 
         <div className="card column-item">

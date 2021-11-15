@@ -7,6 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import CreatePost from './pages/CreatePost';
 import StudentInfoPage from './pages/StudentInfoPage';
 import PleaseVerifyEmailPage from './pages/PleaseVerifyEmailPage';
 import EmailVerificationLandingPage from './pages/EmailVerificationLandingPage';
@@ -39,6 +40,7 @@ function App() {
         <Route path = '/ResearchU/Contact' exact component = {Contact}/>
         <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
         <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
+        <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>        
         <Route path = '/ResearchU/PleaseVerifyEmail' exact component = {PleaseVerifyEmailPage}/>
         <Route path = '/ResearchU/verify-email/:verificationString' exact component = {EmailVerificationLandingPage}/>
         <Route path = '/ResearchU/forgot-password' exact component = {ForgotPasswordPage}/>
