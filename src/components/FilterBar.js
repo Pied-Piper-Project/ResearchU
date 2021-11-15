@@ -11,7 +11,7 @@ const FilterBar = ({
     year: 0,
     gpa: 4,
     major: "",
-    isOnline: false,
+    isOnline: "",
     semester: "",
     duration: "",
     toDate: "",
