@@ -80,7 +80,6 @@ const FilterBar = ({
     else if (field === "fromDate") {
       if (event != null){
         tool = event.toISOString();
-        console.log(tool)
         if (tool === "") {
           tool = "";
         }
@@ -93,7 +92,6 @@ const FilterBar = ({
     else if (field === "toDate") {
       if (event != null){
         tool = event.toISOString();
-        console.log(tool)
         if (tool === "") {
           tool = "";
         }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
+import DatePicker from 'react-date-picker';
 
 function ManuallyCreatePost() {
     const [post, setPosts] = useState({
@@ -12,12 +13,12 @@ function ManuallyCreatePost() {
         postBody: "N/A",
         isOnline: false,
         location: "N/A",
-        activePost: false,
+        activePost: true,
         semester: "N/A",
         postDate: "",
         fromDate: "",
         toDate: "",
-        daysOfWeek: ["monday", "wednesday"],
+        daysOfWeek: ["0"],
         timeRange: "16:00-20:00",
         isPaid: false,
         payAmount: 0,
@@ -30,12 +31,30 @@ function ManuallyCreatePost() {
         professorID: 0,
     });
 
+    const dateRead = val => {
+        if (val === ""){
+          return val
+        }
+        else{
+          return new Date(val)
+        }
+      }
+
     const AddItemsToYear = (value) => {
         let list = post.year
         list.push(value)
         setPosts({
             ...post,
             ["year"]: list,
+        });
+    }
+
+    const AddItemsToWeek = (value) => {
+        let list = post.daysOfWeek
+        list.push(value)
+        setPosts({
+            ...post,
+            ["daysOfWeek"]: list,
         });
     }
 
@@ -76,6 +95,24 @@ function ManuallyCreatePost() {
     }
 
     const handleInput = (field) => (event) => {
+        if (field === "fromDate" || field === "toDate"){
+            let tool;
+            if (event != null){
+                tool = event.toISOString();
+                console.log(tool)
+                if (tool === "") {
+                  tool = "";
+                }
+              }
+              else{
+                tool = "";
+              }
+            setPosts({
+                ...post,
+                [field]: tool,
+            });
+            return
+        }
         let { value } = event.target
         if (field === "isOnline" || field === "activePost" || field === "isPaid" || field === "isGrad") {
             if (value === "true") {
@@ -107,6 +144,28 @@ function ManuallyCreatePost() {
                 }
             }
         }
+        else if (field === "daysOfWeek") {
+            let subVal = value
+            if (post.daysOfWeek.includes("0")) {
+                post.daysOfWeek = []
+            }
+            else if (post.daysOfWeek.includes(subVal)) {
+                let index = post.daysOfWeek.indexOf(subVal)
+                let list = post.daysOfWeek
+                list.splice(index, 1)
+                if (post.daysOfWeek.length === 0) {
+                    value = "0"
+                    post.daysOfWeek = []
+                }
+                else {
+                    setPosts({
+                        ...post,
+                        ["daysOfWeek"]: list,
+                    });
+                    return
+                }
+            }
+        }
         else if (field === "payAmount" || field === "gpa") {
             let p = value
             value = parseFloat(value, 10)
@@ -124,6 +183,9 @@ function ManuallyCreatePost() {
 
         if (field === "year") {
             AddItemsToYear(value)
+        }
+        else if (field === "daysOfWeek"){
+            AddItemsToWeek(value)
         }
         else {
             setPosts({
@@ -225,15 +287,6 @@ function ManuallyCreatePost() {
                             </div>
                             <label className="createPost-label" for="location">Location:</label>
                             <input type="text" id="location" name="location" onChange={handleInput("location")} />
-                            <label className="createPost-label" for="activePost">Active Post:</label>
-                            <div className="filter__container">
-                                <div className="school-filter">
-                                    <input type="radio" id="activePost" className="filter__boxes" value="true"
-                                        onClick={handleInput("activePost")} checked={post.activePost === true} /> Active
-                                    <input type="radio" id="activePost" className="filter__boxes" value="false"
-                                        onClick={handleInput("activePost")} checked={post.activePost === false} /> Inactive
-                                </div>
-                            </div>
                             <label className="createPost-label" for="semester">Semester:</label>
                             <input type="text" id="semester" name="semester" onChange={handleInput("semester")} />
                             <label className="createPost-label" for="isPaid">Are students paid?:</label>
@@ -299,6 +352,41 @@ function ManuallyCreatePost() {
                                     </div>
                                 );
                             })}
+                            <label className="createPost-label" for="fromDate">From Date:</label>
+                            <DatePicker
+                            onChange={handleInput("fromDate")}
+                            className="form-control"
+                            id="fromDate"
+                            value = {dateRead(post.fromDate)}
+                             minDate={new Date(2021, 8, 19)} // Ideally this is not hard coded
+                             />
+                             <label className="createPost-label" for="fromDate">From Date:</label>
+                             <DatePicker
+                            onChange={handleInput("toDate")}
+                            className="form-control"
+                            id="toDate"
+                            value = {dateRead(post.toDate)}
+                            minDate = {new Date(post.fromDate)}
+                             />
+                            <label className="createPost-label" for="daysOfWeek">Days Held:</label>
+                            <div className="filter__container">
+                                <div className="school-filter">
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="sunday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("sunday")} /> Sunday
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="monday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("monday")} /> Monday
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="tuesday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("tuesday")} /> Tuesday
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="wednesday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("wednesday")} /> Wednesday
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="thursday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("thursday")} /> Thursday
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="friday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("friday")} /> Friday
+                                    <input type="radio" id="daysOfWeek" className="filter__boxes" value="saturday"
+                                        onClick={handleInput("daysOfWeek")} checked={post.daysOfWeek.includes("saturday")} /> Saturday
+                                </div>
+                            </div>
                             <label className="createPost-label" for="postBody">Post Body (Write a description of the post here):</label>
                             <input type="text" id="postBody" name="postBody" onChange={handleInput("postBody")} />
                             <input type="submit"></input>

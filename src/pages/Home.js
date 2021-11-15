@@ -68,13 +68,8 @@ function Home() {
       (item.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
-      ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
-
-      
-//       if ((item.requirements.year === year || "" === year) && (item.requirements.major === major || "" === major) && (item.requirements.gpa <= gpa)
-//         && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
-//         ) { //(item.fromDuration === duration)
-//           console.log(isOnline)
+      (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
+      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
 
         return item;
       }
