@@ -42,10 +42,10 @@ function Home(){
     setAllData(filteredData);
   };
     if(order.value === "Ascending"){
-        allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
+        allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
     }
     else{
-        allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
+        allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
     }
 
   return (
