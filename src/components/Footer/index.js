@@ -49,7 +49,8 @@ const Footer = () => {
                 </Row>
                 <Row>
                     <Column>
-                        <FooterLink href="https://clearbit.com/">Clearbit API</FooterLink>
+                        <FooterLink target="_blank" href="https://clearbit.com/">Clearbit API</FooterLink>
+
                     </Column>
                     <Column>
                         <p>&copy;ResearchU 2021</p>
