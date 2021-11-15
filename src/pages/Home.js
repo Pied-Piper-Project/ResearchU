@@ -21,8 +21,8 @@ function Home() {
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
-    //return [...new Set(data.map((item) => item.major))];
+    return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
+    // return [...new Set(data.map((item) => item.major))];
   };
     
 //   const[research, setResearch] = useState({name: " "});
@@ -50,6 +50,7 @@ function Home() {
 //   };
 
   const generateSemesterDataForDropdown = () => {
+    return ["Fall 2021", "Spring 2022", "Fall 2022"];
     return [...new Set(data.map((item) => item.semester))];
   };
 
