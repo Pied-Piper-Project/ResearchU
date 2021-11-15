@@ -138,7 +138,7 @@ const FilterBar = ({
 
 
       <div className="">
-        <h1>Min GPA:</h1>
+        <h1>GPA:</h1>
         <label htmlFor="gpa"></label>
         <div>
           <ReactSlider

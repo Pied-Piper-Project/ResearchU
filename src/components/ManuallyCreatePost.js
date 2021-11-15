@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import React from 'react';
+import axios from 'axios';
 
 function ManuallyCreatePost(){
     const [post, setPosts] = useState({
@@ -77,9 +78,11 @@ function ManuallyCreatePost(){
                 return
             }
         }
-        console.log(post)
+        const submitPost = async () => {
+            const response  = await axios.post('/api/createpost', post);
+        }
+        submitPost();
     }
-
 
     return(
         <>
@@ -138,7 +141,7 @@ function ManuallyCreatePost(){
                                 <input type="radio" id="isGrad" className="filter__boxes" value = "true"
                                     onClick = {handleInput("isGrad")} checked = {post.isGrad === "true"}/> Yes
                                 <input type="radio" id="isGrad" className = "filter__boxes" value = "false"
-                                    onClick = {handleInput("isGrad")} checked = {post.isGrad === "false"}/> In-Person
+                                    onClick = {handleInput("isGrad")} checked = {post.isGrad === "false"}/> No
                             </div>
                         </div>
                         <label className ="createPost-label"  for="activePost">Year of College Preferred:</label>

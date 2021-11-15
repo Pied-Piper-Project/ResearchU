@@ -22,7 +22,6 @@ const About = () => {
                   <h3 className="section-title">The Team</h3>
 
                 <div className="about__container bd-grid">
-
                     <div className="about__data">
                         <h3 className="about__title">Product Owner</h3>
                         <img src={headshot5} alt="" className="about__img"/>
@@ -49,6 +48,7 @@ const About = () => {
                         <img src={headshot3} alt="" className="about__img"/>
                         <h3 className="about__title">Matthew Moreno</h3>
                         <p><span className="value__category">Contact:</span> matt.moreno@emory.edu</p>
+
                     </div>
 
                     <div className="about__data">
