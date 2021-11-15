@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from 'react';
 // import SearchBar from '../components/SearchBar';
-import { tempData } from "../components/ExampleResearchPosts";
 import ResearchResult from './../components/ResearchResult';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
 
-
 function Home(){
-  const data = tempData;
-  // const [data, setData] = useState([]);
+
+  const[research, setResearch] = useState({name: " "});
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await fetch(`api/research`);
+        const body = await result.json();
+        setResearch(body);
+      }
+  fetchData();
+  }, []);
+  const data = Array.from(research);
 
   const icon1 = <MdTableRows/>
   const icon2 = <MdTableRows/>
-    const [order, setOrder] = useState('');
+  const [order, setOrder] = useState('');
     //Need to add a useState for button
     function handleChange(event){
         setOrder({value: event.target.value});
@@ -22,7 +29,7 @@ function Home(){
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return [...new Set(data.map((item) => item.major))];
+    return [...new Set(data.map((item) => item.requirements.major))];
   };
 
   const generateSemesterDataForDropdown = () => {
@@ -31,7 +38,7 @@ function Home(){
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDuration, toDuration) => {
     const filteredData = data.filter((item) => {
-      if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
+      if ((item.requirements.year === year || "" === year) && (item.requirements.major === major || "" === major) && (item.requirements.gpa <= gpa)
         && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
         ) { //(item.fromDuration === duration)
           console.log(isOnline)
@@ -42,10 +49,10 @@ function Home(){
     setAllData(filteredData);
   };
     if(order.value === "Ascending"){
-        allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
+        allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
     }
     else{
-        allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
+        allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
     }
 
   return (
@@ -97,7 +104,7 @@ function Home(){
 
               </div>
               {allData.map((item) => (
-                <ResearchResult result={item} key={item.postID} />
+                <ResearchResult result={item} key={item._id} />
               ))}
             </div>
 

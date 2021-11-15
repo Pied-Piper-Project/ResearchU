@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import React from 'react';
+import axios from 'axios';
 
 function ManuallyCreatePost(){
     const [post, setPosts] = useState({
@@ -77,9 +78,11 @@ function ManuallyCreatePost(){
                 return
             }
         }
-        console.log(post)
+        const submitPost = async () => {
+            const response  = await axios.post('/api/createpost', post);
+        }
+        submitPost();
     }
-
 
     return(
         <>
