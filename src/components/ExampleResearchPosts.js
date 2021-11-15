@@ -1,6 +1,6 @@
 export const tempData = [
     {
-      postID: 1,
+      _id: 1,
       name: "Chem Amino Acid Research",
       professor: "John Dalton",
       school: "Emory University",
@@ -27,7 +27,7 @@ export const tempData = [
       professorID: 1,
     },
     {
-      postID: 2,
+      _id: 2,
       name: "Machine Learning: ASL Recognition",
       professor: "Han Motion",
       school: "Emory University",
@@ -54,7 +54,7 @@ export const tempData = [
       professorID: 1,
     },
     {
-      postID: 3,
+      _id: 3,
       name: "Chem Photocatalysis Research",
       professor: "Emily Dalton",
       school: "Massachusetts Institute of Technology",
@@ -81,7 +81,7 @@ export const tempData = [
       professorID: 1,
     },
     {
-      postID: 4,
+      _id: 4,
       name: "CS Solar Energy Conversion Research",
       professor: "James Dalton",
       school: "Harvard University",
@@ -108,7 +108,7 @@ export const tempData = [
       professorID: 1,
     },
     {
-      postID: 5,
+      _id: 5,
       name: "Untitled Physics Research",
       professor: "Lauren Dalton",
       school: "Stanford University",
@@ -135,7 +135,7 @@ export const tempData = [
       professorID: 1,
     },
     {
-      postID: 6,
+      _id: 6,
       name: "Euler Research",
       professor: "Mark Dalton",
       school: "Georgia Institute of Technology",
@@ -162,7 +162,7 @@ export const tempData = [
       professorID: 1,
     },
     {
-      postID: 7,
+      _id: 7,
       name: "Chem Amino Acid Research",
       professor: "John Dalton",
       school: "Georgia State University",
