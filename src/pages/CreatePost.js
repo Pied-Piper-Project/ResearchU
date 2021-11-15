@@ -1,5 +1,6 @@
 import React from 'react';
 import ManuallyCreatePost from '../components/ManuallyCreatePost';
+import UploadPosts from '../components/UploadPosts';
 
 const CreatePost = () => {
     return(
@@ -8,7 +9,8 @@ const CreatePost = () => {
                 <UploadPosts/>
             </div> */}
             <div className= "">
-                <ManuallyCreatePost/>
+                <UploadPosts/>
+                {/* <ManuallyCreatePost/> */}
             </div>
         </>
     );
