@@ -7,7 +7,6 @@ import FilterBar from "../components/FilterBar";
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
 
-
 function Home() {
   // const data = tempData;
   const [data, setData] = useState([]);
@@ -25,6 +24,30 @@ function Home() {
     return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
     //return [...new Set(data.map((item) => item.major))];
   };
+    
+//   const[research, setResearch] = useState({name: " "});
+//     useEffect(() => {
+//       const fetchData = async () => {
+//         const result = await fetch(`api/research`);
+//         const body = await result.json();
+//         setResearch(body);
+//       }
+//   fetchData();
+//   }, []);
+//   const data = Array.from(research);
+
+//   const icon1 = <MdTableRows/>
+//   const icon2 = <MdTableRows/>
+//   const [order, setOrder] = useState('');
+//     //Need to add a useState for button
+//     function handleChange(event){
+//         setOrder({value: event.target.value});
+//     }
+
+//   const [allData, setAllData] = useState(data);
+//   const generateMajorDataForDropdown = () => {
+//     return [...new Set(data.map((item) => item.requirements.major))];
+//   };
 
   const generateSemesterDataForDropdown = () => {
     return [...new Set(data.map((item) => item.semester))];
@@ -32,6 +55,8 @@ function Home() {
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
+      
+      // Older stuff
       let item_fromDateObj = new Date(item.fromDate);
       let item_toDateObj = new Date(item.toDate);
       let fromDateObj = new Date(fromDate);
@@ -43,18 +68,33 @@ function Home() {
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
       ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
+
+      
+//       if ((item.requirements.year === year || "" === year) && (item.requirements.major === major || "" === major) && (item.requirements.gpa <= gpa)
+//         && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
+//         ) { //(item.fromDuration === duration)
+//           console.log(isOnline)
+
         return item;
       }
     });
 
     setAllData(filteredData);
   };
+
   if (order.value === "Ascending") {
     allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
   }
   else {
     allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
   }
+
+//     if(order.value === "Ascending"){
+//         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
+//     }
+//     else{
+//         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
+//     }
 
   return (
     <>
@@ -105,7 +145,7 @@ function Home() {
 
               </div>
               {allData.map((item) => (
-                <ResearchResult result={item} key={item.postID} />
+                <ResearchResult result={item} key={item._id} />
               ))}
             </div>
 
