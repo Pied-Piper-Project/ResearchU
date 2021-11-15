@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactSlider from "react-slider";
+import DatePicker from 'react-date-picker';
 
 const FilterBar = ({
   majors,
@@ -7,53 +8,85 @@ const FilterBar = ({
   onAllFilter,
 }) => {
   const [filters, setFilters] = useState({
-    year: "",
+    year: 0,
     gpa: 4,
     major: "",
-    isOnline: false,
+    isOnline: "",
     semester: "",
     duration: "",
+    toDate: "",
+    fromDate: "",
   });
+
+  const dateRead = val => {
+    if (val === ""){
+      return val
+    }
+    else{
+      return new Date(val)
+    }
+  }
 
   const handleInput = (field) => (event) => {
     let tool;
     if (field === "gpa") {
       tool = event;
     }
+
     else if (field === "year") {
-      tool = event.target.value
+      tool = event.target.value;
       if (tool === filters.year) {
-        tool = ""
+        tool = 0;
       }
     }
+
     else if (field === "semester" || field === "major") {
-      tool = event.target.value
+      tool = event.target.value;
     }
 
     else if (field === "isOnline") {
-      tool = event.target.value
-      console.log(tool)
+      tool = event.target.value;
+      // console.log(tool)
+      // This is for unclicking the button
       if ((tool === "true" && filters.isOnline === true) || (tool === "false" && filters.isOnline === false)) {
-        tool = ""
+        tool = "";
       }
       if (tool === "true") {
-        tool = true
+        tool = true;
       }
       else if (tool === "false") {
-        tool = false
+        tool = false;
       }
     }
 
-    else if (field === "date") {
-      tool = event
-      console.log(tool)
-      if (tool === "") {
-        tool = ""
+    else if (field === "fromDate") {
+      if (event != null){
+        tool = event.toISOString();
+        console.log(tool)
+        if (tool === "") {
+          tool = "";
+        }
+      }
+      else{
+        tool = "";
+      }
+    }
+
+    else if (field === "toDate") {
+      if (event != null){
+        tool = event.toISOString();
+        console.log(tool)
+        if (tool === "") {
+          tool = "";
+        }
+      }
+      else{
+        tool = "";
       }
     }
 
     else {
-      tool = event.target.value
+      tool = event.target.value;
     }
     const value = tool;
 
@@ -64,22 +97,25 @@ const FilterBar = ({
 
     switch (field) {
       case "year":
-        onAllFilter(value, filters.gpa, filters.major, filters.isOnline, filters.semester, filters.date);
+        onAllFilter(value, filters.gpa, filters.major, filters.isOnline, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "gpa":
-        onAllFilter(filters.year, value, filters.major, filters.isOnline, filters.semester, filters.date);
+        onAllFilter(filters.year, value, filters.major, filters.isOnline, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "major":
-        onAllFilter(filters.year, filters.gpa, value, filters.isOnline, filters.semester, filters.date);
+        onAllFilter(filters.year, filters.gpa, value, filters.isOnline, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "isOnline":
-        onAllFilter(filters.year, filters.gpa, filters.major, value, filters.semester, filters.date);
+        onAllFilter(filters.year, filters.gpa, filters.major, value, filters.semester, filters.fromDate, filters.toDate);
         break;
       case "semester":
-        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, value, filters.date);
+        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, value, filters.fromDate, filters.toDate);
         break;
-      case "date":
-        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, value);
+      case "fromDate":
+        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, value, filters.toDate);
+        break;
+      case "toDate":
+        onAllFilter(filters.year, filters.gpa, filters.major, filters.isOnline, filters.semester, filters.fromDate, value);
         break;
       default:
         break;
@@ -88,54 +124,57 @@ const FilterBar = ({
 
   return (
     <div className="filter__container">
+
       <div className="">
         <h1>School year:</h1>
         <label htmlFor="year"></label>
         <div className="school-filter">
           <div>
-            <input type="radio" className="filter__boxes" id="year" checked={filters.year === "Freshman"}
+            <input type="radio"
+              className="filter__boxes"
+              id="year"
+              checked={filters.year === "1"}
               onClick={handleInput("year")}
-              value="Freshman" /> Freshman
+              value={1} /> Freshman
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Sophomore"}
+              checked={filters.year === "2"}
               onClick={handleInput("year")}
-              value="Sophomore" /> Sophomore
+              value={2} /> Sophomore
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Junior"}
+              checked={filters.year === "3"}
               onClick={handleInput("year")}
-              value="Junior" /> Junior
+              value={3} /> Junior
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Senior"}
+              checked={filters.year === "4"}
               onClick={handleInput("year")}
-              value="Senior" /> Senior
+              value={4} /> Senior
           </div>
           <div>
             <input
               type="radio"
               className="filter__boxes"
               id="year"
-              checked={filters.year === "Graduate"}
+              checked={filters.year === "5"}
               onClick={handleInput("year")}
-              value="Graduate" /> Graduate
+              value={5} /> Graduate
           </div>
         </div>
       </div>
-
 
       <div className="">
         <h1>GPA:</h1>
@@ -227,7 +266,8 @@ const FilterBar = ({
 
       {/* <div className="">
         <div className="select-wrapper">
-          <label htmlFor="startDate">From</label>
+        <h1>From</h1>
+          <label htmlFor="startDate"></label>
           <input
             type="date"
             className="form-control"
@@ -236,7 +276,8 @@ const FilterBar = ({
           />
         </div>
         <div className="select-wrapper">
-          <label htmlFor="endDate">To</label>
+        <h1>To</h1>
+          <label htmlFor="endDate"></label>
           <input
             type="date"
             className="form-control"
@@ -245,6 +286,28 @@ const FilterBar = ({
           />
         </div>
       </div> */}
+
+      <div className="">
+        <div className="select-wrapper">
+          <h1>From:</h1>
+          <DatePicker
+            onChange={handleInput("fromDate")}
+            className="form-control"
+            id="fromDate"
+            value = {dateRead(filters.fromDate)}
+            minDate={new Date(2021, 8, 19)} // Ideally this is not hard coded
+          />
+        </div>
+        <div className="select-wrapper">
+          <h1>To:</h1>
+          <DatePicker
+            onChange={handleInput("toDate")}
+            className="form-control"
+            id="toDate"
+            value = {dateRead(filters.toDate)}
+          />
+        </div>
+      </div>
     </div>
   );
 };

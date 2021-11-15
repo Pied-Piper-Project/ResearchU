@@ -11,16 +11,16 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Spring 2022",
-      toDate: "2022-04-20T04:00:00.000Z",
-      fromDate: "2022-02-07T05:00:00.000Z",
+      fromDate: "2022-02-07T00:00:00.000Z",
+      toDate: "2022-04-20T00:00:00.000Z",
       dayOfWeek: ["monday", "wednesday"],
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.5,
         isGrad: false,
-        year: [1, 2],
+        year: ["1", "2"],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
 
@@ -38,18 +38,18 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Spring 2022",
-      toDate: "2022-04-20T04:00:00.000Z",
-      fromDate: "2022-02-07T05:00:00.000Z",
+      fromDate: "2022-02-07T00:00:00.000Z",
+      toDate: "2022-04-20T00:00:00.000Z",
       dayOfWeek: ["tuesday", "thursday"],
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: null,
         isGrad: false,
-        year: [1, 2],
-        prerequisites: null,
-        major: null
+        year: ["1", "2"],
+        prerequisites: [""],
+        major: [""]
 
       }
     },
@@ -65,16 +65,16 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Fall 2021",
-      toDate: "2021-11-17T05:00:00.000Z",
-      fromDate: "2021-09-20T04:00:00.000Z",
+      fromDate: "2021-09-20T00:00:00.000Z",
+      toDate: "2021-11-17T00:00:00.000Z",
       dayOfWeek: ["monday", "wednesday"],
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.5,
         isGrad: false,
-        year: [4],
+        year: ["4"],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
       }
@@ -91,16 +91,16 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Spring 2022",
-      toDate: "2022-04-20T04:00:00.000Z",
-      fromDate: "2022-02-07T05:00:00.000Z",
+      fromDate: "2021-09-21T00:00:00.000Z",
+      toDate: "2021-09-23T00:00:00.000Z",
       dayOfWeek: ["monday", "wednesday"],
       timeRange: "16:00-20:00",
       isPaid: false,
       payAmount: 0,
-      requirments: {
+      requirements: {
           gpa: 3.2,
           isGrad: false,
-          year: [2],
+          year: ["2"],
           prerequisites: ["CS 170", "PHYS 141"],
           major: ["Computer Science", "Physics"]
       }
@@ -117,16 +117,16 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Fall 2021",
-      toDate: "2021-11-19T05:00:00.000Z",
-      fromDate: "2021-09-20T04:00:00.000Z",
+      fromDate: "2021-09-20T00:00:00.000Z",
+      toDate: "2021-11-19T00:00:00.000Z",
       dayOfWeek: ["friday"],
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.0,
         isGrad: false,
-        year: null,
+        year: ["0"],
         prerequisites: ["PHYS 220"],
         major: ["Physics"]
       }
@@ -143,16 +143,16 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Fall 2022",
-      toDate: "2022-11-03T04:00:00.000Z",
-      fromDate: "2022-09-20T04:00:00.000Z",
+      fromDate: "2022-09-20T00:00:00.000Z",
+      toDate: "2022-11-03T00:00:00.000Z",
       dayOfWeek: ["tuesday", "thursday"],
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.5,
         isGrad: false,
-        year: [3],
+        year: ["3"],
         prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
         major: ["Mathematics"]
       }
@@ -169,16 +169,16 @@ export const tempData = [
       location: "201 Dowman Dr, Atlanta, GA 30322",
       activePost: true,
       semester: "Spring 2022",
-      toDate: "2022-04-20T04:00:00.000Z",
-      fromDate: "2022-02-07T05:00:00.000Z",
+      fromDate: "2022-02-07T00:00:00.000Z",
+      toDate: "2022-04-20T00:00:00.000Z",
       dayOfWeek: ["monday", "wednesday"],
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      requirments: {
+      requirements: {
         gpa: 3.7,
         isGrad: false,
-        year: null,
+        year: ["0"],
         prerequisites: ["CHEM 150"],
         major: ["Chemistry"]
       }

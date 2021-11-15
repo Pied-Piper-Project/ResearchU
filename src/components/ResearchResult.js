@@ -52,7 +52,7 @@ function ResearchResult({ result }) {
             <div className="details ">
               <div className="icon-posted">
                 <div className="icon-date"> {iconData}</div>
-                <h5>Posted: yesterday</h5>
+                <h5>Posted: yesterday</h5> {/* We should fix this. Reseach Post skeleton does not have a field of postDate.*/}
               </div>
               <div className="icon-location">
                 <div className="icon-loc"> {iconLocation}</div>
@@ -74,9 +74,13 @@ function ResearchResult({ result }) {
             <div className="tags">
               <h5>{result.isOnline ? "Remote" : "In-person"}</h5>
             </div>
-            <div className="tags">
-              <h5>{result.major}</h5>
-            </div>
+            <>
+              {result.requirements.major.map((item) => (
+                <div className="tags" key={item}>
+                  <h5>{item}</h5>
+                </div>
+              ))}
+            </>
           </div>
           <div className="five">
             <button className="buttonCard view" onClick={() => setIsOpen(!isOpen)}>View</button>
@@ -105,7 +109,6 @@ function ResearchResult({ result }) {
                 <p>{result.postBody}</p>
               </div>
             </div>
-
           </div>}
         </div>
         {/* <div className="card column-item ">Card 2</div>
