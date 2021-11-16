@@ -75,7 +75,7 @@ function ResearchResult({ result }) {
               <h5>{result.isOnline ? "Remote" : "In-person"}</h5>
             </div>
             <>
-              {result.requirements.major.map((item) => (
+              {result.major.map((item) => (
                 <div className="tags" key={item}>
                   <h5>{item}</h5>
                 </div>
