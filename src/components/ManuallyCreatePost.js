@@ -8,7 +8,7 @@ function ManuallyCreatePost() {
         name: "",
         professor: "Stockington",
         school: "",
-        schoolLogo: "emory.edu",
+        schoolLogo: "",
         department: "",
         postBody: "N/A",
         isOnline: false,
@@ -225,7 +225,7 @@ function ManuallyCreatePost() {
         for (var [field, value] of Object.entries(post)) {
             if (value === "") {
                 if (field === "school" || field === "department" || field === "isOnline"
-                    || field === "name") {
+                    || field === "name" || field === "schoolLogo") {
                     alert('Error: ' + field + ' needs to be implemented')
                     return
                 }
@@ -272,7 +272,7 @@ function ManuallyCreatePost() {
                             <input type="text" id="name" name="name" onChange={handleInput("name")} />
                             <label className="createPost-label" for="school">School Name*:</label>
                             <input type="text" id="school" name="school" onChange={handleInput("school")} />
-                            <label className="createPost-label" for="schoolLogo">Insert School url here:</label>
+                            <label className="createPost-label" for="schoolLogo">Insert School url here*:</label>
                             <input type="text" id="schoolLogo" name="schoolLogo" onChange={handleInput("schoolLogo")} />
                             <label className="createPost-label" for="department">Department*:</label>
                             <input type="text" id="department" name="department" onChange={handleInput("department")} />
