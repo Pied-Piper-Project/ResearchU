@@ -1,42 +1,81 @@
 import React, { useState, useEffect } from 'react';
-// import SearchBar from '../components/SearchBar';
-import { tempData } from "../components/ExampleResearchPosts";
+import SearchBar from '../components/SearchBar';
+// import { tempData } from "../components/ExampleResearchPosts";
 import ResearchResult from './../components/ResearchResult';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
 
+function Home() {
+  // const data = tempData;
+  const [data, setData] = useState([]);
 
-function Home(){
-  const data = tempData;
-  // const [data, setData] = useState([]);
-
-  const icon1 = <MdTableRows/>
-  const icon2 = <MdTableRows/>
-    const [order, setOrder] = useState('');
-    //Need to add a useState for button
-    function handleChange(event){
-        setOrder({value: event.target.value});
-    }
+  const icon1 = <MdTableRows />
+  const icon2 = <MdTableRows />
+  const [order, setOrder] = useState('');
+  //Need to add a useState for button
+  function handleChange(event) {
+    setOrder({ value: event.target.value });
+  }
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
     return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
     // return [...new Set(data.map((item) => item.major))];
   };
+    
+//   const[research, setResearch] = useState({name: " "});
+//     useEffect(() => {
+//       const fetchData = async () => {
+//         const result = await fetch(`api/research`);
+//         const body = await result.json();
+//         setResearch(body);
+//       }
+//   fetchData();
+//   }, []);
+//   const data = Array.from(research);
+
+//   const icon1 = <MdTableRows/>
+//   const icon2 = <MdTableRows/>
+//   const [order, setOrder] = useState('');
+//     //Need to add a useState for button
+//     function handleChange(event){
+//         setOrder({value: event.target.value});
+//     }
+
+//   const [allData, setAllData] = useState(data);
+//   const generateMajorDataForDropdown = () => {
+//     return [...new Set(data.map((item) => item.requirements.major))];
+//   };
 
   const generateSemesterDataForDropdown = () => {
     return ["Fall 2021", "Spring 2022", "Fall 2022"];
     return [...new Set(data.map((item) => item.semester))];
   };
 
-  const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDuration, toDuration) => {
+  const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
-      if ((item.year === year || "" === year) && (item.major === major || "" === major) && (item.gpa <= gpa)
-        && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
-        ) { //(item.fromDuration === duration)
-          console.log(isOnline)
+      
+      // Older stuff
+      let item_fromDateObj = new Date(item.fromDate);
+      let item_toDateObj = new Date(item.toDate);
+      let fromDateObj = new Date(fromDate);
+      let toDateObj = new Date(toDate);
+
+      if ((item.requirements.year.includes(year) || 0 === year) && 
+      (item.requirements.major.includes(major) || 0 === major.length) && 
+      (item.requirements.gpa <= gpa) && 
+      (item.isOnline === isOnline || "" === isOnline) && 
+      (item.semester === semester || "" === semester) && 
+      ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
+
+      
+//       if ((item.requirements.year === year || "" === year) && (item.requirements.major === major || "" === major) && (item.requirements.gpa <= gpa)
+//         && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
+//         ) { //(item.fromDuration === duration)
+//           console.log(isOnline)
+
         return item;
       }
     });
@@ -55,7 +94,7 @@ function Home(){
       <section className="home" id="home">
         <div className="home__container bd-container">
           <div className="home__img">
-            <img src={ animatedLogo } alt="Animated ResearchU logo" />
+            <img src={animatedLogo} alt="Animated ResearchU logo" />
           </div>
           <div className="home__data">
             <h1 className="home__title">Research is just a click away!</h1>
@@ -63,7 +102,7 @@ function Home(){
           <div className="home_container">
             <div className="search-bar">
               <div className="">
-                {/* <SearchBar setData={setData} setAllData={setAllData} /> */}
+                <SearchBar setData={setData} setAllData={setAllData} />
               </div>
             </div>
 
@@ -85,7 +124,7 @@ function Home(){
                 <div className="sorting">
                   <h1>Sort By:</h1>
                   <div className="select-dropdown">
-                      <OrderForm update = {handleChange.bind(this)} cur={order.value}/>
+                    <OrderForm update={handleChange.bind(this)} cur={order.value} />
                   </div>
 
                   <div className="sort-icon">
@@ -99,7 +138,7 @@ function Home(){
 
               </div>
               {allData.map((item) => (
-                <ResearchResult result={item} key={item.postID} />
+                <ResearchResult result={item} key={item._id} />
               ))}
             </div>
 
