@@ -82,29 +82,13 @@ function Home() {
 
     setAllData(filteredData);
   };
-<<<<<<< HEAD
 
-  if (order.value === "Ascending") {
-    allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
-  }
-  else {
-    allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
-  }
-
-//     if(order.value === "Ascending"){
-//         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
-//     }
-//     else{
-//         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
-//     }
-=======
     if(order.value === "Ascending"){
         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
     }
     else{
         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
     }
->>>>>>> 9e6cde3 (Updated post id to _id like MDB)
 
   return (
     <>
