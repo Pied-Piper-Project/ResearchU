@@ -21,8 +21,8 @@ function Home() {
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
-    //return [...new Set(data.map((item) => item.major))];
+    return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
+    // return [...new Set(data.map((item) => item.major))];
     //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
     
@@ -51,6 +51,7 @@ function Home() {
 //   };
 
   const generateSemesterDataForDropdown = () => {
+    return ["Fall 2021", "Spring 2022", "Fall 2022"];
     return [...new Set(data.map((item) => item.semester))];
   };
 
@@ -70,7 +71,6 @@ function Home() {
       (item.semester === semester || "" === semester) && 
       (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
       && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
-
         return item;
       }
     });
@@ -78,19 +78,12 @@ function Home() {
     setAllData(filteredData);
   };
 
-  if (order.value === "Ascending") {
-    allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
-  }
-  else {
-    allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
-  }
-
-//     if(order.value === "Ascending"){
-//         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
-//     }
-//     else{
-//         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
-//     }
+    if(order.value === "Ascending"){
+        allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
+    }
+    else{
+        allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
+    }
 
   return (
     <>
