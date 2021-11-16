@@ -21,8 +21,8 @@ function Home() {
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
-    return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
-    //return [...new Set(data.map((item) => item.major))];
+    return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
+    // return [...new Set(data.map((item) => item.major))];
   };
     
 //   const[research, setResearch] = useState({name: " "});
@@ -50,6 +50,7 @@ function Home() {
 //   };
 
   const generateSemesterDataForDropdown = () => {
+    return ["Fall 2021", "Spring 2022", "Fall 2022"];
     return [...new Set(data.map((item) => item.semester))];
   };
 
@@ -62,19 +63,12 @@ function Home() {
       let fromDateObj = new Date(fromDate);
       let toDateObj = new Date(toDate);
 
-      if ((item.requirements.year.includes(year) || 0 === year) && 
-      (item.requirements.major.includes(major) || 0 === major.length) && 
-      (item.requirements.gpa <= gpa) && 
+      if ((item.year.includes(year) || 0 === year) && 
+      (item.major.includes(major) || 0 === major.length) && 
+      (item.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
       ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
-
-      
-//       if ((item.requirements.year === year || "" === year) && (item.requirements.major === major || "" === major) && (item.requirements.gpa <= gpa)
-//         && (item.isOnline === isOnline || "" === isOnline) && (item.semester === semester || "" === semester)
-//         ) { //(item.fromDuration === duration)
-//           console.log(isOnline)
-
         return item;
       }
     });
@@ -82,19 +76,12 @@ function Home() {
     setAllData(filteredData);
   };
 
-  if (order.value === "Ascending") {
-    allData.sort((a, b) => parseFloat(a.postID) - parseFloat(b.postID))
-  }
-  else {
-    allData.sort((a, b) => parseFloat(b.postID) - parseFloat(a.postID))
-  }
-
-//     if(order.value === "Ascending"){
-//         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
-//     }
-//     else{
-//         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
-//     }
+    if(order.value === "Ascending"){
+        allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
+    }
+    else{
+        allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
+    }
 
   return (
     <>
