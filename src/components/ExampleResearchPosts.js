@@ -21,10 +21,10 @@ export const tempData = [
       gpa: 3.5,
       isGrad: false,
       year: ["1", "2"],
-      prerequisites: ["CHEM150"],
+      prerequisites: ["CHEM 150"],
       major: ["Chemistry"],
       applicants: [["", ""]],
-      professorID: 1,
+      professorID: 1
     },
     {
       _id: 2,
@@ -45,13 +45,13 @@ export const tempData = [
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      gpa: null,
+      gpa: 0,
       isGrad: false,
       year: ["1", "2"],
-      prerequisites: [""],
-      major: [""],
+      prerequisites: ["N/A"],
+      major: ["N/A"],
       applicants: [["", ""]],
-      professorID: 1,
+      professorID: 1
     },
     {
       _id: 3,
@@ -75,10 +75,10 @@ export const tempData = [
       gpa: 3.5,
       isGrad: false,
       year: ["4"],
-      prerequisites: ["CHEM150"],
+      prerequisites: ["CHEM 150"],
       major: ["Chemistry"],
       applicants: [["", ""]],
-      professorID: 1,
+      professorID: 1
     },
     {
       _id: 4,
@@ -102,10 +102,10 @@ export const tempData = [
       gpa: 3.2,
       isGrad: false,
       year: ["2"],
-      prerequisites: ["CS170", "PHYS141"],
+      prerequisites: ["CS 170", "PHYS 141"],
       major: ["Computer Science", "Physics"],
       applicants: [["", ""]],
-      professorID: 1,
+      professorID: 1
     },
     {
       _id: 5,
@@ -129,10 +129,10 @@ export const tempData = [
       gpa: 3.0,
       isGrad: false,
       year: ["0"],
-      prerequisites: ["PHYS220"],
+      prerequisites: ["PHYS 220"],
       major: ["Physics"],
       applicants: [["", ""]],
-      professorID: 1,
+      professorID: 1
     },
     {
       _id: 6,
@@ -156,7 +156,7 @@ export const tempData = [
       gpa: 3.5,
       isGrad: false,
       year: ["3"],
-      prerequisites: ["MATH111", "MATH112", "MATH221"],
+      prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
       major: ["Mathematics"],
       applicants: [["", ""]],
       professorID: 1,
@@ -183,9 +183,9 @@ export const tempData = [
       gpa: 3.7,
       isGrad: false,
       year: ["0"],
-      prerequisites: ["CHEM150"],
+      prerequisites: ["CHEM 150"],
       major: ["Chemistry"],
       applicants: [["", ""]],
-      professorID: 1,
+      professorID: 1
     },
   ];

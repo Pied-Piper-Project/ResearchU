@@ -23,6 +23,7 @@ function Home() {
   const generateMajorDataForDropdown = () => {
     return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
     // return [...new Set(data.map((item) => item.major))];
+    //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
     
 //   const[research, setResearch] = useState({name: " "});
@@ -68,7 +69,8 @@ function Home() {
       (item.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
-      ((fromDateObj <= item_fromDateObj && item_toDateObj <= toDateObj) || (fromDate === "" || toDate === ""))) {
+      (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
+      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
         return item;
       }
     });

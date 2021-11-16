@@ -398,7 +398,7 @@ img{
   width: auto;
   max-width: 55rem;
   margin: auto;
-  height: 120rem;
+  height: auto;
   background-color: var(--container-color);
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
   border-radius: 2rem;
