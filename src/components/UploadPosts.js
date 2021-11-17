@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {useState} from 'react';
 import * as XLSX from 'xlsx';
 
@@ -37,9 +38,11 @@ function UploadPosts(){
         });
 
         promise.then((d) => {
-            // This is where you show data- connect to DB
-            console.log(d)
-            // setItems(d)
+            const uploadPosts = async () => {
+                const response = await axios.post('/api/createspreadsheetposts', Array.from(d));
+            }
+            uploadPosts();
+            setItems(d)
 
         })
     };
