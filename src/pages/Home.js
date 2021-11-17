@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, Component } from 'react';
 import SearchBar from '../components/SearchBar';
 // import { tempData } from "../components/ExampleResearchPosts";
 import ResearchResult from './../components/ResearchResult';
+import script from './../components/script';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
+import $ from 'jquery';
+
 
 function Home() {
   // const data = tempData;
   const [data, setData] = useState([]);
+
+
 
   const icon1 = <MdTableRows />
   const icon2 = <MdTableRows />
@@ -25,7 +31,7 @@ function Home() {
     // return [...new Set(data.map((item) => item.major))];
     //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
-    
+
 //   const[research, setResearch] = useState({name: " "});
 //     useEffect(() => {
 //       const fetchData = async () => {
@@ -57,18 +63,18 @@ function Home() {
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
     const filteredData = data.filter((item) => {
-      
+
       // Older stuff
       let item_fromDateObj = new Date(item.fromDate);
       let item_toDateObj = new Date(item.toDate);
       let fromDateObj = new Date(fromDate);
       let toDateObj = new Date(toDate);
 
-      if ((item.year.includes(year) || 0 === year) && 
-      (item.major.includes(major) || 0 === major.length) && 
-      (item.gpa <= gpa) && 
-      (item.isOnline === isOnline || "" === isOnline) && 
-      (item.semester === semester || "" === semester) && 
+      if ((item.year.includes(year) || 0 === year) &&
+      (item.major.includes(major) || 0 === major.length) &&
+      (item.gpa <= gpa) &&
+      (item.isOnline === isOnline || "" === isOnline) &&
+      (item.semester === semester || "" === semester) &&
       (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
       && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
         return item;
@@ -87,7 +93,17 @@ function Home() {
 
   return (
     <>
+
+
       <section className="home" id="home">
+
+
+
+
+
+
+
+
         <div className="home__container bd-container">
           <div className="home__img">
             <img src={animatedLogo} alt="Animated ResearchU logo" />
@@ -102,6 +118,11 @@ function Home() {
               </div>
             </div>
 
+
+
+
+
+
             <div className="filters">
               <div className="">
                 <div>
@@ -113,34 +134,37 @@ function Home() {
                 </div>
               </div>
             </div>
-
-            <div className="cards-wrapper">
-              <div className="listing">
-                <h1>Results</h1>
-                <div className="sorting">
-                  <h1>Sort By:</h1>
-                  <div className="select-dropdown">
-                    <OrderForm update={handleChange.bind(this)} cur={order.value} />
-                  </div>
-
-                  <div className="sort-icon">
-
-                    <div className="original-icon">{icon1}</div>
-                    <div className="rotate-icon">{icon2}</div>
-
-                  </div>
-
-                </div>
-
-              </div>
-              {allData.map((item) => (
-                <ResearchResult result={item} key={item._id} />
-              ))}
-            </div>
-
           </div>
         </div>
+
+
+
+
+
+        <div class="container">
+	<div class="tab-slider--nav">
+		<ul class="tab-slider--tabs">
+			<li class="tab-slider--trigger active" rel="tab1">Tab 1</li>
+			<li class="tab-slider--trigger" rel="tab2">Tab 2</li>
+		</ul>
+	</div>
+	<div class="tab-slider--container">
+		<div id="tab1" class="tab-slider--body">
+			<h2>First Tab</h2>
+			<p>Toggle switch style tab navigation. Currently only works with two tabs.</p>
+			<p>Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</p>
+		</div>
+		<div id="tab2" class="tab-slider--body">
+			<h2>Second Tab</h2>
+			<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+		</div>
+	</div>
+</div>
+
+
       </section>
+
+
     </>
   );
 }
