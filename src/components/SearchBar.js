@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { tempData } from "./ExampleResearchPosts";
 
-function SearchBar( {setData, setAllData} ){
-    const data = [];
+function SearchBar( {setAllData} ){
+    let data = [];
 
     const [school, setSchool] = useState('');
     const [keyword, setKeyword] = useState('');
@@ -10,18 +10,28 @@ function SearchBar( {setData, setAllData} ){
 
     const getResults = async () => {
         try {
-            const result = await fetch('/api/research/', {
-                method: 'get',
-                // body: JSON.stringify({ school, keyword }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
+            if(school === "" && keyword === ""){
+                var result = await fetch(`/api/research`);
+                console.log("both were empty");
+            }
+            else if(school === ""){
+                var result = await fetch(`/api/searchkeyword/${keyword}`);
+                console.log("school is empty");
+            }
+            else if(keyword === ""){
+                var result = await fetch(`/api/searchschool/${school}`);
+                console.log("keyword is empty");
+            }
+            else{
+                var result = await fetch(`/api/searchboth/${school}/${keyword}`);
+                console.log("both are filled");
+            } 
             data = await result.json();
+            setAllData(data);
+            console.log(data);
+
         } catch(error) {
             console.log(error);
-            setData(tempData);
             setAllData(tempData);
             console.log(tempData);
         }
