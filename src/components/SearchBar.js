@@ -10,22 +10,14 @@ function SearchBar( {setAllData} ){
 
     const getResults = async () => {
         try {
-            if(school === "" && keyword === ""){
+            if(school === "" && keyword === "")
                 var result = await fetch(`/api/research`);
-                console.log("both were empty");
-            }
-            else if(school === ""){
+            else if(school === "")
                 var result = await fetch(`/api/searchkeyword/${keyword}`);
-                console.log("school is empty");
-            }
-            else if(keyword === ""){
+            else if(keyword === "")
                 var result = await fetch(`/api/searchschool/${school}`);
-                console.log("keyword is empty");
-            }
-            else{
+            else
                 var result = await fetch(`/api/searchboth/${school}/${keyword}`);
-                console.log("both are filled");
-            } 
             data = await result.json();
             setAllData(data);
             console.log(data);
