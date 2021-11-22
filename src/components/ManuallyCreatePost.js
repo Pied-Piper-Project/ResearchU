@@ -2,11 +2,17 @@ import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
 import DatePicker from 'react-date-picker';
+import {useUser} from '../auth/useUser'
 
 function ManuallyCreatePost() {
+    const user = useUser();
+    let Name = "";
+    if (user != null){
+        Name = user.Name;
+    }
     const [post, setPosts] = useState({
         name: "",
-        professor: "Stockington",
+        professor: Name,
         school: "",
         schoolLogo: "",
         department: "",

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { tempData } from "./ExampleResearchPosts";
 
 function SearchBar( {setData, setAllData} ){
-    const data = [];
+    let data = [];
 
     const [school, setSchool] = useState('');
     const [keyword, setKeyword] = useState('');
@@ -19,6 +19,8 @@ function SearchBar( {setData, setAllData} ){
             });
 
             data = await result.json();
+            setData(data)
+            setAllData(data)
         } catch(error) {
             console.log(error);
             setData(tempData);
