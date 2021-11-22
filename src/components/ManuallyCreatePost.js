@@ -173,11 +173,11 @@ function ManuallyCreatePost() {
                 alert('Your value for ' + field + ' was not valid. Please insert a number.')
             }
         }
-        if (value === "" && field != "school" && field != "department" && field != "isOnline"
-            && field != "name" && field != "payAmount" && field != "gpa") {
+        if (value === "" && field !== "school" && field !== "department" && field !== "isOnline"
+            && field !== "name" && field !== "payAmount" && field !== "gpa") {
             value = "N/A"
         }
-        else if ((field == "payAmount" || field == "gpa") && isNaN(value)) {
+        else if ((field === "payAmount" || field === "gpa") && isNaN(value)) {
             value = 0
         }
 
