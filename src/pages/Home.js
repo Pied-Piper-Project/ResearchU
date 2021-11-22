@@ -52,7 +52,7 @@ function Home() {
 
   const generateSemesterDataForDropdown = () => {
     return ["Fall 2021", "Spring 2022", "Fall 2022"];
-    return [...new Set(data.map((item) => item.semester))];
+    // return [...new Set(data.map((item) => item.semester))];
   };
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
@@ -69,8 +69,8 @@ function Home() {
       (item.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
-      (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
-      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
+      (fromDateObj <= item_fromDateObj || fromDate === "" || item.fromDate === "")
+      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate === "")) {
         return item;
       }
     });

@@ -23,7 +23,7 @@ const Navbar = ({toggle}) => {
         <>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to ='/ResearchU'>
+                    <NavLogo to ='/'>
                     <img src={logo} width={200} alt='logo' />
                     </NavLogo>
                     <MobileIcon onClick = {toggle}>
@@ -31,13 +31,13 @@ const Navbar = ({toggle}) => {
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to ='/ResearchU' >Home</NavLinks>
+                            <NavLinks to ='/' >Home</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to ="/ResearchU/About">About</NavLinks>
+                            <NavLinks to ="/About">About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to ="/ResearchU/Contact">Contact</NavLinks>
+                            <NavLinks to ="/Contact">Contact</NavLinks>
                         </NavItem>
                         <NavItem>
                         <NightModeIcon onClick={myButton}>
@@ -46,10 +46,10 @@ const Navbar = ({toggle}) => {
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
-                        <NavBtnLink to = "/ResearchU/CreatePost"> Create Post</NavBtnLink>
-                        <NavLinks to ="/ResearchU/SignIn">Sign In</NavLinks>
+                        <NavBtnLink to = "/CreatePost"> Create Post</NavBtnLink>
+                        <NavLinks to ="/SignIn">Sign In</NavLinks>
                         {/* <FaGripLinesVertical/> */}
-                        <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink>
+                        <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
