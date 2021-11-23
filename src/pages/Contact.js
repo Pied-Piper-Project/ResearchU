@@ -7,7 +7,7 @@ const Contact = () => {
             <section className="send section" id = "contact">
                 <div className="send__container bd-container bd-grid glass">
                     <div className="send__content">
-                        <h2 className="section-title-center send__title">Contact US</h2>
+                        <h2 className="section-title-center send__title">Contact Us</h2>
                         <p className="send__description">If you have any questions or suggestions about the website, send us your email address so that we can get in contact with you!</p>
                         <form action="">
                             <div className="send__direction">
