@@ -14,6 +14,7 @@ import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 function ResearchResult({ result }) {
   const [isOpen, setIsOpen] = useState(false);
   let user = useUser()
+  console.log(user)
   const [appliedText, setApplied] = useState("Apply");
 
   const icon1 = <MdTableRows />
@@ -43,11 +44,12 @@ function ResearchResult({ result }) {
         user.appliedPosts.push(result._id)
         console.log(result._id)
         const appliedPosts = user.appliedPosts
-        const studentID = user._id
+        const studentID = user.id
         result.applicants.push([studentID, "1"])
         const applicants = result.applicants
         const postID = result._id
         console.log(user)
+        console.log(studentID)
         await axios.put(`/api/ResearchU/apply/${result._id}`, {
           appliedPosts,
           studentID,
