@@ -43,10 +43,10 @@ function ResearchResult({ result }) {
       else {
         user.appliedPosts.push(result._id)
         console.log(result._id)
-        const appliedPosts = user.appliedPosts
+        const appliedPosts = result._id
         const studentID = user.id
         result.applicants.push([studentID, "1"])
-        const applicants = result.applicants
+        const applicants = [studentID, "1"]
         const postID = result._id
         console.log(user)
         console.log(studentID)
