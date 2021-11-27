@@ -16,6 +16,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
 import Footer from './components/Footer';
+import StudentProfile from './pages/StudentProfile';
 
 
 
@@ -48,6 +49,7 @@ function App() {
         <Route path = '/forgot-password' exact component = {ForgotPasswordPage}/>
         <Route path = '/reset-password/:passwordResetCode' exact component = {PasswordResetLandingPage}/>
         <PrivateRoute path = '/StudentInfoPage' exact component = {StudentInfoPage}/>
+        <Route path = '/StudentProfile' exact component = {StudentProfile('619b019a8d604a2846bc6d84')}/>
 
       </Switch>
         <Footer />
