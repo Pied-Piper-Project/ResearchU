@@ -410,10 +410,22 @@ img{
 
 }
 
+
 .createPost-form {
   display: flex;
   flex-direction: column;
 
+}
+
+.createPost-formTwo {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+}
+
+.createPost-formTwoNormal {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
 }
 
 .createPost-label {

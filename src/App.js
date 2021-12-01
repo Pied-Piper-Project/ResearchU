@@ -49,7 +49,7 @@ function App() {
         <Route path = '/forgot-password' exact component = {ForgotPasswordPage}/>
         <Route path = '/reset-password/:passwordResetCode' exact component = {PasswordResetLandingPage}/>
         <PrivateRoute path = '/StudentInfoPage' exact component = {StudentInfoPage}/>
-        <Route path = '/StudentProfile' exact component = {StudentProfile('619b019a8d604a2846bc6d84')}/>
+        <Route path = '/StudentProfile' exact component = {StudentProfile}/>
 
       </Switch>
         <Footer />

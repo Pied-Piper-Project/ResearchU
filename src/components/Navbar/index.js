@@ -49,8 +49,8 @@ const Navbar = ({toggle}) => {
                         <NavBtnLink to = "/CreatePost"> Create Post</NavBtnLink>
                         <NavLinks to ="/SignIn">Sign In</NavLinks>
                         {/* <FaGripLinesVertical/> */}
-                        <NavBtnLink to = "/ResearchU/SignUp"> Sign Up </NavBtnLink>
-                        <NavBtnLink to = '/ResearchU/StudentProfile'> Student Profile </NavBtnLink>
+                        <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
+                        <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
