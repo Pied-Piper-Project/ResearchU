@@ -11,13 +11,15 @@ const SignUp = () => {
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
     const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
+    const [signUpAs, setSignUpAs] = useState('');
 
     const history = useHistory();
 
     const onSignUpClicked = async () => {
         const response = await axios.post('/api/ResearchU/SignUp', {
             email: emailValue,
-            password: passwordValue
+            password: passwordValue,
+            signup: signUpAs
         });
         const { token } = response.data;
         setToken(token);
@@ -46,9 +48,20 @@ const SignUp = () => {
                 onChange={e => setConfirmPasswordValue(e.target.value)}
                 placeholder="Confirm Password" />
             <p></p>
+            <b>Select what you want to sign up as</b>
+            <select 
+                id = "mylist"
+                value={signUpAs}
+                onChange={e => setSignUpAs(e.target.value)}>
+            <option>---Choose type---</option>
+            <option>Student</option>
+            <option>Professor</option>
+            <option>Administrator</option>
+            </select>
+            <p></p>
             <button
                 disabled={!emailValue || !passwordValue ||
-                passwordValue !== confirmPasswordValue
+                passwordValue !== confirmPasswordValue || !signUpAs
                 }
                 onClick={onSignUpClicked}>Sign Up</button>
             <hr />

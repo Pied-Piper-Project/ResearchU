@@ -10,12 +10,13 @@ const EmailVerificationLandingPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isSuccess, setIsSuccess] = useState(false);
     const { verificationString } = useParams();
+    const { signup } = useParams();
     const [, setToken] = useToken();
 
     useEffect(() => {
         const loadVerification = async () => {
             try {
-                const response = await axios.put('/api/ResearchU/verify-email', {verificationString});
+                const response = await axios.put('/api/ResearchU/verify-email', {verificationString, signup});
                 const { token } = response.data;
                 setToken(token);
                 setIsSuccess(true);
