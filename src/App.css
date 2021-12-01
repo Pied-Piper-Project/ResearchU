@@ -997,11 +997,18 @@ input[type='radio']:checked:after {
 .send__description{
   text-align: center;
   margin-bottom: var(--mb-4);
+  margin-top: var(--mb-1);
 }
 
 .sendButton {
   color:#000;
   background-color: #ebac23;
+}
+
+.sendButtonTwo {
+  color:#000;
+  background-color: #ebac23;
+  margin-left: 5rem
 }
 
 .send__direction{
