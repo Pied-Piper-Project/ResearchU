@@ -16,12 +16,13 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
 import Footer from './components/Footer';
+import Applied from './components/Applied';
 
 
 
 
 function App() {
-  
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -31,18 +32,18 @@ function App() {
 
   return (
     <Router>
-       
+
       <Sidebar isOpen= {isOpen} toggle = {toggle}/>
       <Navbar toggle = {toggle}/>
       <Switch>
-        
+
         <Route path = '/' exact component = {Home}/>
         <Route path = '/ResearchU' exact component = {Home}/>
         <Route path = '/ResearchU/About' exact component = {About}/>
         <Route path = '/ResearchU/Contact' exact component = {Contact}/>
         <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
         <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
-        <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>        
+        <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>
         <Route path = '/ResearchU/PleaseVerifyEmail' exact component = {PleaseVerifyEmailPage}/>
         <Route path = '/ResearchU/verify-email/:verificationString' exact component = {EmailVerificationLandingPage}/>
         <Route path = '/ResearchU/forgot-password' exact component = {ForgotPasswordPage}/>
@@ -50,8 +51,9 @@ function App() {
         <PrivateRoute path = '/ResearchU/StudentInfoPage' exact component = {StudentInfoPage}/>
 
       </Switch>
-        <Footer />
+      <Footer />
     </Router>
+
   );
 }
 
