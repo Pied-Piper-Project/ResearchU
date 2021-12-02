@@ -9,8 +9,8 @@ const CreatePost = () => {
                 <UploadPosts/>
             </div> */}
             <div className= "">
-                <UploadPosts/>
-                {/* <ManuallyCreatePost/> */}
+                {/*<UploadPosts/>*/}
+                <ManuallyCreatePost/>
             </div>
         </>
     );
