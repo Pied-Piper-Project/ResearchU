@@ -6,16 +6,20 @@ import { BiStar } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import SignIn from "../pages/SignIn";
 
-import {useUser} from '../auth/useUser'
+import {useUser} from '../auth/useUser';
+import { useToken } from '../auth/useToken';
 import axios from 'axios';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 
 function ResearchResult({ result }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [token, setToken] = useToken();
   let user = useUser()
-  console.log(user)
   const [appliedText, setApplied] = useState("Apply");
+  //if (user.appliedPosts.includes(result._id)){
+    //setApplied("Applied")
+ // }
 
   const icon1 = <MdTableRows />
   const icon2 = <MdTableRows />
@@ -40,22 +44,24 @@ function ResearchResult({ result }) {
       else if (user.appliedPosts.includes(result._id)){
         alert("Already applied!")
       }
+      else if (user.id == null){
+        setApplied("Apply")
+      }
       else {
         user.appliedPosts.push(result._id)
-        console.log(result._id)
         const appliedPosts = result._id
         const studentID = user.id
         result.applicants.push([studentID, "1"])
         const applicants = [studentID, "1"]
         const postID = result._id
-        console.log(user)
-        console.log(studentID)
-        await axios.put(`/api/ResearchU/apply/${result._id}`, {
+        const response = await axios.put(`/api/ResearchU/apply/${result._id}`, {
           appliedPosts,
           studentID,
           applicants,
           postID,
-        })
+        }, {headers: { Authorization: `Bearer ${token}`}});
+        const { token: newToken } = response.data;
+        setToken(newToken);
         setApplied("Applied")
       }
   }
@@ -130,6 +136,9 @@ function ResearchResult({ result }) {
             <button className="buttonCard view" onClick={() => setIsOpen(!isOpen)}>View</button>
             <button className="buttonCard apply" onClick={() => {
               if (user == null){
+                history.push('/ResearchU/SignIn')
+              }
+              else if (user.id == null){
                 history.push('/ResearchU/SignIn')
               }
               else{
