@@ -9,15 +9,40 @@ import animatedLogo from "../images/logo.gif";
 
 function Home() {
   // const data = tempData;
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([""]);
 
-  const icon1 = <MdTableRows />
-  const icon2 = <MdTableRows />
+  // const icon1 = <MdTableRows />
+  // const icon2 = <MdTableRows />
+  // const [order, setOrder] = useState('');
+  // //Need to add a useState for button
+  // function handleChange(event) {
+  //   setOrder({ value: event.target.value });
+  // }
+
+  // const [allData, setAllData] = useState(data);
+  // const generateMajorDataForDropdown = () => {
+  //   return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
+  //   //return [...new Set(data.map((item) => item.major))];
+  // };
+    
+  const[research, setResearch] = useState({name: " "});
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await fetch(`api/research`);
+        const body = await result.json();
+        setResearch(body);
+      }
+  fetchData();
+  }, []);
+  const data = Array.from(research);
+
+  const icon1 = <MdTableRows/>
+  const icon2 = <MdTableRows/>
   const [order, setOrder] = useState('');
-  //Need to add a useState for button
-  function handleChange(event) {
-    setOrder({ value: event.target.value });
-  }
+    //Need to add a useState for button
+    function handleChange(event){
+        setOrder({value: event.target.value});
+    }
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
@@ -25,30 +50,6 @@ function Home() {
     // return [...new Set(data.map((item) => item.major))];
     //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
-    
-//   const[research, setResearch] = useState({name: " "});
-//     useEffect(() => {
-//       const fetchData = async () => {
-//         const result = await fetch(`api/research`);
-//         const body = await result.json();
-//         setResearch(body);
-//       }
-//   fetchData();
-//   }, []);
-//   const data = Array.from(research);
-
-//   const icon1 = <MdTableRows/>
-//   const icon2 = <MdTableRows/>
-//   const [order, setOrder] = useState('');
-//     //Need to add a useState for button
-//     function handleChange(event){
-//         setOrder({value: event.target.value});
-//     }
-
-//   const [allData, setAllData] = useState(data);
-//   const generateMajorDataForDropdown = () => {
-//     return [...new Set(data.map((item) => item.requirements.major))];
-//   };
 
   const generateSemesterDataForDropdown = () => {
     return ["Fall 2021", "Spring 2022", "Fall 2022"];
@@ -98,7 +99,7 @@ function Home() {
           <div className="home_container">
             <div className="search-bar">
               <div className="">
-                <SearchBar setData={setData} setAllData={setAllData} />
+                <SearchBar setAllData={setAllData} />
               </div>
             </div>
 
