@@ -8,7 +8,7 @@ import animatedLogo from "../images/logo.gif";
 
 function Home() {
   // const data = tempData;
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   const [toggleResults, setToggleResults] = useState(false);
 
@@ -29,7 +29,7 @@ function Home() {
     }
     fetchData();
   }, []);
-  const data = Array.from(research);
+  const [data, setData] = useState(Array.from(research));
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
@@ -50,6 +50,7 @@ function Home() {
       let fromDateObj = new Date(fromDate);
       let toDateObj = new Date(toDate);
 
+
       if ((item.year.includes(year) || 0 === year) && 
       (item.major.includes(major) || 0 === major.length) && 
       (item.gpa <= gpa) && 
@@ -61,7 +62,7 @@ function Home() {
       }
     });
 
-    setAllData(filteredData);
+    setData(filteredData);
   };
     if(order.value === "Ascending"){
         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
@@ -119,7 +120,7 @@ function Home() {
                   </div>
 
                 </div>
-                {allData.map((item) => (
+                {data.map((item) => (
                   <ResearchResult result={item} key={item._id} />
                 ))}
               </div>
