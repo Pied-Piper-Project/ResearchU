@@ -74,13 +74,13 @@ function ResearchResult({ result }) {
             <div className="tags">
               <h5>{result.isOnline ? "Remote" : "In-person"}</h5>
             </div>
-            {/* <>
+            <>
               {result.major.map((item) => (
                 <div className="tags" key={item}>
                   <h5>{item}</h5>
                 </div>
               ))}
-            </> */}
+            </>
           </div>
           <div className="five">
             <button className="buttonCard view" onClick={() => setIsOpen(!isOpen)}>View</button>

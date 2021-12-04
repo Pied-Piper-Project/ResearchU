@@ -398,7 +398,7 @@ img{
   width: auto;
   max-width: 55rem;
   margin: auto;
-  height: 120rem;
+  height: auto;
   background-color: var(--container-color);
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
   border-radius: 2rem;
@@ -968,6 +968,7 @@ input[type='radio']:checked:after {
   /* background-color: var(--container-color); */
   /* box-shadow: 0 2px 6px rgba(35, 10, 58, 0.3); */
   border-radius: 1rem;
+  margin: 4px;
 }
 
 .about__data:hover{
@@ -991,21 +992,23 @@ input[type='radio']:checked:after {
 .send{
   background-color: var(--first-color-send);
   margin-top: 7rem;
-
-}
-
-.send__title, .send__description{
-  color: #fff;
 }
 
 .send__description{
   text-align: center;
   margin-bottom: var(--mb-4);
+  margin-top: var(--mb-1);
 }
 
 .sendButton {
   color:#000;
   background-color: #ebac23;
+}
+
+.sendButtonTwo {
+  color:#000;
+  background-color: #ebac23;
+  margin-left: 5rem
 }
 
 .send__direction{

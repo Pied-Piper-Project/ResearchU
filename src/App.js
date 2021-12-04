@@ -37,17 +37,17 @@ function App() {
       <Switch>
         
         <Route path = '/' exact component = {Home}/>
-        <Route path = '/ResearchU' exact component = {Home}/>
-        <Route path = '/ResearchU/About' exact component = {About}/>
-        <Route path = '/ResearchU/Contact' exact component = {Contact}/>
-        <Route path = '/ResearchU/SignIn' exact component = {SignIn}/>
-        <Route path = '/ResearchU/SignUp' exact component = {SignUp}/>
-        <Route path = '/ResearchU/CreatePost' exact component = {CreatePost}/>        
-        <Route path = '/ResearchU/PleaseVerifyEmail' exact component = {PleaseVerifyEmailPage}/>
-        <Route path = '/ResearchU/verify-email/:verificationString' exact component = {EmailVerificationLandingPage}/>
-        <Route path = '/ResearchU/forgot-password' exact component = {ForgotPasswordPage}/>
-        <Route path = '/ResearchU/reset-password/:passwordResetCode' exact component = {PasswordResetLandingPage}/>
-        <PrivateRoute path = '/ResearchU/StudentInfoPage' exact component = {StudentInfoPage}/>
+        {/* <Route path = '' exact component = {Home}/> */}
+        <Route path = '/About' exact component = {About}/>
+        <Route path = '/Contact' exact component = {Contact}/>
+        <Route path = '/SignIn' exact component = {SignIn}/>
+        <Route path = '/SignUp' exact component = {SignUp}/>
+        <Route path = '/CreatePost' exact component = {CreatePost}/>        
+        <Route path = '/PleaseVerifyEmail' exact component = {PleaseVerifyEmailPage}/>
+        <Route path = '/verify-email/:verificationString' exact component = {EmailVerificationLandingPage}/>
+        <Route path = '/forgot-password' exact component = {ForgotPasswordPage}/>
+        <Route path = '/reset-password/:passwordResetCode' exact component = {PasswordResetLandingPage}/>
+        <PrivateRoute path = '/StudentInfoPage' exact component = {StudentInfoPage}/>
 
       </Switch>
         <Footer />
