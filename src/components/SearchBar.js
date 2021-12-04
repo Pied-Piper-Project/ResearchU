@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { tempData } from "./ExampleResearchPosts";
 
-function SearchBar( {setAllData} ){
+function SearchBar( {setData, setAllData} ){
     let data = [];
 
     const [school, setSchool] = useState('');

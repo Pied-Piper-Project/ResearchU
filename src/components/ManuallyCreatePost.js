@@ -2,13 +2,23 @@ import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
 import DatePicker from 'react-date-picker';
+import {useUser} from '../auth/useUser'
 
 function ManuallyCreatePost() {
+    const user = useUser();
+    let Name = "";
+    let Url = "";
+    let Id = 0;
+    if (user != null){
+        Name = user.Name;
+        Url = user.email.substring(user.email.lastIndexOf("@") + 1);
+        Id = user._id;
+    }
     const [post, setPosts] = useState({
         name: "",
-        professor: "Stockington",
+        professor: Name,
         school: "",
-        schoolLogo: "",
+        schoolLogo: Url,
         department: "",
         postBody: "N/A",
         isOnline: false,
@@ -28,7 +38,7 @@ function ManuallyCreatePost() {
         prerequisites: [""],
         major: [""],
         applicants: [["", ""]],
-        professorID: 0,
+        professorID: Id,
     });
 
     const dateRead = val => {
@@ -225,7 +235,7 @@ function ManuallyCreatePost() {
         for (var [field, value] of Object.entries(post)) {
             if (value === "") {
                 if (field === "school" || field === "department" || field === "isOnline"
-                    || field === "name" || field === "schoolLogo") {
+                    || field === "name") {
                     alert('Error: ' + field + ' needs to be implemented')
                     return
                 }
@@ -272,8 +282,9 @@ function ManuallyCreatePost() {
                             <input type="text" id="name" name="name" onChange={handleInput("name")} />
                             <label className="createPost-label" for="school">School Name*:</label>
                             <input type="text" id="school" name="school" onChange={handleInput("school")} />
-                            <label className="createPost-label" for="schoolLogo">Insert School url here*:</label>
+                            {/*<label className="createPost-label" for="schoolLogo">Insert School url here*:</label>
                             <input type="text" id="schoolLogo" name="schoolLogo" onChange={handleInput("schoolLogo")} />
+                            */}
                             <label className="createPost-label" for="department">Department*:</label>
                             <input type="text" id="department" name="department" onChange={handleInput("department")} />
                             <label className="createPost-label" for="isOnline">In-Person or Remote:</label>

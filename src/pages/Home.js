@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from '../components/SearchBar';
-// import { tempData } from "../components/ExampleResearchPosts";
 import ResearchResult from './../components/ResearchResult';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
@@ -24,17 +23,6 @@ function Home() {
   //   return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
   //   //return [...new Set(data.map((item) => item.major))];
   // };
-    
-  const[research, setResearch] = useState({name: " "});
-    useEffect(() => {
-      const fetchData = async () => {
-        const result = await fetch(`api/research`);
-        const body = await result.json();
-        setResearch(body);
-      }
-  fetchData();
-  }, []);
-  const data = Array.from(research);
 
   const icon1 = <MdTableRows/>
   const icon2 = <MdTableRows/>
@@ -44,11 +32,20 @@ function Home() {
         setOrder({value: event.target.value});
     }
 
+  const [research, setResearch] = useState({name: " "});
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(`api/research`);
+      const body = await result.json();
+      setResearch(body);
+    }
+    fetchData();
+  }, []);
+  const data = Array.from(research);
+
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
     return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
-    // return [...new Set(data.map((item) => item.major))];
-    //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
 
   const generateSemesterDataForDropdown = () => {
@@ -57,7 +54,7 @@ function Home() {
   };
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
-    const filteredData = data.filter((item) => {
+    const filteredData = allData.filter((item) => {
       
       // Older stuff
       let item_fromDateObj = new Date(item.fromDate);
@@ -78,7 +75,6 @@ function Home() {
 
     setAllData(filteredData);
   };
-
     if(order.value === "Ascending"){
         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
     }
