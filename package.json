@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Pied-Piper-Project.github.io/ResearchU",
+  "homepage": "https://researchu.github.io",
   "name": "research-u",
   "version": "0.1.0",
   "proxy": "http://localhost:8000/",
@@ -18,7 +18,8 @@
     "react-scroll": "^1.8.4",
     "react-slider": "^1.3.1",
     "styled-components": "^5.3.1",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "xlsx": "^0.17.4"
   },
   "scripts": {
     "predeploy": "npm run build",

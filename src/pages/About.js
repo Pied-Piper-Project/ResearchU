@@ -22,28 +22,28 @@ const About = () => {
                   <h3 className="section-title">The Team</h3>
 
                 <div className="about__container bd-grid">
-                    <div className="about__data">
+                    <div className="about__data glass">
                         <h3 className="about__title">Product Owner</h3>
                         <img src={headshot5} alt="" className="about__img"/>
                         <h3 className="about__title">Abraham Arevelo</h3>
                         <p><span className="value__category">Contact:</span> abe.arevalo@emory.edu</p>
                     </div>
 
-                    <div className="about__data">
+                    <div className="about__data glass">
                         <h3 className="about__title">Scrum Master</h3>
                         <img src={headshot2} alt="" className="about__img"/>
                         <h3 className="about__title">Abner Benitez</h3>
                         <p><span className="value__category">Contact:</span> abner.benitez@emory.edu</p>
                     </div>
 
-                    <div className="about__data">
+                    <div className="about__data glass">
                         <h3 className="about__title">Development Team</h3>
                         <img src={headshot6} alt="" className="about__img"/>
                         <h3 className="about__title">Carol Tang</h3>
                         <p><span className="value__category">Contact:</span> carol.tang@emory.edu</p>
                     </div>
 
-                     <div className="about__data">
+                     <div className="about__data glass">
                         <h3 className="about__title">Development Team</h3>
                         <img src={headshot3} alt="" className="about__img"/>
                         <h3 className="about__title">Matthew Moreno</h3>
@@ -51,28 +51,28 @@ const About = () => {
 
                     </div>
 
-                    <div className="about__data">
+                    <div className="about__data glass">
                         <h3 className="about__title">Development Team</h3>
                        <img src={stockphoto} alt="" className="about__img"/>
                        <h3 className="about__title">Amin El Asery</h3>
                        <p><span className="value__category">Contact:</span> melaser@emory.edu</p>
                    </div>
 
-                   <div className="about__data">
+                   <div className="about__data glass">
                       <h3 className="about__title">Development Team</h3>
                       <img src={headshot1} alt="" className="about__img"/>
                       <h3 className="about__title">Ender Schmidt</h3>
                       <p><span className="value__category">Contact:</span> elschm2@emory.edu</p>
                   </div>
 
-                  <div className="about__data">
+                  <div className="about__data glass">
                       <h3 className="about__title">Development Team</h3>
                      <img src={headshot7} alt="" className="about__img"/>
                      <h3 className="about__title">Enoc Flores</h3>
                      <p><span className="value__category">Contact:</span> ehflore@emory.edu</p>
                  </div>
 
-                 <div className="about__data">
+                 <div className="about__data glass">
                     <h3 className="about__title">Development Team</h3>
                     <img src={headshot4} alt="" className="about__img"/>
                     <h3 className="about__title">Kody Coppock</h3>

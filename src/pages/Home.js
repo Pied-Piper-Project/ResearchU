@@ -7,14 +7,30 @@ import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
 
 function Home() {
+  // const data = tempData;
+  // const [data, setData] = useState([""]);
 
-  const icon1 = <MdTableRows />
-  const icon2 = <MdTableRows />
+  // const icon1 = <MdTableRows />
+  // const icon2 = <MdTableRows />
+  // const [order, setOrder] = useState('');
+  // //Need to add a useState for button
+  // function handleChange(event) {
+  //   setOrder({ value: event.target.value });
+  // }
+
+  // const [allData, setAllData] = useState(data);
+  // const generateMajorDataForDropdown = () => {
+  //   return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
+  //   //return [...new Set(data.map((item) => item.major))];
+  // };
+
+  const icon1 = <MdTableRows/>
+  const icon2 = <MdTableRows/>
   const [order, setOrder] = useState('');
-
-  function handleChange(event) {
-    setOrder({ value: event.target.value });
-  }
+    //Need to add a useState for button
+    function handleChange(event){
+        setOrder({value: event.target.value});
+    }
 
   const [research, setResearch] = useState({name: " "});
   useEffect(() => {
@@ -31,10 +47,10 @@ function Home() {
   const generateMajorDataForDropdown = () => {
     return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
   };
-    
+
   const generateSemesterDataForDropdown = () => {
     return ["Fall 2021", "Spring 2022", "Fall 2022"];
-    //return [...new Set(allData.map((item) => item.semester))];
+    // return [...new Set(data.map((item) => item.semester))];
   };
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
@@ -51,8 +67,8 @@ function Home() {
       (item.gpa <= gpa) && 
       (item.isOnline === isOnline || "" === isOnline) && 
       (item.semester === semester || "" === semester) && 
-      (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
-      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
+      (fromDateObj <= item_fromDateObj || fromDate === "" || item.fromDate === "")
+      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate === "")) {
         return item;
       }
     });
