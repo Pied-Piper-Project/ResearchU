@@ -447,7 +447,7 @@ img{
 .search-bar{
   grid-area: search-bar;
   height: 5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 
@@ -738,7 +738,6 @@ input[type='radio']:checked:after {
   grid-gap: 2rem;
   grid-template-rows: auto;
   grid-template-areas:
-    "search-bar search-bar search-bar search-bar"
     "filters cards-wrapper cards-wrapper cards-wrapper";
 
 

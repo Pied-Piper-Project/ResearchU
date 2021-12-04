@@ -49,11 +49,12 @@ const Footer = () => {
                 </Row>
                 <Row>
                     <Column>
-                        <FooterLink target="_blank" href="https://clearbit.com/">Clearbit API</FooterLink>
-
                     </Column>
                     <Column>
-                        <p>&copy;ResearchU 2021</p>
+                        <p>&copy; 2021 ResearchU</p>
+                    </Column>
+                    <Column>
+                        <FooterLink target="_blank" href="https://clearbit.com/">Logos provided by Clearbit</FooterLink>
                     </Column>
                 </Row>
             </Container>

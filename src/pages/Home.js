@@ -8,24 +8,12 @@ import animatedLogo from "../images/logo.gif";
 
 function Home() {
   // const data = tempData;
-  // const [data, setData] = useState([""]);
+  const [data, setData] = useState([]);
 
-  // const icon1 = <MdTableRows />
-  // const icon2 = <MdTableRows />
-  // const [order, setOrder] = useState('');
-  // //Need to add a useState for button
-  // function handleChange(event) {
-  //   setOrder({ value: event.target.value });
-  // }
+  const [toggleResults, setToggleResults] = useState(false);
 
-  // const [allData, setAllData] = useState(data);
-  // const generateMajorDataForDropdown = () => {
-  //   return ["Chemistry", "Mathematics", "Physics", "Computer Science"]
-  //   //return [...new Set(data.map((item) => item.major))];
-  // };
-
-  const icon1 = <MdTableRows/>
-  const icon2 = <MdTableRows/>
+  const icon1 = <MdTableRows />
+  const icon2 = <MdTableRows />
   const [order, setOrder] = useState('');
     //Need to add a useState for button
     function handleChange(event){
@@ -92,47 +80,49 @@ function Home() {
           <div className="home__data">
             <h1 className="home__title">Research is just a click away!</h1>
           </div>
-          <div className="home_container">
+          <div className="home_container_null">
             <div className="search-bar">
               <div className="">
-                <SearchBar setAllData={setAllData} />
+                <SearchBar setData={setData} setAllData={setAllData} setToggleResults={setToggleResults}/>
               </div>
             </div>
 
-            <div className="filters">
-              <div className="">
-                <div>
-                  <FilterBar
-                    majors={generateMajorDataForDropdown()}
-                    semesters={generateSemesterDataForDropdown()}
-                    onAllFilter={handleFilterMajor}
-                  ></FilterBar>
+            <div className="home_container" style={ toggleResults ? {display: "grid"} : {display: "none"}}>
+              <div className="filters">
+                <div className="">
+                  <div>
+                    <FilterBar
+                      majors={generateMajorDataForDropdown()}
+                      semesters={generateSemesterDataForDropdown()}
+                      onAllFilter={handleFilterMajor}
+                    ></FilterBar>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="cards-wrapper">
-              <div className="listing">
-                <h1>Results</h1>
-                <div className="sorting">
-                  <h1>Sort By:</h1>
-                  <div className="select-dropdown">
-                    <OrderForm update={handleChange.bind(this)} cur={order.value} />
-                  </div>
+              <div className="cards-wrapper">
+                <div className="listing">
+                  <h1>Results</h1>
+                  <div className="sorting">
+                    <h1>Sort By:</h1>
+                    <div className="select-dropdown">
+                      <OrderForm update={handleChange.bind(this)} cur={order.value} />
+                    </div>
 
-                  <div className="sort-icon">
+                    <div className="sort-icon">
 
-                    <div className="original-icon">{icon1}</div>
-                    <div className="rotate-icon">{icon2}</div>
+                      <div className="original-icon">{icon1}</div>
+                      <div className="rotate-icon">{icon2}</div>
+
+                    </div>
 
                   </div>
 
                 </div>
-
+                {allData.map((item) => (
+                  <ResearchResult result={item} key={item._id} />
+                ))}
               </div>
-              {allData.map((item) => (
-                <ResearchResult result={item} key={item._id} />
-              ))}
             </div>
 
           </div>

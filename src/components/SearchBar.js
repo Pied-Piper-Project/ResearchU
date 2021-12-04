@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { tempData } from "./ExampleResearchPosts";
 
-function SearchBar( {setData, setAllData} ){
+function SearchBar( {setData, setAllData, setToggleResults} ){
     let data = [];
 
     const [school, setSchool] = useState('');
@@ -29,6 +29,15 @@ function SearchBar( {setData, setAllData} ){
         }
     };
 
+    const showResults = () => {
+        setToggleResults(true);
+    };
+
+    const buttonClickAction = () => {
+        showResults();
+        getResults();
+    };
+
     useEffect(() => {
     console.log(`school is: ${school}`);
     }, [school])
@@ -41,7 +50,7 @@ function SearchBar( {setData, setAllData} ){
         <div className="search_box bd-grid glass">
             <input type="text" className="input_school" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
             <input type="text" className="input_keyword" value={keyword} onChange={e => setKeyword(e.target.value)} placeholder="Keyword: Math, Amino Acids, CS, etc..." />
-            <button className="search_btn" onClick={() => getResults()}><i className="fas fa-search"></i></button>
+            <button className="search_btn" onClick={() => buttonClickAction()}><i className="fas fa-search"></i></button>
         </div>
     )
 }

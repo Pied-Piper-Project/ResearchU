@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  padding: 80px 60px;
+  padding: 80px 60px 0 60px;
   background: rgba(46,46,46,1);
   position: relative;
   bottom: 0;
@@ -54,7 +54,7 @@ export const Row = styled.div`
 export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 12px;
   text-decoration: none;
    
   &:hover {
