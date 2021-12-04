@@ -50,6 +50,7 @@ const Navbar = ({toggle}) => {
                         <NavLinks to ="/SignIn">Sign In</NavLinks>
                         {/* <FaGripLinesVertical/> */}
                         <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
+                        <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink>
                     </NavBtn>
                 </NavbarContainer>
             </Nav>
