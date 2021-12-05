@@ -5,10 +5,22 @@ import { GrLocation } from "react-icons/gr";
 import { BiStar } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import SignIn from "../pages/SignIn";
+import {useUser} from '../auth/useUser';
+import { useToken } from '../auth/useToken';
+import axios from 'axios';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import jQuery from 'jquery'
+import $ from 'jquery';
+import { tempData1 } from "./ExampleProfile";
 
-
-function Applied({ result }) {
+function AppliedPosts({ result }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [token, setToken] = useToken();
+
+
+
+  let user = 1;
+
 
   const icon1 = <MdTableRows />
   const icon2 = <MdTableRows />
@@ -16,10 +28,48 @@ function Applied({ result }) {
   const iconLocation = <GrLocation />
   const iconData = <MdDateRange />
 
+
+
+
+    const [statusID, setStatus] = useState("Check");
+    var arr = result.applicants
+    var studentID= user;
+    var index;
+    var results;
+
+  const statusCheck = async() => {
+    for(var k = 0; k < arr.length; k++){
+        if(arr[k][0] == studentID){
+            index = k;
+            results = arr[index][1];
+  }
+}
+    if(user.appliedPosts.includes(result._id)){
+
+      if(results == 0 || results == "0"){
+        setStatus("Accepted")
+
+
+      }else if(results == 2 || results == "2"){
+        setStatus("Rejected")
+
+              }else if(results == 1 || results == "1"){
+        setStatus("Pending")
+
+      }
+    }else{
+      alert("Have Not Applied! Go Back To Result Tab To Apply!")
+    }
+  }
+
+
   const history = useHistory();
 
+
+
   return (
-    <>
+    <html>
+    <body>
       <div className="cards column">
 
         <div className="card column-item">
@@ -61,40 +111,59 @@ function Applied({ result }) {
               ))}
             </>
           </div>
-          <div className="five">
-            <button className="buttonCardApplied accepted" onClick={() => setIsOpen(!isOpen)}>Accept</button>
-            <button className="buttonCardApplied pending" onClick={() => { history.push('/ResearchU/SignIn') }}>Profile</button>
+
+
+          <div className="fiveone">
+          <div>
+            <button className="buttonCardApplied view" onClick={() => setIsOpen(!isOpen)}>Details</button>
+            </div>
+
+
+            <button id="id1" className="buttonCardApplied status" onClick={() => {
+                statusCheck()
+              }
+            }>{statusID}</button>
+
+
           </div>
+
+
+
           {isOpen && <div className="six">
             <div className="details-res">
               <div className="detail-item">
-                <h5 className= "pendingTwo" >Pending:</h5>
-                <p>Matthew Moreno</p>
-                <p>Carol Tang</p>
-                <p>Abraham Arevelo</p>
-                <p>Kody Coppock</p>
-              </div>
-
-
-              <div className="detail-item">
-                <h5 className= "acceptedTwo">Accepted:</h5>
-                <p>Abner Benitez</p>
-                <p>Enoc Flores</p>
+                <h5>Professor:</h5>
+                <p>{result.professor}</p>
               </div>
               <div className="detail-item">
-                <h5 className= "rejectedTwo">Rejected:</h5>
-                <p>Ender Schmidt</p>
-                <p>Amin El Asery</p>
+                <h5>Duration:</h5>
+                <p>{result.date}</p>
               </div>
-
+              <div className="detail-item">
+                <h5>Location:</h5>
+                <p>{result.location}</p>
+              </div>
+              <div className="detail-item">
+                <h5>Hours:</h5>
+                <p>Research is conducted between the hours of {result.timeRange}</p>
+              </div>
+              <div className="detail-item">
+                <h5>Description:</h5>
+                <p>{result.postBody}</p>
+              </div>
             </div>
           </div>}
         </div>
         {/* <div className="card column-item ">Card 2</div>
           <div className="card column-item ">Card 3</div> */}
       </div>
-    </>
-  )
+</body>
+    </html>
+
+)
+
 }
 
-export default Applied;
+
+
+export default AppliedPosts;

@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  padding: 80px 60px;
+
+  padding: 80px 60px 0 60px;
   background: rgba(46,46,46,1);
   position: relative;
   bottom: 0;
   width: 100%;
-  
-   
+
+
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
+
 `;
 
 export const Box1 = styled.div`
@@ -19,14 +21,15 @@ export const Box1 = styled.div`
   position: relative;
   bottom: 0;
   width: 100%;
-  
-   
+
+
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
 `;
 
 export const Container = styled.div`
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +48,7 @@ export const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-   
+
   @media (max-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -54,9 +57,9 @@ export const Row = styled.div`
 export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 12px;
   text-decoration: none;
-   
+
   &:hover {
       color: #6654C4;
       transition: 0.1s ease-in-out;

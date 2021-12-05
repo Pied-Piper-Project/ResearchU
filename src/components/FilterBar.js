@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactSlider from "react-slider";
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-date-picker/dist/entry.nostyle';
 
 const FilterBar = ({
   majors,
@@ -303,9 +303,12 @@ const FilterBar = ({
       </div> */}
 
       <div className="">
+      <h1>From:</h1>
+
         <div className="select-wrapper">
-          <h1>From:</h1>
+
           <DatePicker
+            className="select-dropdown-from"
             onChange={handleInput("fromDate")}
             className="form-control"
             id="fromDate"
@@ -313,17 +316,18 @@ const FilterBar = ({
             minDate={new Date(2021, 8, 19)} // Ideally this is not hard coded
           />
         </div>
+        <h1>To:</h1>
         <div className="select-wrapper">
-          <h1>To:</h1>
           <DatePicker
+            className="select-dropdown-to"
             onChange={handleInput("toDate")}
             className="form-control"
             id="toDate"
             value = {dateRead(filters.toDate)}
           />
         </div>
+        </div>
       </div>
-    </div>
   );
 };
 

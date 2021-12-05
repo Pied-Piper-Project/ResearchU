@@ -16,7 +16,6 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
 import Footer from './components/Footer';
-import Applied from './components/Applied';
 
 
 

@@ -6,14 +6,13 @@ import { Link as LinkS } from 'react-scroll'
 export const Nav = styled.nav`
   background-color: var(--container-color);
   height: 80px;
-//   margin-top: -80px;
   display:flex;
-  justify-content: center;
+
   align-items: center;
   font-size: 1rem;
-  position: sticky;
+
   top:0;
-  z-index:10;
+
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
   }
@@ -21,23 +20,22 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   height: 80px;
-  z-index: 1;
-  width: 100%;
-  padding: 0 24px;
-  max-width: 1000px;
+  width: 52%;
+
+  justify-content: center;
 `
 export const NavLogo = styled(LinkR) `
   color:#000;
-  justify-self: flex-start;
+  width: 24%;
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 0px;
   font-weight: bold;
   text-decoration: none;
+  padding-left:1%;
+
 `
 export const MobileIcon = styled.div`
   display: none;
@@ -57,8 +55,7 @@ export const NavMenu = styled.ul`
   display:flex;
   justify-content: center;
   list-style: none;
-  text-align: center;
-
+  width: 100%;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -91,15 +88,16 @@ export const NavLinks = styled(LinkR)`
 export const NightModeIcon =  styled.div`
   color: #000;
   margin-top: 1.9rem;
-  transform: translateX(1.2rem);
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
   cursor: pointer;
+  display: flex;
 `
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+  justify-content: center;
+  width: 24%;
 `
 export const NavBtnLink = styled(LinkR)`
   border-radius: 50px;
@@ -114,6 +112,7 @@ export const NavBtnLink = styled(LinkR)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #6654C4;
