@@ -10,6 +10,7 @@ const SignIn = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
+    const [signInAs, setSignInAs] = useState('');
 
     const history = useHistory();
 
@@ -20,7 +21,15 @@ const SignIn = () => {
         });
         const { token } = response.data;
         setToken(token);
-        history.push('/ResearchU/StudentInfoPage');
+        if (signInAs === "Student"){
+            history.push('/ResearchU/StudentInfoPage');
+        }
+        else if (signInAs === "Professor"){
+            history.push('/ResearchU/ProfessorInfoPage');
+        }
+        else {
+            history.push('/ResearchU/AdminInfoPage');
+        }
     }
 
     return (
@@ -38,8 +47,19 @@ const SignIn = () => {
                 onChange={e => setPasswordValue(e.target.value)}
                 placeholder="Password" />
             <p></p>
+            <b>Select what you want to sign in as</b>
+            <select 
+                id = "mylist"
+                value={signInAs}
+                onChange={e => setSignInAs(e.target.value)}>
+            <option>---Choose type---</option>
+            <option>Student</option>
+            <option>Professor</option>
+            <option>Administrator</option>
+            </select>
+            <p></p>
             <button
-                disabled={!emailValue || !passwordValue}
+                disabled={!emailValue || !passwordValue || !signInAs}
                 onClick={onLogInClicked}>Sign In</button>
             <hr />
             <button onClick={() => history.push('/ResearchU/forgot-password')}>Forgot your password?</button>

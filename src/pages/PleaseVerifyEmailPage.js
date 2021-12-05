@@ -6,7 +6,7 @@ const PleaseVerifyEmailPage = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            history.push('/ResearchU/StudentInfoPage');
+            history.push('/ResearchU/SignIn');
         }, 3000);
     }, [history]);
 

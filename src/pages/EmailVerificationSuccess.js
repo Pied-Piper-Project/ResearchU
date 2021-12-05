@@ -9,7 +9,7 @@ const EmailVerificationSuccess = () => {
             <p>
                 Thanks for verifying your email, now you can use all the features!
             </p>
-            <button onClick={() => history.push('/ResearchU/StudentInfoPage')}>Go to home page</button>
+            <button onClick={() => history.push('/ResearchU/SignIn')}>Go to home page</button>
         </div>
 
     )
