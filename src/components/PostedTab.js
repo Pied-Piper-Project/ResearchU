@@ -19,7 +19,7 @@ function PostedTab({ result }) {
 
   const [token, setToken] = useToken();
 
-  let user = useUser;
+  let user = useUser();
 
   const [appliedText, setApplied] = useState("Apply");
   //if (user.appliedPosts.includes(result._id)){

@@ -19,7 +19,7 @@ function AppliedPosts({ result }) {
 
 
 
-  let user = 1;
+  let user = useUser();
 
 
   const icon1 = <MdTableRows />
