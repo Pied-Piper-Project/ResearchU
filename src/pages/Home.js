@@ -40,76 +40,61 @@ function Home() {
 
 /*------------END OF SCRIPT FOR TABS-----------*/
 
-  const [data, setData] = useState([]);
+  //const [data, setData] = useState([]);
   const [toggleResults, setToggleResults] = useState(false);
   const icon1 = <MdTableRows />
   const icon2 = <MdTableRows />
   const [order, setOrder] = useState('');
-  //Need to add a useState for button
-  function handleChange(event) {
-    setOrder({ value: event.target.value });
-  }
   const user = useUser();
+    //Need to add a useState for button
+    function handleChange(event){
+        setOrder({value: event.target.value});
+    }
+
+  const [research, setResearch] = useState({name: " "});
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(`api/research`);
+      const body = await result.json();
+      setResearch(body);
+    }
+    fetchData();
+  }, []);
+  const [data, setData] = useState(Array.from(research));
 
   const [allData, setAllData] = useState(data);
   const generateMajorDataForDropdown = () => {
     return ["Computer Science", "Chemistry", "Physics", "Mathematics"];
-    // return [...new Set(data.map((item) => item.major))];
-    //return [...new Set(data.map((item) => item.requirements.major.map((itemTwo, index) => itemTwo)))];
   };
-
-//   const[research, setResearch] = useState({name: " "});
-//     useEffect(() => {
-//       const fetchData = async () => {
-//         const result = await fetch(`api/research`);
-//         const body = await result.json();
-//         setResearch(body);
-//       }
-//   fetchData();
-//   }, []);
-//   const data = Array.from(research);
-
-//   const icon1 = <MdTableRows/>
-//   const icon2 = <MdTableRows/>
-//   const [order, setOrder] = useState('');
-//     //Need to add a useState for button
-//     function handleChange(event){
-//         setOrder({value: event.target.value});
-//     }
-
-//   const [allData, setAllData] = useState(data);
-//   const generateMajorDataForDropdown = () => {
-//     return [...new Set(data.map((item) => item.requirements.major))];
-//   };
 
   const generateSemesterDataForDropdown = () => {
     return ["Fall 2021", "Spring 2022", "Fall 2022"];
-    return [...new Set(data.map((item) => item.semester))];
+    // return [...new Set(data.map((item) => item.semester))];
   };
 
   const handleFilterMajor = (year, gpa, major, isOnline, semester, fromDate, toDate) => {
-    const filteredData = data.filter((item) => {
-
+    const filteredData = allData.filter((item) => {
+      
       // Older stuff
       let item_fromDateObj = new Date(item.fromDate);
       let item_toDateObj = new Date(item.toDate);
       let fromDateObj = new Date(fromDate);
       let toDateObj = new Date(toDate);
 
-      if ((item.year.includes(year) || 0 === year) &&
-      (item.major.includes(major) || 0 === major.length) &&
-      (item.gpa <= gpa) &&
-      (item.isOnline === isOnline || "" === isOnline) &&
-      (item.semester === semester || "" === semester) &&
-      (fromDateObj <= item_fromDateObj || fromDate == "" || item.fromDate === "")
-      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate == "")) {
+
+      if ((item.year.includes(year) || 0 === year) && 
+      (item.major.includes(major) || 0 === major.length) && 
+      (item.gpa <= gpa) && 
+      (item.isOnline === isOnline || "" === isOnline) && 
+      (item.semester === semester || "" === semester) && 
+      (fromDateObj <= item_fromDateObj || fromDate === "" || item.fromDate === "")
+      && (item_toDateObj <= toDateObj || toDate === "" || item.toDate === "")) {
         return item;
       }
     });
 
-    setAllData(filteredData);
+    setData(filteredData);
   };
-
     if(order.value === "Ascending"){
         allData.sort((a, b) => parseFloat(a._id) - parseFloat(b._id))
     }
@@ -362,10 +347,7 @@ function Home() {
           <div className="home__data">
             <h1 className="home__title">Research a click away!</h1>
           </div>
-
           <div className="home_container_null">
-
-
             <div className="search-bar">
               <div className="">
                 <SearchBar setData={setData} setAllData={setAllData} setToggleResults={setToggleResults}/>
@@ -385,7 +367,6 @@ function Home() {
                     ></FilterBar>
                   </div>
               </div>
-            </div>
 
           <div data-cardWrapper className="cardWrapper">
 
@@ -451,6 +432,7 @@ function Home() {
 
           </div>
           </div>
+        </div>
         </div>
 </section>
 

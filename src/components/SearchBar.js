@@ -3,7 +3,7 @@ import { tempData } from "./ExampleResearchPosts";
 import { tempData1 } from "./ExampleProfile";
 
 function SearchBar( {setData, setAllData, setToggleResults} ){
-    const data = [];
+    let data = [];
 
     const [school, setSchool] = useState('');
     const [keyword, setKeyword] = useState('');
@@ -11,18 +11,20 @@ function SearchBar( {setData, setAllData, setToggleResults} ){
 
     const getResults = async () => {
         try {
-            const result = await fetch('/api/research/', {
-                method: 'get',
-                // body: JSON.stringify({ school, keyword }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
+            if(school === "" && keyword === "")
+                var result = await fetch(`/api/research`);
+            else if(school === "")
+                var result = await fetch(`/api/searchkeyword/${keyword}`);
+            else if(keyword === "")
+                var result = await fetch(`/api/searchschool/${school}`);
+            else
+                var result = await fetch(`/api/searchboth/${school}/${keyword}`);
             data = await result.json();
+            setAllData(data);
+            console.log(data);
+
         } catch(error) {
             console.log(error);
-            setData(tempData);
             setAllData(tempData);
             console.log(tempData);
         }

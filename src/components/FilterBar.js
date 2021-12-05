@@ -38,24 +38,6 @@ const FilterBar = ({
       if (filters.year === tool){
         tool = 0
       }
-      /* Maybe use this for ManuallyCreatePost
-      let val = event.target.value
-      if (filters.year.includes(0)){
-        tool = [val]
-      }
-      else if (filters.year.includes(val)) {
-        tool = filters.year
-        let index = tool.indexOf(val)
-        tool.splice(index, 1)
-        if (tool.length === 0){
-          tool = [0]
-        }
-      }
-      else {
-        tool = filters.year
-        tool.push(val)
-      }
-      */
     }
 
     else if (field === "semester" || field === "major") {
@@ -64,8 +46,6 @@ const FilterBar = ({
 
     else if (field === "isOnline") {
       tool = event.target.value;
-      // console.log(tool)
-      // This is for unclicking the button
       if ((tool === "true" && filters.isOnline === true) || (tool === "false" && filters.isOnline === false)) {
         tool = "";
       }

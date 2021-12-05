@@ -16,10 +16,10 @@ const Sidebar = ({ isOpen , toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to ="/ResearchU" onClick= {toggle}>Home</SidebarLink>
-                    <SidebarLink to ="/ResearchU/About" onClick= {toggle}>About</SidebarLink>
-                    <SidebarLink to ="/ResearchU/Contact" onClick= {toggle}>Contact</SidebarLink>
-                    <SidebarLink to ="/ResearchU/SignIn" onClick= {toggle}>Sign In</SidebarLink>                    
+                    <SidebarLink to ="/" onClick= {toggle}>Home</SidebarLink>
+                    <SidebarLink to ="/About" onClick= {toggle}>About</SidebarLink>
+                    <SidebarLink to ="/Contact" onClick= {toggle}>Contact</SidebarLink>
+                    <SidebarLink to ="/SignIn" onClick= {toggle}>Sign In</SidebarLink>                    
                     {/* <SidebarLink to ="/darkmode" onClick= {toggle}><MdNightlightRound/></SidebarLink> */}
                     <NightModeIconRespo onClick={myButton}>
                              {icon}
@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen , toggle}) => {
                 </SidebarMenu>
                 <SideBtnWrap>
                     
-                    <SidebarRoute to = "/ResearchU/SignUp">
+                    <SidebarRoute to = "/SignUp">
                         Sign Up
                     </SidebarRoute>
                 </SideBtnWrap>
