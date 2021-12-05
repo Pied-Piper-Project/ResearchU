@@ -398,7 +398,7 @@ img{
   width: auto;
   max-width: 55rem;
   margin: auto;
-  height: 120rem;
+  height: auto;
   background-color: var(--container-color);
   box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
   border-radius: 2rem;
@@ -410,10 +410,22 @@ img{
 
 }
 
+
 .createPost-form {
   display: flex;
   flex-direction: column;
 
+}
+
+.createPost-formTwo {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+}
+
+.createPost-formTwoNormal {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
 }
 
 .createPost-label {
@@ -435,7 +447,7 @@ img{
 .search-bar{
   grid-area: search-bar;
   height: 5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 
@@ -726,7 +738,6 @@ input[type='radio']:checked:after {
   grid-gap: 2rem;
   grid-template-rows: auto;
   grid-template-areas:
-    "search-bar search-bar search-bar search-bar"
     "filters cards-wrapper cards-wrapper cards-wrapper";
 
 
@@ -945,13 +956,21 @@ input[type='radio']:checked:after {
 
 
 /*---------------- About ----------------*/
+
+  .mission__data{
+    text-align: center;
+    padding: 1rem 1rem 1rem;
+    background-color: var(--container-color);
+    box-shadow: 0 2px 6px rgba(35, 10, 58, 0.3);
+    border-radius: 1rem;
+}
 .about__container{
-  margin-top: 3rem;
+  margin-top: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .section-title {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .about__data{
@@ -960,6 +979,7 @@ input[type='radio']:checked:after {
   /* background-color: var(--container-color); */
   /* box-shadow: 0 2px 6px rgba(35, 10, 58, 0.3); */
   border-radius: 1rem;
+  margin: 4px;
 }
 
 .about__data:hover{
@@ -967,13 +987,14 @@ input[type='radio']:checked:after {
 }
 
 .about__img{
+  border-radius: .5rem;
   max-width: 120px;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .about__title{
   font-size: var(--h3-font-size);
-  margin-bottom: 1rem;
+  margin-bottom: .25rem;
 }
 
 
@@ -982,21 +1003,23 @@ input[type='radio']:checked:after {
 .send{
   background-color: var(--first-color-send);
   margin-top: 7rem;
-
-}
-
-.send__title, .send__description{
-  color: #fff;
 }
 
 .send__description{
   text-align: center;
   margin-bottom: var(--mb-4);
+  margin-top: var(--mb-1);
 }
 
 .sendButton {
   color:#000;
   background-color: #ebac23;
+}
+
+.sendButtonTwo {
+  color:#000;
+  background-color: #ebac23;
+  margin-left: 5rem
 }
 
 .send__direction{
@@ -1139,8 +1162,14 @@ input[type='radio']:checked:after {
     margin-bottom: var(--mb-1);
   }
 
-  .value__title, .value__category{
+  .value__title{
     text-align: initial;
+  }
+  .value__category{
+    text-align: initial;
+    font-weight: bold;
+    color: black;
+
   }
 
   .value__button{
