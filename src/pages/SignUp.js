@@ -16,11 +16,13 @@ const SignUp = () => {
     const history = useHistory();
 
     const onSignUpClicked = async () => {
+
         const response = await axios.post('/api/ResearchU/SignUp', {
             email: emailValue,
             password: passwordValue,
             signup: signUpAs
         });
+ 
         const { token } = response.data;
         setToken(token);
         history.push('/ResearchU/PleaseVerifyEmail');

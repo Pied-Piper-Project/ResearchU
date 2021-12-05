@@ -16,7 +16,9 @@ const EmailVerificationLandingPage = () => {
     useEffect(() => {
         const loadVerification = async () => {
             try {
-                const response = await axios.put('/api/ResearchU/verify-email', {verificationString, signup});
+                console.log("entering landing page");
+                const response = await axios.put('/api/ResearchU/verify-email/', {verificationString});
+                
                 const { token } = response.data;
                 setToken(token);
                 setIsSuccess(true);
@@ -27,7 +29,7 @@ const EmailVerificationLandingPage = () => {
             }
         }
         loadVerification();
-    }, [setToken, verificationString]);
+    }, [setToken, verificationString]); 
 
     if (isLoading) return <p>Loading...</p>;
     if (!isSuccess) return <EmailVerificationFail />;

@@ -9,6 +9,8 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import CreatePost from './pages/CreatePost';
 import StudentInfoPage from './pages/StudentInfoPage';
+import ProfessorInfoPage from './pages/ProfessorInfoPage';
+import AdminInfoPage from './pages/AdminInfoPage';
 import PleaseVerifyEmailPage from './pages/PleaseVerifyEmailPage';
 import EmailVerificationLandingPage from './pages/EmailVerificationLandingPage';
 import PasswordResetLandingPage from './pages/PasswordResetLandingPage';
@@ -46,6 +48,8 @@ function App() {
         <Route path = '/ResearchU/forgot-password' exact component = {ForgotPasswordPage}/>
         <Route path = '/ResearchU/reset-password/:passwordResetCode' exact component = {PasswordResetLandingPage}/>
         <PrivateRoute path = '/ResearchU/StudentInfoPage' exact component = {StudentInfoPage}/>
+        <PrivateRoute path = '/ResearchU/ProfessorInfoPage' exact component = {ProfessorInfoPage}/>
+        <PrivateRoute path = '/ResearchU/AdminInfoPage' exact component = {AdminInfoPage}/>
 
       </Switch>
     </Router>
