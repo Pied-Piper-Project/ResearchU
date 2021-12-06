@@ -33,7 +33,6 @@ const Navbar = ({ toggle }) => {
         click.classList.toggle("dark-theme");
     }
     const user = useUser();
-    console.log(user);
 
     if (user != null) {
         if (user.appliedPosts != null) {
