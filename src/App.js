@@ -19,21 +19,25 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
 import Footer from './components/Footer';
 import StudentProfile from './pages/StudentProfile';
+import MissingPage from './pages/MissingPage';
 
 
 
 
 function App() {
 
-
   const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => {
-        setIsOpen(!isOpen)
-    };
+  // localStorage.setItem('darkMode', false);
+
+  // const [toggle, setToggle] = useState(flase);
+  
+  const toggle = () => {
+      setIsOpen(!isOpen)
+  };
 
   return (
-    <Router>
+    <Router forceRefresh={true}>
 
       <Sidebar isOpen= {isOpen} toggle = {toggle}/>
       <Navbar toggle = {toggle}/>
@@ -54,6 +58,7 @@ function App() {
         <Route path = '/StudentProfile' exact component = {StudentProfile}/>
         <PrivateRoute path = '/ProfessorInfoPage' exact component = {ProfessorInfoPage}/>
         <PrivateRoute path = '/AdminInfoPage' exact component = {AdminInfoPage}/>
+        <Route path = '*' component = {MissingPage}/>
 
       </Switch>
       <Footer />
