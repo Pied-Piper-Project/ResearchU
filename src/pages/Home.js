@@ -102,7 +102,7 @@ function Home() {
         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
     }
   
-    if (user != null){
+if (user != null){
   if (user.appliedPosts != null){
     return (
       <>
@@ -227,7 +227,7 @@ function Home() {
   
   
           <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
-            <img src="/ResearchU/static/media/logo.101fc9cd.gif" width="75%" height="75%"/>
+            <img src={animatedLogo} width="75%" height="75%"/>
           </div>
   
             <div className="home__data">
@@ -342,7 +342,7 @@ function Home() {
 
 
         <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
-          <img src="/ResearchU/static/media/logo.101fc9cd.gif" width="75%" height="75%"/>
+          <img src={animatedLogo} width="75%" height="75%"/>
         </div>
 
           <div className="home__data">
@@ -367,6 +367,7 @@ function Home() {
                       onAllFilter={handleFilterMajor}
                     ></FilterBar>
                   </div>
+              </div>
               </div>
 
           <div data-cardWrapper className="cardWrapper">
@@ -434,14 +435,13 @@ function Home() {
           </div>
           </div>
         </div>
-        </div>
 </section>
 
     </>
   );
                             }
                           }
-                          else{
+  else{
 
   
   return (
@@ -454,7 +454,7 @@ function Home() {
 
 
         <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
-          <img src="/ResearchU/static/media/logo.101fc9cd.gif" width="75%" height="75%"/>
+          <img src={animatedLogo} width="75%" height="75%"/>
         </div>
 
           <div className="home__data">
@@ -479,6 +479,7 @@ function Home() {
                       onAllFilter={handleFilterMajor}
                     ></FilterBar>
                   </div>
+              </div>
               </div>
 
           <div data-cardWrapper className="cardWrapper">
@@ -545,7 +546,6 @@ function Home() {
 
           </div>
           </div>
-        </div>
         </div>
 </section>
 
