@@ -46,6 +46,8 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
+  width: 200px;
+  margin: auto;
   grid-template-rows: repeat(5, 60px);
   text-align: center;
   @media  screen and (max-width: 480px) {
@@ -94,7 +96,6 @@ export const SidebarRoute = styled(LinkR)`
   color: #010606;
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 2rem;
   outline:  none;
   border: none;
   cursor: pointer;
