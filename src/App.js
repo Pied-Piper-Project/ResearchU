@@ -28,10 +28,12 @@ function App() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  // localStorage.setItem('darkMode', false);
+  var isOn = localStorage.getItem('darkMode') ? localStorage.getItem('darkMode') : "false";
+  console.log(isOn);
+  if (isOn === "true") {
+    document.body.classList.add("dark-theme");
+  }
 
-  // const [toggle, setToggle] = useState(flase);
-  
   const toggle = () => {
       setIsOpen(!isOpen)
   };
