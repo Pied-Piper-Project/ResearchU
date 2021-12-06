@@ -19,6 +19,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/SideBar';
 import Footer from './components/Footer';
 import StudentProfile from './pages/StudentProfile';
+import MissingPage from './pages/MissingPage';
 
 
 
@@ -57,6 +58,7 @@ function App() {
         <Route path = '/StudentProfile' exact component = {StudentProfile}/>
         <PrivateRoute path = '/ProfessorInfoPage' exact component = {ProfessorInfoPage}/>
         <PrivateRoute path = '/AdminInfoPage' exact component = {AdminInfoPage}/>
+        <Route path = '*' component = {MissingPage}/>
 
       </Switch>
       <Footer />
