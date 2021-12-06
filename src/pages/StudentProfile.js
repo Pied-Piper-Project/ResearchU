@@ -1,7 +1,4 @@
-import React, { useState, useEffect} from "react";
-
-import axios from 'axios';
-import { get } from "react-scroll/modules/mixins/scroller";
+import React, { useState } from "react";
 
 const StudentProfile = () => {
     const StudentId = "619b019a8d604a2846bc6d84"
@@ -25,7 +22,7 @@ const StudentProfile = () => {
         setEmail(gotUser[0].email)
         setMajor(gotUser[0].info.major)
         setMinor(gotUser[0].info.minor)
-        if (gotUser[0].info.onCampus == true){
+        if (gotUser[0].info.onCampus === true){
             setOnCampus("Yes")
         }
         else{
