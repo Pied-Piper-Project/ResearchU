@@ -10,7 +10,7 @@ const PasswordResetSuccess = () => {
                  Your password has now be reset, now please log in with your new password.
             </p>
             <p></p>
-            <button onClick={() => history.push('/ResearchU/SignIn')}>Sign In</button>
+            <button onClick={() => history.push('/SignIn')}>Sign In</button>
         </div>
 
     )

@@ -23,13 +23,13 @@ const SignIn = () => {
         const { token } = response.data;
         setToken(token);
         if (signInAs === "Student"){
-            history.push('/ResearchU/StudentInfoPage');
+            history.push('/StudentInfoPage');
         }
         else if (signInAs === "Professor"){
-            history.push('/ResearchU/ProfessorInfoPage');
+            history.push('/ProfessorInfoPage');
         }
         else {
-            history.push('/ResearchU/AdminInfoPage');
+            history.push('/AdminInfoPage');
         }
     }
 
@@ -63,9 +63,9 @@ const SignIn = () => {
                 disabled={!emailValue || !passwordValue || !signInAs}
                 onClick={onLogInClicked}>Sign In</button>
             <hr />
-            <button onClick={() => history.push('/ResearchU/forgot-password')}>Forgot your password?</button>
+            <button onClick={() => history.push('/forgot-password')}>Forgot your password?</button>
             <p></p>
-            <button onClick={() => history.push('/ResearchU/SignUp')}>Don't have an account? Sign Up!</button>
+            <button onClick={() => history.push('/SignUp')}>Don't have an account? Sign Up!</button>
         </div>
     )
 }

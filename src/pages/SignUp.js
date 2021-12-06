@@ -25,7 +25,7 @@ const SignUp = () => {
  
         const { token } = response.data;
         setToken(token);
-        history.push('/ResearchU/PleaseVerifyEmail');
+        history.push('/PleaseVerifyEmail');
 
     }
 
@@ -67,7 +67,7 @@ const SignUp = () => {
                 }
                 onClick={onSignUpClicked}>Sign Up</button>
             <hr />
-            <button onClick={() => history.push('/ResearchU/SignIn')}>Already have an account? Log In!</button>
+            <button onClick={() => history.push('/SignIn')}>Already have an account? Log In!</button>
         </div>
     )
 }
