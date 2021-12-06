@@ -21,17 +21,11 @@ const Sidebar = ({ isOpen , toggle}) => {
                     <SidebarLink to ="/Contact" onClick= {toggle}>Contact</SidebarLink>
                     <SidebarLink to ="/SignIn" onClick= {toggle}>Sign In</SidebarLink>                    
                     {/* <SidebarLink to ="/darkmode" onClick= {toggle}><MdNightlightRound/></SidebarLink> */}
+                    <SidebarRoute to = "/SignUp" onClick= {toggle}>Sign Up</SidebarRoute>
                     <NightModeIconRespo onClick={myButton}>
                              {icon}
                     </NightModeIconRespo>
-                    
                 </SidebarMenu>
-                <SideBtnWrap>
-                    
-                    <SidebarRoute to = "/SignUp">
-                        Sign Up
-                    </SidebarRoute>
-                </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>
     )

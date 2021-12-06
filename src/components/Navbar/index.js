@@ -24,7 +24,11 @@ const Navbar = ({ toggle }) => {
     const icon = <HiMoon />;
 
     function myButton() {
-        // localStorage.setItem('darkMode', true);
+        if (localStorage.getItem('darkMode') === 'true')
+            localStorage.setItem('darkMode', false);
+        else
+            localStorage.setItem('darkMode', true);
+
         var click = document.body;
         click.classList.toggle("dark-theme");
     }
