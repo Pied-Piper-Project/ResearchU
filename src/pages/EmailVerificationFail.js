@@ -9,7 +9,7 @@ const EmailVerificationFail = () => {
             <p>
                 Something went wrong while trying to verify your email.
             </p>
-            <button onClick={() => history.push('/ResearchU/SignUp')}>Back to sign up</button>
+            <button onClick={() => history.push('/SignUp')}>Back to sign up</button>
         </div>
 
     );

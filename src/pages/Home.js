@@ -46,6 +46,7 @@ function Home() {
   const icon2 = <MdTableRows />
   const [order, setOrder] = useState('');
   const user = useUser();
+  console.log(user)
     //Need to add a useState for button
     function handleChange(event){
         setOrder({value: event.target.value});
@@ -103,7 +104,7 @@ function Home() {
     }
   
 if (user != null){
-  if (user.appliedPosts != null){
+  if (user.signup == "Student"){
     return (
       <>
   
@@ -152,7 +153,7 @@ if (user != null){
                               <input type="radio" name="tabgroup" id="tab-1" checked/>
                               <label for="tab-1">Result</label>
                                 <div class="tab__content1">
-                          {allData.map((item) => (
+                          {data.map((item) => (
                             <ResearchResult result={item} key={item._id} />
                           ))}
                                 </div>
@@ -165,7 +166,7 @@ if (user != null){
                               <input type="radio" name="tabgroup" id="tab-2"/>
                               <label for="tab-2">Applied</label>
                                 <div class="tab__content">
-                                {allData.map((item) => (
+                                {data.map((item) => (
                                   <AppliedPosts result={item} key={item._id} />
                                 ))}
                                 </div>
@@ -216,7 +217,7 @@ if (user != null){
     );
   }
 
-  else if (user.createdPost != null){
+  else if (user.signup == "Professor" || user.signup == "Administrator"){
     return (
       <>
   
@@ -265,7 +266,7 @@ if (user != null){
                               <input type="radio" name="tabgroup" id="tab-1" checked/>
                               <label for="tab-1">Result</label>
                                 <div class="tab__content1">
-                          {allData.map((item) => (
+                          {data.map((item) => (
                             <ResearchResult result={item} key={item._id} />
                           ))}
                                 </div>
@@ -290,10 +291,10 @@ if (user != null){
   
   
                          <div class="tab">
-                              <input type="radio" name="tabgroup" id="tab-3"/>
-                              <label for="tab-3">Posted</label>
+                              <input type="radio" name="tabgroup" id="tab-2"/>
+                              <label for="tab-2">Posted</label>
                                 <div class="tab__content">
-                                {allData.map((item) => (
+                                {data.map((item) => (
                                   <PostedTab result={item} key={item._id} />
                                 ))}
                                 </div>
@@ -377,7 +378,7 @@ if (user != null){
                             <input type="radio" name="tabgroup" id="tab-1" checked/>
                             <label for="tab-1">Result</label>
                               <div class="tab__content1">
-                        {allData.map((item) => (
+                        {data.map((item) => (
                           <ResearchResult result={item} key={item._id} />
                         ))}
                               </div>
@@ -489,7 +490,7 @@ if (user != null){
                             <input type="radio" name="tabgroup" id="tab-1" checked/>
                             <label for="tab-1">Result</label>
                               <div class="tab__content1">
-                        {allData.map((item) => (
+                        {data.map((item) => (
                           <ResearchResult result={item} key={item._id} />
                         ))}
                               </div>

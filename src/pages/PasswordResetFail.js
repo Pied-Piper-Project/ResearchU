@@ -9,7 +9,7 @@ const PasswordResetFail = () => {
             <p>
                 Something went wrong while trying to reset your password.
             </p>
-            <button onClick={() => history.push('/ResearchU/SignIn')}>Back to sign up</button>
+            <button onClick={() => history.push('/SignIn')}>Back to sign up</button>
         </div>
 
     );

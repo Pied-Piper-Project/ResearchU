@@ -13,7 +13,7 @@ const ForgotPasswordPage = () => {
             await axios.put(`/api/ResearchU/forgot-password/${emailValue}`);
             setSuccess(true);
             setTimeout(() => {
-                history.push('/ResearchU/SignIn');
+                history.push('/SignIn');
             }, 3000);
         } catch (e) {
             setErrorMessage(e.message);
