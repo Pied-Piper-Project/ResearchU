@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import axios from 'axios';
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-date-picker/dist/entry.nostyle'; //getting some error on my end when this isnt set to no style
 import {useUser} from '../auth/useUser'
 
 function ManuallyCreatePost() {

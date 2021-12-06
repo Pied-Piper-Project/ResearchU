@@ -221,14 +221,7 @@ function Home() {
                                                         cur={order.value}
                                                     />
                                                 </div>
-                                                <div className="sort-icon">
-                                                    <div className="original-icon">
-                                                        {icon1}
-                                                    </div>
-                                                    <div className="rotate-icon">
-                                                        {icon2}
-                                                    </div>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -336,8 +329,8 @@ function Home() {
                                             </div>
 
                                             {/*
-                                  
-  
+
+
                            <div class="tab">
                               <input type="radio" name="tabgroup" id="tab-2"/>
                               <label for="tab-2">Applied</label>
@@ -347,7 +340,7 @@ function Home() {
                                 ))}
                                 </div>
                            </div>
-  
+
                            */}
 
                                             <div class="tab">
@@ -379,14 +372,7 @@ function Home() {
                                                         cur={order.value}
                                                     />
                                                 </div>
-                                                <div className="sort-icon">
-                                                    <div className="original-icon">
-                                                        {icon1}
-                                                    </div>
-                                                    <div className="rotate-icon">
-                                                        {icon2}
-                                                    </div>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -490,7 +476,7 @@ function Home() {
                                             </div>
 
                                             {/*
-                                
+
 
                          <div class="tab">
                             <input type="radio" name="tabgroup" id="tab-2"/>
@@ -525,14 +511,7 @@ function Home() {
                                                         cur={order.value}
                                                     />
                                                 </div>
-                                                <div className="sort-icon">
-                                                    <div className="original-icon">
-                                                        {icon1}
-                                                    </div>
-                                                    <div className="rotate-icon">
-                                                        {icon2}
-                                                    </div>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -626,7 +605,7 @@ function Home() {
                                         </div>
 
                                         {/*
-                                
+
 
                          <div class="tab">
                             <input type="radio" name="tabgroup" id="tab-2"/>
@@ -661,14 +640,7 @@ function Home() {
                                                     cur={order.value}
                                                 />
                                             </div>
-                                            <div className="sort-icon">
-                                                <div className="original-icon">
-                                                    {icon1}
-                                                </div>
-                                                <div className="rotate-icon">
-                                                    {icon2}
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
