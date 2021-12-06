@@ -38,6 +38,9 @@ function ResearchResult({ result }) {
       if (user == null){
         setApplied("Apply")
       }
+      else if (user.signup == "Professor" || user.signup == "Administrator"){
+        alert("You cannot apply for a research post as a Professor or Administrator")
+      }
       else if (result.activePost === false){
         alert("The post no longer accepts applicants")
       }

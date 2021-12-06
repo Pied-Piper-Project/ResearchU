@@ -39,7 +39,7 @@ const StudentProfile = () => {
     getUserInfo()
     return (
     <section className="about section bd-container" id="about">
-    <h2 className="section-title">Abner Profile</h2>
+    <h2 className="section-title">Student Profile</h2>
     <div className="createPost-wrapper">
         <div className="createPost-content">
             <div className = "createPost-formTwo">

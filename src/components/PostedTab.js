@@ -33,6 +33,7 @@ function PostedTab({ result }) {
   const iconData = <MdDateRange />
 
   const history = useHistory();
+  
 
 
 
@@ -109,34 +110,48 @@ function PostedTab({ result }) {
           {(isOpen2 && isOffline2) && <div className="six">
             <div className="details-res">
             <h5 className= "pendingTwo" >Pending:</h5>
+            {result.applicants.map((applic) => 
               <div className="detail-item">
-
+                 {applic[0]}
 
 
               <div className="fourone">
 
                 <button className="tagsProfile"   onClick={() => {
-                  history.push('/ResearchU/StudentInfoPage')
+                  history.push('/StudentProfile')
                   }
                 }>Profile</button>
 
                 <button className="tagsAccept"  onClick={() => {
-                  const applic = result.applicants;
-                  const studentID = applic.id
-                  result.applicants.push([studentID, "0"])
+                  const studentID = applic[0]
+                  const number = "0"
+                  const post_id = result._id
+                    const response = axios.put(`/api/ResearchU/applicantManage/${result._id}`, {
+                      number,
+                      studentID,
+                      post_id,
+                    });
+                  //result.applicants.push([studentID, "0"])
                   }
                 }>Accept</button>
 
                 <button className="tagsReject" onClick={() => {
-                  const applic = result.applicants;
-                  const studentID = applic.id
-                  result.applicants.push([studentID, "2"])
+                  const studentID = applic[0]
+                  const number = "2"
+                  const post_id = result._id
+                    const response = axios.put(`/api/ResearchU/applicantManage/${result._id}`, {
+                      number,
+                      studentID,
+                      post_id,
+                    });
+                  //result.applicants.push([studentID, "2"])
                   
                 }}>Reject</button>
 
               </div>
 
               </div>
+)}
 
 
 

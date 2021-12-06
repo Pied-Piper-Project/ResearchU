@@ -19,7 +19,6 @@ const Navbar = ({toggle}) => {
         click.classList.toggle("dark-theme")
     }
     const user = useUser()
-    console.log(user)
 
     if (user != null){
     if (user.appliedPosts != null){
@@ -52,8 +51,6 @@ const Navbar = ({toggle}) => {
                     </NavbarContainer>
                     <NavBtn>
                         <NavLinks to ="/StudentInfoPage">User Info</NavLinks>
-                        <NavLinks to ="/SignIn">Sign In</NavLinks>
-                        <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
                         {/* <FaGripLinesVertical/> */}
                         {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                     </NavBtn>
@@ -90,9 +87,8 @@ const Navbar = ({toggle}) => {
                         </NavMenu>
                     </NavbarContainer>
                     <NavBtn>
+                        <NavLinks to ="/ProfessorInfoPage">User Info</NavLinks>
                         <NavBtnLink to = "/CreatePost"> Create Post</NavBtnLink>
-                        <NavLinks to ="/SignIn">Sign In</NavLinks>
-                        <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
                         {/* <FaGripLinesVertical/> */}
                         {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                     </NavBtn>
@@ -131,9 +127,9 @@ const Navbar = ({toggle}) => {
                     </NavMenu>
                 </NavbarContainer>
                 <NavBtn>
-                    <NavLinks to ="/SignIn">Sign In</NavLinks>
+                    <NavLinks to ="/AdminInfoPage">User Info</NavLinks>
+                    <NavBtnLink to = "/CreatePost"> Create Post</NavBtnLink>
                     {/* <FaGripLinesVertical/> */}
-                    <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
                     {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                 </NavBtn>
             </Nav>
