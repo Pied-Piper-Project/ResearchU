@@ -20,6 +20,7 @@ function SearchBar( {setData, setAllData, setToggleResults} ){
             else
                 var result = await fetch(`/api/searchboth/${school}/${keyword}`);
             data = await result.json();
+            setData(data)
             setAllData(data);
             console.log(data);
 

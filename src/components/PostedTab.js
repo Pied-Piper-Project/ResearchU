@@ -85,7 +85,7 @@ function PostedTab({ result }) {
 
           <div className="five">
             <button className="buttonCard view" onClick={() => {
-              if (setIsOpen2()==true){
+              if (setIsOpen2() === true){
                 setIsOffline2(!isOffline2)
               }
               else{
@@ -95,7 +95,7 @@ function PostedTab({ result }) {
 
 
             <button className="buttonCard apply" onClick={() => {
-              if (setIsOpen()==true){
+              if (setIsOpen() === true){
                 setIsOffline(!isOffline)
               }
               else{
