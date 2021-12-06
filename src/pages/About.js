@@ -14,7 +14,7 @@ const About = () => {
 
             <section className="about section bd-container" id="about">
                   <h3 className="section-title">Mission Statement</h3>
-                <div className="mission__data">
+                <div className="mission__data glass">
                   <span className="about__title">Pied Piper aims to alleviate communication issues between students and professors through an accessible medium.</span>
                 </div>
                   

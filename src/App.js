@@ -25,15 +25,18 @@ import StudentProfile from './pages/StudentProfile';
 
 function App() {
 
-
   const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => {
-        setIsOpen(!isOpen)
-    };
+  // localStorage.setItem('darkMode', false);
+
+  // const [toggle, setToggle] = useState(flase);
+  
+  const toggle = () => {
+      setIsOpen(!isOpen)
+  };
 
   return (
-    <Router>
+    <Router forceRefresh={true}>
 
       <Sidebar isOpen= {isOpen} toggle = {toggle}/>
       <Navbar toggle = {toggle}/>
