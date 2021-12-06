@@ -20,7 +20,7 @@ const Navbar = ({toggle}) => {
     }
     const user = useUser()
 
-
+    if (user != null){
     if (user.appliedPosts != null){
         return (
             <>
@@ -139,6 +139,47 @@ const Navbar = ({toggle}) => {
         </>
     );
     }
+    }
+    else{
+
+
+        return (
+            <>
+                <Nav>
+                <NavLogo to ='/ResearchU'>
+                <img src={logo} width={200} alt='logo' />
+                </NavLogo>
+                    <NavbarContainer>
+                        <MobileIcon onClick = {toggle}>
+                            <FaBars/>
+                        </MobileIcon>
+                        <NavMenu>
+                            <NavItem>
+                                <NavLinks to ='/' >Home</NavLinks>
+                            </NavItem>
+                            <NavItem>
+                                <NavLinks to ="/About">About</NavLinks>
+                            </NavItem>
+                            <NavItem>
+                                <NavLinks to ="/Contact">Contact</NavLinks>
+                            </NavItem>
+                            <NavItem>
+                            <NightModeIcon onClick={myButton}>
+                                 {icon}
+                            </NightModeIcon>
+                            </NavItem>
+                        </NavMenu>
+                    </NavbarContainer>
+                    <NavBtn>
+                        <NavLinks to ="/SignIn">Sign In</NavLinks>
+                        {/* <FaGripLinesVertical/> */}
+                        <NavBtnLink to = "/SignUp"> Sign Up </NavBtnLink>
+                        {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
+                    </NavBtn>
+                </Nav>
+            </>
+        );
+        }
 };
 
 export default Navbar;
