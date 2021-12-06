@@ -17,7 +17,8 @@ const SignIn = () => {
     const onLogInClicked = async () => {
         const response = await axios.post('/api/ResearchU/SignIn', {
             email: emailValue,
-            password: passwordValue
+            password: passwordValue,
+            signin: signInAs
         });
         const { token } = response.data;
         setToken(token);
@@ -48,7 +49,7 @@ const SignIn = () => {
                 placeholder="Password" />
             <p></p>
             <b>Select what you want to sign in as</b>
-            <select 
+            <select
                 id = "mylist"
                 value={signInAs}
                 onChange={e => setSignInAs(e.target.value)}>
