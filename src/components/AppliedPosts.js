@@ -34,17 +34,19 @@ function AppliedPosts({ result }) {
     const [statusID, setStatus] = useState("Check");
     var arr = result.applicants
     var studentID= user;
-    var index;
+    var index = 0;
     var results;
 
   const statusCheck = async() => {
-    for(var k = 0; k < arr.length; k++){
+    /*for(var k = 0; k < arr.length; k++){
         if(arr[k][0] == studentID){
             index = k;
             results = arr[index][1];
   }
-}
-    if(user.appliedPosts.includes(result._id)){
+}*/
+for (var k = 0; k < user.appliedPosts.length; k++)
+    if(user.appliedPosts[k].includes(result._id)){
+      results = user.appliedPosts[k][1]
 
       if(results == 0 || results == "0"){
         setStatus("Accepted")
@@ -57,8 +59,13 @@ function AppliedPosts({ result }) {
         setStatus("Pending")
 
       }
-    }else{
-      alert("Have Not Applied! Go Back To Result Tab To Apply!")
+    }
+    else {
+      index = index + 1;
+      if (index == user.appliedPosts.length){
+      alert("Have Not Applied! Go Back To Result Tab To Apply!");
+      index = 0;
+      }
     }
   }
 

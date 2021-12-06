@@ -113,7 +113,7 @@ function Home() {
   
   
           <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
-            <img src="/ResearchU/static/media/logo.101fc9cd.gif" width="75%" height="75%"/>
+            <img src={animatedLogo} width="75%" height="75%"/>
           </div>
   
             <div className="home__data">
