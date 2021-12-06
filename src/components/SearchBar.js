@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { tempData } from "./ExampleResearchPosts";
+import { tempData1 } from "./ExampleProfile";
 
 function SearchBar( {setData, setAllData, setToggleResults} ){
     let data = [];

@@ -1,20 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import SearchBar from '../components/SearchBar';
+
 import ResearchResult from './../components/ResearchResult';
+import AppliedPosts from './../components/AppliedPosts';
+import PostedTab from './../components/PostedTab';
 import OrderForm from './../components/OrderForm';
 import FilterBar from "../components/FilterBar";
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import animatedLogo from "../images/logo.gif";
+import jQuery from 'jquery'
+import $ from 'jquery';
+import {useUser} from '../auth/useUser'
+
+
 
 function Home() {
-  // const data = tempData;
-  // const [data, setData] = useState([]);
 
+
+/*------------SCRIPT FOR TABS-----------*/
+
+ $(document).ready(function() {
+
+      // get tallest tab__content element
+      var maxHeight = 0;
+
+		$('.tab__content1').each(function() {
+			maxHeight = $(this).outerHeight();
+		});
+
+      // set height of tabs + top offset
+		$('[data-tabs]').css('height', maxHeight - 110 + 'px');
+    $('[data-tabs]').css('max-height', maxHeight * 2 + 'px');
+    $('[data-home_container]').css('height', maxHeight - 110 + 'px');
+    $('[data-home_container]').css('max-height', maxHeight * 2 + 'px');
+
+
+
+});
+
+/*------------END OF SCRIPT FOR TABS-----------*/
+
+  //const [data, setData] = useState([]);
   const [toggleResults, setToggleResults] = useState(false);
-
   const icon1 = <MdTableRows />
   const icon2 = <MdTableRows />
   const [order, setOrder] = useState('');
+  const user = useUser();
     //Need to add a useState for button
     function handleChange(event){
         setOrder({value: event.target.value});
@@ -71,15 +102,250 @@ function Home() {
         allData.sort((a, b) => parseFloat(b._id) - parseFloat(a._id))
     }
 
+  if (user.appliedPosts != null){
+    return (
+      <>
+  
+  
+  <section className="home" id="home">
+  
+          <div className="home__container bd-container">
+  
+  
+          <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
+            <img src={animatedLogo} width="75%" height="75%"/>
+          </div>
+  
+            <div className="home__data">
+              <h1 className="home__title">Research a click away!</h1>
+            </div>
+  
+            <div className="home_container_null">
+  
+  
+              <div className="search-bar">
+                <div className="">
+                  <SearchBar setData={setData} setAllData={setAllData} setToggleResults={setToggleResults}/>
+                </div>
+              </div>
+  
+  
+              <div data-homeContainer className="homeContainer" style={ toggleResults ? {display: "grid"} : {display: "none"}}>
+  
+                <div className="filters">
+                  <div className="filter__container">
+                    <div>
+                      <FilterBar
+                        majors={generateMajorDataForDropdown()}
+                        semesters={generateSemesterDataForDropdown()}
+                        onAllFilter={handleFilterMajor}
+                      ></FilterBar>
+                    </div>
+                </div>
+              </div>
+  
+            <div data-cardWrapper className="cardWrapper">
+  
+                        <div data-tabs class="tabs">
+                           <div class="tab">
+                              <input type="radio" name="tabgroup" id="tab-1" checked/>
+                              <label for="tab-1">Result</label>
+                                <div class="tab__content1">
+                          {allData.map((item) => (
+                            <ResearchResult result={item} key={item._id} />
+                          ))}
+                                </div>
+                           </div>
+  
+                           
+                                  
+  
+                           <div class="tab">
+                              <input type="radio" name="tabgroup" id="tab-2"/>
+                              <label for="tab-2">Applied</label>
+                                <div class="tab__content">
+                                {allData.map((item) => (
+                                  <AppliedPosts result={item} key={item._id} />
+                                ))}
+                                </div>
+                           </div>
+  
+                           
+                 
+  
+  
+  
+                         {/*  <div class="tab">
+                              <input type="radio" name="tabgroup" id="tab-3"/>
+                              <label for="tab-3">Posted</label>
+                                <div class="tab__content">
+                                {allData.map((item) => (
+                                  <PostedTab result={item} key={item._id} />
+                                ))}
+                                </div>
+                           </div>
+                                */}
+  
+  
+  
+                           <div className="sorting">
+                                           <h1>Sort By:</h1>
+                                           <div className="select-dropdown">
+                                             <OrderForm update={handleChange.bind(this)} cur={order.value} />
+                                           </div>
+                                           <div className="sort-icon">
+                                             <div className="original-icon">{icon1}</div>
+                                             <div className="rotate-icon">{icon2}</div>
+                                           </div>
+                          </div>
+                          </div>
+                        </div>
+  
+  
+            </div>
+  
+            <div className="disappearData" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
+  
+            </div>
+            </div>
+          </div>
+  </section>
+  
+      </>
+    );
+  }
+
+  else if (user.createdPost != null){
+    return (
+      <>
+  
+  
+  <section className="home" id="home">
+  
+          <div className="home__container bd-container">
+  
+  
+          <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
+            <img src="/ResearchU/static/media/logo.101fc9cd.gif" width="75%" height="75%"/>
+          </div>
+  
+            <div className="home__data">
+              <h1 className="home__title">Research a click away!</h1>
+            </div>
+  
+            <div className="home_container_null">
+  
+  
+              <div className="search-bar">
+                <div className="">
+                  <SearchBar setData={setData} setAllData={setAllData} setToggleResults={setToggleResults}/>
+                </div>
+              </div>
+  
+  
+              <div data-homeContainer className="homeContainer" style={ toggleResults ? {display: "grid"} : {display: "none"}}>
+  
+                <div className="filters">
+                  <div className="filter__container">
+                    <div>
+                      <FilterBar
+                        majors={generateMajorDataForDropdown()}
+                        semesters={generateSemesterDataForDropdown()}
+                        onAllFilter={handleFilterMajor}
+                      ></FilterBar>
+                    </div>
+                </div>
+              </div>
+  
+            <div data-cardWrapper className="cardWrapper">
+  
+                        <div data-tabs class="tabs">
+                           <div class="tab">
+                              <input type="radio" name="tabgroup" id="tab-1" checked/>
+                              <label for="tab-1">Result</label>
+                                <div class="tab__content1">
+                          {allData.map((item) => (
+                            <ResearchResult result={item} key={item._id} />
+                          ))}
+                                </div>
+                           </div>
+  
+                           {/*
+                                  
+  
+                           <div class="tab">
+                              <input type="radio" name="tabgroup" id="tab-2"/>
+                              <label for="tab-2">Applied</label>
+                                <div class="tab__content">
+                                {allData.map((item) => (
+                                  <AppliedPosts result={item} key={item._id} />
+                                ))}
+                                </div>
+                           </div>
+  
+                           */
+                 }
+  
+  
+  
+                         <div class="tab">
+                              <input type="radio" name="tabgroup" id="tab-3"/>
+                              <label for="tab-3">Posted</label>
+                                <div class="tab__content">
+                                {allData.map((item) => (
+                                  <PostedTab result={item} key={item._id} />
+                                ))}
+                                </div>
+                           </div>
+                                
+  
+  
+  
+                           <div className="sorting">
+                                           <h1>Sort By:</h1>
+                                           <div className="select-dropdown">
+                                             <OrderForm update={handleChange.bind(this)} cur={order.value} />
+                                           </div>
+                                           <div className="sort-icon">
+                                             <div className="original-icon">{icon1}</div>
+                                             <div className="rotate-icon">{icon2}</div>
+                                           </div>
+                          </div>
+                          </div>
+                        </div>
+  
+  
+            </div>
+  
+            <div className="disappearData" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
+  
+            </div>
+            </div>
+          </div>
+  </section>
+  
+      </>
+    );
+  }
+
+  else{
+
+  
   return (
     <>
-      <section className="home" id="home">
+
+
+<section className="home" id="home">
+
         <div className="home__container bd-container">
-          <div className="home__img">
-            <img src={animatedLogo} alt="Animated ResearchU logo" />
-          </div>
+
+
+        <div className="disappearData2" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
+          <img src="/ResearchU/static/media/logo.101fc9cd.gif" width="75%" height="75%"/>
+        </div>
+
           <div className="home__data">
-            <h1 className="home__title">Research is just a click away!</h1>
+            <h1 className="home__title">Research a click away!</h1>
           </div>
           <div className="home_container_null">
             <div className="search-bar">
@@ -88,9 +354,11 @@ function Home() {
               </div>
             </div>
 
-            <div className="home_container" style={ toggleResults ? {display: "grid"} : {display: "none"}}>
+
+            <div data-homeContainer className="homeContainer" style={ toggleResults ? {display: "grid"} : {display: "none"}}>
+
               <div className="filters">
-                <div className="">
+                <div className="filter__container">
                   <div>
                     <FilterBar
                       majors={generateMajorDataForDropdown()}
@@ -98,39 +366,79 @@ function Home() {
                       onAllFilter={handleFilterMajor}
                     ></FilterBar>
                   </div>
-                </div>
               </div>
 
-              <div className="cards-wrapper">
-                <div className="listing">
-                  <h1>Results</h1>
-                  <div className="sorting">
-                    <h1>Sort By:</h1>
-                    <div className="select-dropdown">
-                      <OrderForm update={handleChange.bind(this)} cur={order.value} />
-                    </div>
+          <div data-cardWrapper className="cardWrapper">
 
-                    <div className="sort-icon">
+                      <div data-tabs class="tabs">
+                         <div class="tab">
+                            <input type="radio" name="tabgroup" id="tab-1" checked/>
+                            <label for="tab-1">Result</label>
+                              <div class="tab__content1">
+                        {allData.map((item) => (
+                          <ResearchResult result={item} key={item._id} />
+                        ))}
+                              </div>
+                         </div>
 
-                      <div className="original-icon">{icon1}</div>
-                      <div className="rotate-icon">{icon2}</div>
+                         {/*
+                                
 
-                    </div>
+                         <div class="tab">
+                            <input type="radio" name="tabgroup" id="tab-2"/>
+                            <label for="tab-2">Applied</label>
+                              <div class="tab__content">
+                              {allData.map((item) => (
+                                <AppliedPosts result={item} key={item._id} />
+                              ))}
+                              </div>
+                         </div>
 
-                  </div>
+                         */
+               }
 
-                </div>
-                {data.map((item) => (
-                  <ResearchResult result={item} key={item._id} />
-                ))}
-              </div>
-            </div>
+
+
+                       {/*  <div class="tab">
+                            <input type="radio" name="tabgroup" id="tab-3"/>
+                            <label for="tab-3">Posted</label>
+                              <div class="tab__content">
+                              {allData.map((item) => (
+                                <PostedTab result={item} key={item._id} />
+                              ))}
+                              </div>
+                         </div>
+                              */}
+
+
+
+                         <div className="sorting">
+                                         <h1>Sort By:</h1>
+                                         <div className="select-dropdown">
+                                           <OrderForm update={handleChange.bind(this)} cur={order.value} />
+                                         </div>
+                                         <div className="sort-icon">
+                                           <div className="original-icon">{icon1}</div>
+                                           <div className="rotate-icon">{icon2}</div>
+                                         </div>
+                        </div>
+                        </div>
+                      </div>
+
 
           </div>
+
+          <div className="disappearData" style={ toggleResults ? {display: "none"} : {display: "grid"}}>
+
+          </div>
+          </div>
         </div>
-      </section>
+        </div>
+</section>
+
     </>
   );
+                            }
 }
 
 export default Home;

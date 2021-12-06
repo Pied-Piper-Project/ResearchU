@@ -23,7 +23,7 @@ export const tempData = [
       year: ["1", "2"],
       prerequisites: ["CHEM 150"],
       major: ["Chemistry"],
-      applicants: [["", ""]],
+      applicants: [["1", "0"]],
       professorID: 1
     },
     {
@@ -50,7 +50,7 @@ export const tempData = [
       year: ["1", "2"],
       prerequisites: ["N/A"],
       major: ["N/A"],
-      applicants: [["", ""]],
+      applicants: [["1", "1"]],
       professorID: 1
     },
     {
@@ -77,7 +77,7 @@ export const tempData = [
       year: ["4"],
       prerequisites: ["CHEM 150"],
       major: ["Chemistry"],
-      applicants: [["", ""]],
+      applicants: [["1", "2"]],
       professorID: 1
     },
     {
@@ -104,7 +104,7 @@ export const tempData = [
       year: ["2"],
       prerequisites: ["CS 170", "PHYS 141"],
       major: ["Computer Science", "Physics"],
-      applicants: [["", ""]],
+      applicants: [["2", "2"],["1", "0"],["4", "2"]],
       professorID: 1
     },
     {
@@ -131,61 +131,44 @@ export const tempData = [
       year: ["0"],
       prerequisites: ["PHYS 220"],
       major: ["Physics"],
-      applicants: [["", ""]],
+      applicants: [["2", "2"],["1", "1"],["9", "1"]],
       professorID: 1
     },
     {
       _id: 6,
-      name: "Euler Research",
-      professor: "Mark Dalton",
-      school: "Georgia Institute of Technology",
-      schoolLogo: "www.gatech.edu",
-      department: "Mathematics",
-      postBody: "This research opportunity supports students who are at an early stage of their study of mathematics. Students who are from underrepresented groups, who have only completed one or two years of study of mathematics, or who attend colleges without access to large research departments are strongly encouraged to apply. Students learn to read research articles; to formulate conjectures and construct examples; to program simulations; to concentrate, listen, and ask questions; to generalize and simplify proofs; and to disseminate their discoveries. Students are immersed in an environment where the mathematical ideas are new and not fully understood. Students work in one of several research groups led by a faculty mentor. Students present their progress on a weekly basis and write a final report at the end of the program. Funding is available for travel to conferences to present research.",
-      isOnline: false,
-      location: "North Ave NW, Atlanta, GA 30332",
-      activePost: true,
-      semester: "Fall 2022",
-      postDate: "2022-08-19T00:00:00.000Z",
-      fromDate: "2022-09-20T00:00:00.000Z",
-      toDate: "2022-11-03T00:00:00.000Z",
-      daysOfWeek: ["tuesday", "thursday"],
-      timeRange: "16:00-20:00",
-      isPaid: true,
-      payAmount: 0,
-      gpa: 3.5,
-      isGrad: false,
-      year: ["3"],
-      prerequisites: ["MATH 111", "MATH 112", "MATH 221"],
-      major: ["Mathematics"],
-      applicants: [["", ""]],
-      professorID: 1,
-    },
-    {
-      _id: 7,
-      name: "Chem Amino Acid Research",
-      professor: "John Dalton",
-      school: "Georgia State University",
-      schoolLogo: "gsu.edu",
+      name: "Untitled Physics Research",
+      professor: "Lauren Dalton",
+      school: "Stanford University",
+      schoolLogo: "www.stanford.edu",
       department: "Chemistry",
-      postBody: "We invite students from both 4-year and 2-year universities, as well as students from community colleges to apply. For most labs, only completion of freshmen chemistry and lab is required. Organic classes and lab are required for some, but not all organic labs.",
-      isOnline: false,
-      location: "P.O. Box 3965 Atlanta, GA 30302-3965",
+      postBody: "Information about this opportunity is private, apply to learn more.",
+      isOnline: true,
+      location: "450 Serra Mall, Stanford, CA 94305",
       activePost: true,
-      semester: "Spring 2022",
-      postDate: "2022-01-09T00:00:00.000Z",
-      fromDate: "2022-02-07T00:00:00.000Z",
-      toDate: "2022-04-20T00:00:00.000Z",
-      daysOfWeek: ["monday", "wednesday"],
+      semester: "Fall 2021",
+      postDate: "2021-08-28T00:00:00.000Z",
+      fromDate: "2021-09-20T00:00:00.000Z",
+      toDate: "2021-11-19T00:00:00.000Z",
+      daysOfWeek: ["friday"],
       timeRange: "16:00-20:00",
       isPaid: true,
       payAmount: 0,
-      gpa: 3.7,
+      gpa: 3.0,
       isGrad: false,
       year: ["0"],
-      prerequisites: ["CHEM 150"],
-      major: ["Chemistry"],
-      applicants: [["", ""]],
+      prerequisites: ["PHYS 220"],
+      major: ["Physics"],
+      applicants: [["2", "2"],["1", "2"],["9", "0"]],
       professorID: 1
     },
+
+
+
+
+
+
+
+
+
+
   ];

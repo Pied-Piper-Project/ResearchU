@@ -46,18 +46,18 @@ const Footer = () => {
                             </i>
                         </FooterLink>
                     </Column>
-                </Row>
-                <Row>
-                    <Column>
-                    </Column>
-                    <Column>
-                        <p>&copy; 2021 ResearchU</p>
-                    </Column>
-                    <Column>
-                        <FooterLink target="_blank" href="https://clearbit.com/">Logos provided by Clearbit</FooterLink>
-                    </Column>
-                </Row>
-            </Container>
+                    </Row>
+                     <Row>
+                         <Column>
+                         </Column>
+                         <Column>
+                             <p>&copy; 2021 ResearchU</p>
+                         </Column>
+                         <Column>
+                             <FooterLink target="_blank" href="https://clearbit.com/">Logos provided by Clearbit</FooterLink>
+                         </Column>
+                     </Row>
+                 </Container>
         </Box>
         </div>
     );

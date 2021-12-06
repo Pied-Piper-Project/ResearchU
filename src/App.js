@@ -24,7 +24,7 @@ import StudentProfile from './pages/StudentProfile';
 
 
 function App() {
-  
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,11 +34,11 @@ function App() {
 
   return (
     <Router>
-       
+
       <Sidebar isOpen= {isOpen} toggle = {toggle}/>
       <Navbar toggle = {toggle}/>
       <Switch>
-        
+
         <Route path = '/' exact component = {Home}/>
         {/* <Route path = '' exact component = {Home}/> */}
         <Route path = '/About' exact component = {About}/>
@@ -56,8 +56,9 @@ function App() {
         <PrivateRoute path = '/AdminInfoPage' exact component = {AdminInfoPage}/>
 
       </Switch>
-        <Footer />
+      <Footer />
     </Router>
+
   );
 }
 

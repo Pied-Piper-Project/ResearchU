@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import { MdViewColumn, MdTableRows, MdDateRange } from "react-icons/md";
 import { GrLocation } from "react-icons/gr";
-
 import { BiStar } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import SignIn from "../pages/SignIn";
-
 import {useUser} from '../auth/useUser';
 import { useToken } from '../auth/useToken';
 import axios from 'axios';
+import StudentInfoPage from './../pages/StudentInfoPage';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 
 
-function ResearchResult({ result }) {
+function PostedTab({ result }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOffline, setIsOffline] = useState(true);
+  const [isOffline2, setIsOffline2] = useState(true);
+
   const [token, setToken] = useToken();
-  let user = useUser()
+
+  let user = useUser();
+
   const [appliedText, setApplied] = useState("Apply");
   //if (user.appliedPosts.includes(result._id)){
     //setApplied("Applied")
@@ -27,70 +32,14 @@ function ResearchResult({ result }) {
   const iconLocation = <GrLocation />
   const iconData = <MdDateRange />
 
-  /*if (user === null){
-    user = {
-      _id: "21024",
-      appliedPosts: []
-    }
-  }*/
-
-  const applied = async () => {
-      if (user == null){
-        setApplied("Apply")
-      }
-      else if (result.activePost === false){
-        alert("The post no longer accepts applicants")
-      }
-      else if (user.appliedPosts.includes(result._id)){
-        alert("Already applied!")
-      }
-      else if (user.id == null){
-        setApplied("Apply")
-      }
-      else {
-        user.appliedPosts.push(result._id)
-        const appliedPosts = result._id
-        const studentID = user.id
-        result.applicants.push([studentID, "1"])
-        const applicants = [studentID, "1"]
-        const postID = result._id
-        const response = await axios.put(`/api/ResearchU/apply/${result._id}`, {
-          appliedPosts,
-          studentID,
-          applicants,
-          postID,
-        }, {headers: { Authorization: `Bearer ${token}`}});
-        const { token: newToken } = response.data;
-        setToken(newToken);
-        setApplied("Applied")
-      }
-  }
-
   const history = useHistory();
-  // function handleClick() {
-  //   history.push(SignIn);
-  // }
 
 
-  // ToDo: write function to display pay amount if it is paid
 
-  // ToDo: write function to format timeRange
+
   return (
     <>
-      {/* <h1>{result.name}</h1>
-      <h3>School {result.school}</h3>
-      <img src={result.schoolLogo} alt={result.school + "'s school logo"} />
-      <h3>Academic Department {result.department}</h3>
-      <h3>Professor {result.professor}</h3>
-      <h3>Location: {result.location}</h3>
-      <h3>Semester: {result.semester}</h3>
-      <h3>Duration: {result.dateRange}</h3>
-      <h3>Major: {result.major}</h3>
-      <h3>Research is conducted between the hours of {result.timeRange}</h3>
-      <h3>This is {result.isPaid ? "a paid" : "not a paid"} research opportunity</h3>
-      <h3>This opportunity pays ${result.payAmount}</h3>
-      <p>{result.postBody}</p>
-      <p>This opportunity is {result.isOnline ? "online" : "offline"}</p> */}
+
       <div className="cards column">
 
         <div className="card column-item">
@@ -132,21 +81,70 @@ function ResearchResult({ result }) {
               ))}
             </>
           </div>
+
+
           <div className="five">
-            <button className="buttonCard view" onClick={() => setIsOpen(!isOpen)}>View</button>
-            <button className="buttonCard apply" onClick={() => {
-              if (user == null){
-                history.push('/SignIn')
-              }
-              else if (user.id == null){
-                history.push('/SignIn')
+            <button className="buttonCard view" onClick={() => {
+              if (setIsOpen2()==true){
+                setIsOffline2(!isOffline2)
               }
               else{
-                applied()
+                setIsOpen(!isOpen)
               }
-              }}>{appliedText}</button>
+            }}>Details</button>
+
+
+            <button className="buttonCard apply" onClick={() => {
+              if (setIsOpen()==true){
+                setIsOffline(!isOffline)
+              }
+              else{
+                setIsOpen2(!isOpen2)
+              }
+            }}>Applicants</button>
+
           </div>
-          {isOpen && <div className="six">
+
+
+          {(isOpen2 && isOffline2) && <div className="six">
+            <div className="details-res">
+            <h5 className= "pendingTwo" >Pending:</h5>
+              <div className="detail-item">
+
+
+
+              <div className="fourone">
+
+                <button className="tagsProfile"   onClick={() => {
+                  history.push('/ResearchU/StudentInfoPage')
+                  }
+                }>Profile</button>
+
+                <button className="tagsAccept"  onClick={() => {
+                  const applic = result.applicants;
+                  const studentID = applic.id
+                  result.applicants.push([studentID, "0"])
+                  }
+                }>Accept</button>
+
+                <button className="tagsReject" onClick={() => {
+                  const applic = result.applicants;
+                  const studentID = applic.id
+                  result.applicants.push([studentID, "2"])
+                  
+                }}>Reject</button>
+
+              </div>
+
+              </div>
+
+
+
+            </div>
+          </div>}
+
+
+          {(isOpen && isOffline) && <div className="six">
             <div className="details-res">
               <div className="detail-item">
                 <h5>Professor:</h5>
@@ -171,11 +169,10 @@ function ResearchResult({ result }) {
             </div>
           </div>}
         </div>
-        {/* <div className="card column-item ">Card 2</div>
-          <div className="card column-item ">Card 3</div> */}
+
       </div>
     </>
   )
 }
 
-export default ResearchResult;
+export default PostedTab;
