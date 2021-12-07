@@ -118,10 +118,6 @@ const Navbar = ({ toggle }) => {
 
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                         </NavBtn>
-
-
-
-                          <button  className = "field-margin button-style logOut" onClick={logOut}>Log Out</button>
                     </Nav>
                 </>
             );
