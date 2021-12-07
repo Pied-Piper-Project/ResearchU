@@ -420,7 +420,7 @@ margin-top: 80px;
 /*---------------- Create Post ----------------*/
 .signIn-wrapper {
   text-align: center;
- 
+
   background-color: #6258be;
   width: 20rem;
   margin: auto;
@@ -491,12 +491,12 @@ margin-top: 80px;
 }
 
 .button-style:active,
-.button-style:focus{  
+.button-style:focus{
   background-color: #fc6;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
-.button-style:hover{  
+.button-style:hover{
   background-color: #fc6;
   color: #010820;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
@@ -1789,8 +1789,9 @@ input[type='radio']:checked:after {
   color: #6654c4;
 }
 .react-date-picker__inputGroup__input {
-  min-width: 0.54em;
-  height: 100%;
+  min-width: 0.54rem;
+  margin-top: .6rem;
+  height: 50%;
   position: relative;
   padding: 0 1px;
   border: 0;

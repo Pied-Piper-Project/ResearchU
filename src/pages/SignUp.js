@@ -31,7 +31,7 @@ const SignUp = () => {
 
     return (
         <section className="about section bd-container" id="about">
-        <h2 className="section-title">Sign In</h2>
+        <h2 className="section-title">Sign Up</h2>
             <div className="signIn-wrapper">
                 <div className="signIn-content">
             {errorMessage && <div className="fail">{errorMessage}</div> }
