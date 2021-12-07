@@ -17,8 +17,9 @@ import {
     NightModeIcon,
 } from "./NavbarElements";
 import { useUser } from "../../auth/useUser";
-
+import { useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
+
 
 const Navbar = ({ toggle }) => {
     const icon = <HiMoon />;
@@ -33,6 +34,11 @@ const Navbar = ({ toggle }) => {
         click.classList.toggle("dark-theme");
     }
     const user = useUser();
+    const history = useHistory();
+    const logOut = () => {
+        localStorage.removeItem('token');
+        history.push('/SignIn');
+    }
 
     if (user != null) {
         if (user.appliedPosts != null) {
@@ -64,10 +70,12 @@ const Navbar = ({ toggle }) => {
                             </NavMenu>
                         </NavbarContainer>
                         <NavBtn>
+                        <NavLinks onClick={logOut} > Log Out </NavLinks>
                             <NavBtnLink to="/StudentInfoPage">Profile</NavBtnLink>
                             {/* <FaGripLinesVertical/> */}
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                         </NavBtn>
+
                     </Nav>
                 </>
             );
@@ -104,10 +112,16 @@ const Navbar = ({ toggle }) => {
                                 {" "}
                                 Create Post
                             </NavLinks>
+                            <NavLinks onClick={logOut} > Log Out </NavLinks>
                             <NavBtnLink to="/ProfessorInfoPage">Profile</NavBtnLink>
-                            {/* <FaGripLinesVertical/> */}
+
+
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                         </NavBtn>
+
+
+
+                          <button  className = "field-margin button-style logOut" onClick={logOut}>Log Out</button>
                     </Nav>
                 </>
             );
