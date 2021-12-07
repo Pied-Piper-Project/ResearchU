@@ -84,6 +84,28 @@ export const NavLinks = styled(LinkR)`
     color: #6654C4;
     transition: 0.1s ease-in-out;
   }
+  `
+
+
+  export const NavLinks2 = styled(LinkR)`
+    color: #091b33;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+
+    &.active {
+      border-bottom: 3px solid #01bf71
+    }
+
+    transition: 0.2s ease-in-out;
+    &:hover {
+      color: #6654C4;
+      transition: 0.1s ease-in-out;
+    }
 
 `
 

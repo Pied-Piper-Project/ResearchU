@@ -12,6 +12,7 @@ import {
     NavMenu,
     NavItem,
     NavLinks,
+    NavLinks2,
     NavBtn,
     NavBtnLink,
     NightModeIcon,
@@ -70,8 +71,9 @@ const Navbar = ({ toggle }) => {
                             </NavMenu>
                         </NavbarContainer>
                         <NavBtn>
-                        <NavLinks onClick={logOut} > Log Out </NavLinks>
+
                             <NavBtnLink to="/StudentInfoPage">Profile</NavBtnLink>
+                            <NavLinks2 onClick={logOut} > Log Out </NavLinks2>
                             {/* <FaGripLinesVertical/> */}
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                         </NavBtn>
@@ -112,8 +114,9 @@ const Navbar = ({ toggle }) => {
                                 {" "}
                                 Create Post
                             </NavLinks>
-                            <NavLinks onClick={logOut} > Log Out </NavLinks>
+
                             <NavBtnLink to="/ProfessorInfoPage">Profile</NavBtnLink>
+                            <NavLinks2 onClick={logOut} > Log Out </NavLinks2>
 
 
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
@@ -151,6 +154,7 @@ const Navbar = ({ toggle }) => {
                         </NavbarContainer>
                         <NavBtn>
                             <NavLinks to="/SignIn">Sign In</NavLinks>
+                            
                             {/* <FaGripLinesVertical/> */}
                             <NavBtnLink to="/SignUp"> Sign Up </NavBtnLink>
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
