@@ -112,7 +112,7 @@ const Navbar = ({ toggle }) => {
                                 {" "}
                                 Create Post
                             </NavLinks>
-                            <NavLinks onClick={logOut} > Log Out </NavLinks>
+                            <NavLinks onClick={logOut2} > Log Out </NavLinks>
                             <NavBtnLink to="/ProfessorInfoPage">Profile</NavBtnLink>
 
 

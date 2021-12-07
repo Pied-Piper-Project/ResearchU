@@ -166,8 +166,12 @@ function PostedTab({ result }) {
                 <p>{result.professor}</p>
               </div>
               <div className="detail-item">
-                <h5>Duration:</h5>
-                <p>{result.date}</p>
+                <h5>From:</h5>
+                <p>{Date(result.fromDate).toString()}</p>
+              </div>
+              <div className="detail-item">
+                <h5>To:</h5>
+                <p>{Date(result.toDate).toString()}</p>
               </div>
               <div className="detail-item">
                 <h5>Location:</h5>
