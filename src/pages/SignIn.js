@@ -34,21 +34,27 @@ const SignIn = () => {
     }
 
     return (
-        <div className="content-container">
-            <h1>Sign In</h1>
+        <section className="about section bd-container" id="about">
+        <h2 className="section-title">Sign In</h2>
+            <div className="signIn-wrapper">
+                <div className="signIn-content">
             {errorMessage && <div className="fail">{errorMessage}</div> }
             <input
+            className = "field-margin field-style"
                 value={emailValue}
                 onChange={e => setEmailValue(e.target.value)}
                 placeholder="Email"/>
             <p></p>
             <input
+            className = "field-margin field-style"
                 type="password"
                 value={passwordValue}
                 onChange={e => setPasswordValue(e.target.value)}
                 placeholder="Password" />
             <p></p>
-            <b>Select what you want to sign in as</b>
+            <h3 className = "selectPerm" >Select what you want to sign in as:</h3>
+            <div className="select-wrapper" >
+            <div className="select-dropdown-subject">
             <select
                 id = "mylist"
                 value={signInAs}
@@ -58,15 +64,20 @@ const SignIn = () => {
             <option>Professor</option>
             <option>Administrator</option>
             </select>
+            </div>
+            </div>
             <p></p>
             <button
+                className = "field-margin button-style"
                 disabled={!emailValue || !passwordValue || !signInAs}
                 onClick={onLogInClicked}>Sign In</button>
-            <hr />
-            <button onClick={() => history.push('/forgot-password')}>Forgot your password?</button>
+            <hr className = "sepr"/>
+            <button className = "btn-marg button-forget" onClick={() => history.push('/forgot-password')}>Forgot your password?</button>
             <p></p>
-            <button onClick={() => history.push('/SignUp')}>Don't have an account? Sign Up!</button>
-        </div>
+            <button className = "button-forget" onClick={() => history.push('/SignUp')}>Don't have an account? Sign Up!</button>
+            </div>
+            </div>
+        </section>
     )
 }
 
