@@ -363,14 +363,19 @@ function ManuallyCreatePost() {
                                     </div>
                                 );
                             })}
+
                             <label className="createPost-label" for="fromDate">From Date:</label>
-                            <DatePicker
+
+
+                            <DatePicker 
                             onChange={handleInput("fromDate")}
                             className="form-control"
                             id="fromDate"
                             value = {dateRead(post.fromDate)}
                              minDate={new Date(2021, 8, 19)} // Ideally this is not hard coded
+
                              />
+
                              <label className="createPost-label" for="fromDate">To Date:</label>
                              <DatePicker
                             onChange={handleInput("toDate")}
