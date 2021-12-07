@@ -61,21 +61,26 @@ const ProfessorInfoPage = () => {
 
     //jsx for component
     return (
-        <div className="content-container">
-            <h1>Info for {email}</h1>
+        <section className="about section bd-container" id="about">
+        <div className="profile-wrapper ">
+        <div className="signIn-content">
+        {/* <div className="content-container"> */}
+            <h1>Info for: {email}</h1>
             {!isVerified && <div className="fail"> You won't be able to make any changes until you verify your email.</div>}
             {showSuccessMessage && <div className="success">Successfully saved user data!</div>}
             {showErrorMessage && <div className="fail">Uh oh... something went wrong and we couldn't save changes</div>}
             <label>
                 School:
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setSchool(e.target.value)}
                     value={school} />
             </label>
             <p></p>
             <label>
-                OnCampus:
+                Is it on campus?
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setOnCampus(e.target.value)}
                     value={onCampus} />
             </label>
@@ -83,16 +88,22 @@ const ProfessorInfoPage = () => {
             <label>
                 Department:
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setDepartment(e.target.value)}
                     value={department} />
             </label>
             <hr />
-            <button onClick={saveChanges}>Save Changes</button>
+            <div className ="profile-grid">
+            <button className = "field-margin button-style saveChanges" onClick={saveChanges}>Save Changes</button>
             <p></p>
-            <button onClick={resetValues}>Reset Values</button>
+            <button className = "field-margin button-style resetValues" onClick={resetValues}>Reset Values</button>
             <p></p>
-            <button onClick={logOut}>Log Out</button>
-        </div>
+            <button className = "field-margin button-style logOut" onClick={logOut}>Log Out</button>
+           </div>
+        {/* </div> */}
+         </div>
+         </div>
+     </section>
     );
 
 
