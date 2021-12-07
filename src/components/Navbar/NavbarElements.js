@@ -96,6 +96,7 @@ export const NavLinks = styled(LinkR)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
+    text-decoration: underline;
 
     &.active {
       border-bottom: 3px solid #01bf71

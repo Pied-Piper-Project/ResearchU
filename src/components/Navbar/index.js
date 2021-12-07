@@ -154,7 +154,7 @@ const Navbar = ({ toggle }) => {
                         </NavbarContainer>
                         <NavBtn>
                             <NavLinks to="/SignIn">Sign In</NavLinks>
-                            
+
                             {/* <FaGripLinesVertical/> */}
                             <NavBtnLink to="/SignUp"> Sign Up </NavBtnLink>
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
