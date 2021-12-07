@@ -268,6 +268,7 @@ function ManuallyCreatePost() {
             const response  = await axios.post('/api/createpost', post);
         }
         submitPost();
+        alert("Post created!")
     }
 
     return(
