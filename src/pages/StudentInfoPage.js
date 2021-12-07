@@ -73,14 +73,19 @@ const StudentInfoPage = () => {
 
     //jsx for component
     return (
-        <div className="content-container">
-            <h1>Info for {email}</h1>
+        <section className="about section bd-container" id="about">
+        {/* <h2 className="section-title">Sign In</h2> */}
+            <div className="profile-wrapper ">
+                <div className="signIn-content">
+        {/* <div className="content-container"> */}
+            <h1>Info for: {email}</h1>
             {!isVerified && <div className="fail"> You won't be able to make any changes until you verify your email.</div>}
             {showSuccessMessage && <div className="success">Successfully saved user data!</div>}
             {showErrorMessage && <div className="fail">Uh oh... something went wrong and we couldn't save changes</div>}
             <label>
                 School:
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setSchool(e.target.value)}
                     value={school} />
             </label>
@@ -88,6 +93,7 @@ const StudentInfoPage = () => {
             <label>
                 Major:
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setMajor(e.target.value)}
                     value={major} />
             </label>
@@ -95,13 +101,15 @@ const StudentInfoPage = () => {
             <label>
                 Minor:
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setMinor(e.target.value)}
                     value={minor} />
             </label>
             <p></p>
             <label>
-                OnCampus:
+                Are you on campus?
                 <input
+                className = "field-margin field-style profile-style"
                     onChange={e => setOnCampus(e.target.value)}
                     value={onCampus} />
             </label>
@@ -109,30 +117,36 @@ const StudentInfoPage = () => {
             <label>
                 Year:
                 <input
+                className = "field-margin field-style profile-style "
                     onChange={e => setYear(e.target.value)}
                     value={year} />
             </label>
             <p></p>
             <label>
-                Gpa:
+                GPA:
                 <input
+                className = "field-margin field-style profile-style "
                     onChange={e => setGpa(e.target.value)}
                     value={gpa} />
             </label>
             <p></p>
             <label>
-                AboutThem:
+                About:
                 <input
+                className = "field-margin field-style profile-style "
                     onChange={e => setAboutThem(e.target.value)}
                     value={aboutThem} />
             </label>
             <hr />
-            <button onClick={saveChanges}>Save Changes</button>
-            <p></p>
-            <button onClick={resetValues}>Reset Values</button>
-            <p></p>
-            <button onClick={logOut}>Log Out</button>
-        </div>
+            <div className ="profile-grid">
+            <button className = "field-margin button-style saveChanges" onClick={saveChanges}>Save Changes</button>
+            <button  className = "field-margin button-style resetValues" onClick={resetValues}>Reset Values</button>
+            <button  className = "field-margin button-style logOut" onClick={logOut}>Log Out</button>
+            </div>
+            
+            </div>
+            </div>
+        </section>
     );
 
 

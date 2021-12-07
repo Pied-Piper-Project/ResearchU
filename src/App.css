@@ -535,6 +535,55 @@ margin-top: 80px;
   margin-bottom: 1.5rem;
 }
 
+/*---------------- Profile ----------------*/
+.profile-wrapper {
+  text-align: left;
+  background-color: #6258be;
+  width: 43rem;
+  max-width: 45rem;
+  margin: auto;
+  height: auto;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 6px rgba(101, 100, 102, 0.3);
+  border-radius: 2rem;
+
+}
+
+.fail {
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
+}
+
+.profile-style {
+  background-color: #c1b6f1;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+/* .saveChanges {
+  background-color: #000;
+} */
+
+.resetValues {
+  background-color: rgb(126, 189, 154);
+}
+.resetValues:hover {
+  background-color: rgb(100, 156, 125);
+}
+
+.logOut {
+  background-color: rgb(190, 130, 140);
+}
+
+.logOut:hover {
+  background-color: rgb(182, 94, 109);
+}
 /*---------------- Applied Tabs----------------*/
 .disappearData{
 
