@@ -157,9 +157,9 @@ function ResearchResult({ result }) {
               </div>
               <div className="detail-item">
                 <h5>From:</h5>
-                <p>{result.fromDate}</p>
+                <p>{Date.parse(result.fromDate).toString()}</p>
                 <h5>To:</h5>
-                <p>{result.toDate}</p>
+                <p>{Date.parse(result.toDate).toString()}</p>
               </div>
               <div className="detail-item">
                 <h5>Location:</h5>
