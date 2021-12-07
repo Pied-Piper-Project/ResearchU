@@ -99,6 +99,9 @@ export const NavBtn = styled.nav`
   align-items: center;
   justify-content: center;
   width: 24%;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 export const NavBtnLink = styled(LinkR)`
   border-radius: 50px;

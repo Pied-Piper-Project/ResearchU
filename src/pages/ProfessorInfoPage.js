@@ -50,7 +50,7 @@ const ProfessorInfoPage = () => {
     }
     const logOut = () => {
         localStorage.removeItem('token');
-        history.push('/ResearchU/SignIn');
+        history.push('/SignIn');
     }
 
     const resetValues = () => {

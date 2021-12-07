@@ -22,19 +22,24 @@ import logo from "../../images/logo.png";
 
 const Navbar = ({ toggle }) => {
     const icon = <HiMoon />;
+
     function myButton() {
+        if (localStorage.getItem('darkMode') === 'true')
+            localStorage.setItem('darkMode', false);
+        else
+            localStorage.setItem('darkMode', true);
+
         var click = document.body;
         click.classList.toggle("dark-theme");
     }
     const user = useUser();
-    console.log(user);
 
     if (user != null) {
         if (user.appliedPosts != null) {
             return (
                 <>
                     <Nav>
-                        <NavLogo to="/ResearchU">
+                        <NavLogo to="/">
                             <img src={logo} width={200} alt="logo" />
                         </NavLogo>
                         <NavbarContainer>
@@ -59,9 +64,7 @@ const Navbar = ({ toggle }) => {
                             </NavMenu>
                         </NavbarContainer>
                         <NavBtn>
-                            <NavLinks to="/StudentInfoPage">User Info</NavLinks>
-                            <NavLinks to="/SignIn">Sign In</NavLinks>
-                            <NavBtnLink to="/SignUp"> Sign Up </NavBtnLink>
+                            <NavBtnLink to="/StudentInfoPage">Profile</NavBtnLink>
                             {/* <FaGripLinesVertical/> */}
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                         </NavBtn>
@@ -72,7 +75,7 @@ const Navbar = ({ toggle }) => {
             return (
                 <>
                     <Nav>
-                        <NavLogo to="/ResearchU">
+                        <NavLogo to="/">
                             <img src={logo} width={200} alt="logo" />
                         </NavLogo>
                         <NavbarContainer>
@@ -97,12 +100,11 @@ const Navbar = ({ toggle }) => {
                             </NavMenu>
                         </NavbarContainer>
                         <NavBtn>
-                            <NavBtnLink to="/CreatePost">
+                            <NavLinks to="/CreatePost">
                                 {" "}
                                 Create Post
-                            </NavBtnLink>
-                            <NavLinks to="/SignIn">Sign In</NavLinks>
-                            <NavBtnLink to="/SignUp"> Sign Up </NavBtnLink>
+                            </NavLinks>
+                            <NavBtnLink to="/ProfessorInfoPage">Profile</NavBtnLink>
                             {/* <FaGripLinesVertical/> */}
                             {/* <NavBtnLink to = "/StudentProfile"> Student Profile </NavBtnLink> */}
                         </NavBtn>
@@ -113,7 +115,7 @@ const Navbar = ({ toggle }) => {
             return (
                 <>
                     <Nav>
-                        <NavLogo to="/ResearchU">
+                        <NavLogo to="/">
                             <img src={logo} width={200} alt="logo" />
                         </NavLogo>
                         <NavbarContainer>
@@ -151,7 +153,7 @@ const Navbar = ({ toggle }) => {
         return (
             <>
                 <Nav>
-                    <NavLogo to="/ResearchU">
+                    <NavLogo to="/">
                         <img src={logo} width={200} alt="logo" />
                     </NavLogo>
                     <NavbarContainer>
