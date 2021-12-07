@@ -44,9 +44,9 @@ function AppliedPosts({ result }) {
             results = arr[index][1];
   }
 }*/
-for (var k = 0; k < user.appliedPosts.length; k++)
-    if(user.appliedPosts[k].includes(result._id)){
-      results = user.appliedPosts[k][1]
+for (var k = 0; k < result.applicants.length; k++){
+    if(result.applicants[k][0] === user.id){
+      results = result.applicants[k][1]
 
       if(results === 0 || results === "0"){
         setStatus("Accepted")
@@ -62,12 +62,13 @@ for (var k = 0; k < user.appliedPosts.length; k++)
     }
     else {
       index = index + 1;
-      if (index === user.appliedPosts.length){
+      if (index === result.applicants.length){
       alert("Have Not Applied! Go Back To Result Tab To Apply!");
       index = 0;
       }
     }
   }
+}
 
 
   const history = useHistory();
