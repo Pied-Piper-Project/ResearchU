@@ -7,6 +7,7 @@ export const Nav = styled.nav`
   background-color: var(--container-color);
   height: 80px;
   display:flex;
+  box-shadow: 0 1px 6px rgba(35, 10, 58, 0.3);
 
   align-items: center;
   font-size: 1rem;

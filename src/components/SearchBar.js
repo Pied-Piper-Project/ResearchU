@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { tempData } from "./ExampleResearchPosts";
+import { FaUniversity } from "react-icons/fa";
 import { tempData1 } from "./ExampleProfile";
 
 function SearchBar( {setData, setAllData, setToggleResults} ){
+
+    const iconLocation = <FaUniversity />
+
     let data = [];
 
     const [school, setSchool] = useState('');
@@ -50,7 +54,10 @@ function SearchBar( {setData, setAllData, setToggleResults} ){
 
     return(
         <div className="search_box bd-grid glass">
-            <input type="text" className="input_school" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
+            <div className="icon-university">
+                <div className="icon-univ"> {iconLocation}</div>
+                <input type="text" className="input_school" value={school} onChange={e => setSchool(e.target.value)} placeholder="University" />
+              </div>
             <input type="text" className="input_keyword" value={keyword} onChange={e => setKeyword(e.target.value)} placeholder="Keyword: Math, Amino Acids, CS, etc..." />
             <button className="search_btn" onClick={() => buttonClickAction()}><i className="fas fa-search"></i></button>
         </div>

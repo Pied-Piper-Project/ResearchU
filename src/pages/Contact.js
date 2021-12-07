@@ -4,7 +4,7 @@ import contactImg from '../images/contact.png';
 const Contact = () => {
     return(
         <>
-            <section className="send section" id = "contact">
+            <section className="send section contactUS" id = "contact">
                 <div className="send__container bd-container bd-grid glass">
                     <div className="send__content">
                         <h2 className="section-title-center">Contact Us</h2>

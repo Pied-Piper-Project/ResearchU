@@ -30,27 +30,34 @@ const SignUp = () => {
     }
 
     return (
-        <div className="content-container">
-            <h1>Sign Up</h1>
+        <section className="about section bd-container" id="about">
+        <h2 className="section-title">Sign In</h2>
+            <div className="signIn-wrapper">
+                <div className="signIn-content">
             {errorMessage && <div className="fail">{errorMessage}</div> }
             <input
+            className = "field-margin field-style"
                 value={emailValue}
                 onChange={e => setEmailValue(e.target.value)}
                 placeholder="Email"/>
             <p></p>
             <input
+            className = "field-margin field-style"
                 type="password"
                 value={passwordValue}
                 onChange={e => setPasswordValue(e.target.value)}
                 placeholder="Password" />
             <p></p>
             <input
+            className = "field-margin field-style"
                 type="password"
                 value={confirmPasswordValue}
                 onChange={e => setConfirmPasswordValue(e.target.value)}
                 placeholder="Confirm Password" />
             <p></p>
-            <b>Select what you want to sign up as</b>
+            <h3 className = "selectPerm" >Select what you want to sign in as:</h3>
+            <div className="select-wrapper" >
+            <div className="select-dropdown-subject">
             <select 
                 id = "mylist"
                 value={signUpAs}
@@ -60,15 +67,20 @@ const SignUp = () => {
             <option>Professor</option>
             <option>Administrator</option>
             </select>
+            </div>
+            </div>
             <p></p>
             <button
+            className = "field-margin button-style"
                 disabled={!emailValue || !passwordValue ||
                 passwordValue !== confirmPasswordValue || !signUpAs
                 }
                 onClick={onSignUpClicked}>Sign Up</button>
-            <hr />
-            <button onClick={() => history.push('/SignIn')}>Already have an account? Log In!</button>
-        </div>
+            <hr className = "sepr" />
+            <button  className = "button-forget" onClick={() => history.push('/SignIn')}>Already have an account? Log In!</button>
+            </div>
+            </div>
+        </section>
     )
 }
 
