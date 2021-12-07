@@ -156,8 +156,10 @@ function ResearchResult({ result }) {
                 <p>{result.professor}</p>
               </div>
               <div className="detail-item">
-                <h5>Duration:</h5>
-                <p>{result.date}</p>
+                <h5>From:</h5>
+                <p>{result.fromDate}</p>
+                <h5>To:</h5>
+                <p>{result.toDate}</p>
               </div>
               <div className="detail-item">
                 <h5>Location:</h5>
