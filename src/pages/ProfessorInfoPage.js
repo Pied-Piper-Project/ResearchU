@@ -95,9 +95,7 @@ const ProfessorInfoPage = () => {
             <hr />
             <div className ="profile-grid">
             <button className = "field-margin button-style saveChanges" onClick={saveChanges}>Save Changes</button>
-            <p></p>
             <button className = "field-margin button-style resetValues" onClick={resetValues}>Reset Values</button>
-            <p></p>
             <button className = "field-margin button-style logOut" onClick={logOut}>Log Out</button>
            </div>
         {/* </div> */}

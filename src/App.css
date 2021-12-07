@@ -1459,18 +1459,15 @@ input[type='radio']:checked:after {
 .contactUS {
   padding: 0;
 }
+
 .send__container {
   background-color: var(--container-color);
 }
+
 .send{
   background-color: var(--first-color-send);
   margin-top: 7rem;
 }
-
-.send__title, .send__description{
-  /* color: #5B5757; */
-}
-
 
 .send__description{
   text-align: center;
