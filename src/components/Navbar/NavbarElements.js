@@ -24,6 +24,7 @@ export const NavbarContainer = styled.div`
   height: 80px;
   width: 52%;
 
+
   justify-content: center;
 `
 export const NavLogo = styled(LinkR) `
@@ -32,7 +33,7 @@ export const NavLogo = styled(LinkR) `
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   font-weight: bold;
   text-decoration: none;
   padding-left:1%;
@@ -97,7 +98,7 @@ export const NightModeIcon =  styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 24%;
   @media screen and (max-width: 768px) {
     display: none;
