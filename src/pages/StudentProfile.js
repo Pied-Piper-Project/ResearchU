@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const StudentProfile = () => {
-    const StudentId = "619b019a8d604a2846bc6d84"
+    const location = useLocation();
+    const StudentId = location.state
     const [school, setSchool] = useState("");
     const [email, setEmail] = useState("");
     const [major, setMajor] = useState('');

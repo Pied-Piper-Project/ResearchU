@@ -16,6 +16,8 @@ function PostedTab({ result }) {
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOffline, setIsOffline] = useState(true);
   const [isOffline2, setIsOffline2] = useState(true);
+  const [accepted, setAccepted] = useState("Accept");
+  const [rejected, setRejected] = useState("Reject");
 
   const [token, setToken] = useToken();
 
@@ -118,7 +120,9 @@ function PostedTab({ result }) {
               <div className="fourone">
 
                 <button className="tagsProfile"   onClick={() => {
-                  history.push('/StudentProfile')
+                  history.push({
+                    pathname: '/StudentProfile',
+                    state: applic[0]})
                   }
                 }>Profile</button>
 
@@ -132,8 +136,11 @@ function PostedTab({ result }) {
                       post_id,
                     });
                   //result.applicants.push([studentID, "0"])
+                  //setAccepted("Accepted")
+                  //setRejected("Reject")
+                  alert("Student has been accepted!")
                   }
-                }>Accept</button>
+                }>{accepted}</button>
 
                 <button className="tagsReject" onClick={() => {
                   const studentID = applic[0]
@@ -145,8 +152,10 @@ function PostedTab({ result }) {
                       post_id,
                     });
                   //result.applicants.push([studentID, "2"])
-                  
-                }}>Reject</button>
+                  //setAccepted("Accept")
+                  //setRejected("Rejected")
+                  alert("Student has been rejected!")
+                }}>{rejected}</button>
 
               </div>
 
